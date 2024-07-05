@@ -6,5 +6,6 @@
         Task<bool> DeleteAsync(long Id);
         Task<T> GetByIdAsync(long Id);
         Task<IEnumerable<T>> GetAllAsync();
+        Task<bool> UpdateAsync(long Id,T item);
     }
 }

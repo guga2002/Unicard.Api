@@ -2,7 +2,6 @@
 using GA.UniCard.Domain.Entitites;
 using GA.UniCard.Domain.Interfaces;
 using Microsoft.Data.SqlClient;
-using System.Data;
 
 namespace GA.UniCard.Infrastructure.Repositories
 {
@@ -23,7 +22,7 @@ namespace GA.UniCard.Infrastructure.Repositories
                 values (@ProductId, @OrderId, @Quantity,@Price);
                 select scope_identity();";
 
-                long orderId = await dbConnection.ExecuteScalarAsync<long>(query, new
+                long orderItemId = await dbConnection.ExecuteScalarAsync<long>(query, new
                 {
                     item.ProductId,
                     item.OrderId,
@@ -31,7 +30,7 @@ namespace GA.UniCard.Infrastructure.Repositories
                     item.Price,
                 });
 
-                return orderId;
+                return orderItemId;
             }
         }
 
@@ -74,6 +73,33 @@ namespace GA.UniCard.Infrastructure.Repositories
                 var orderItem = await dbConnection.QueryFirstOrDefaultAsync<OrderItem>(query, new { Id = Id }) ??
                     throw new ArgumentNullException("No OrderItem found on this Id");
                 return orderItem;
+            }
+        }
+
+        public async Task<bool> UpdateAsync(long Id, OrderItem item)
+        {
+            using (var dbConnection = new SqlConnection(this.ConnectionString))
+            {
+                dbConnection.Open();
+
+                string updateQuery = @"
+                update OrderItems
+                set 
+                    ProductId = @ProductId,
+                    OrderId = @OrderId,
+                    Item_Quantity = @Quantity
+                    Item_Price=@Price
+                where Id = @Id";
+
+                long rowsAffected = await dbConnection.ExecuteAsync(updateQuery, new
+                {
+                    item.ProductId,
+                    item.OrderId,
+                    item.Quantity,
+                    item.Price,
+                    Id
+                });
+                return rowsAffected > 0;
             }
         }
     }

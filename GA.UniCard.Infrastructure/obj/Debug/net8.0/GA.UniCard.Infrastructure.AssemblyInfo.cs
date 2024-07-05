@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GA.UniCard.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4b08008521d0948412dd44f81cf727598554492")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7eb86f32a972bf53f2ede9bdab8ec70d5ce5fb27")]
 [assembly: System.Reflection.AssemblyProductAttribute("GA.UniCard.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GA.UniCard.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,14 @@
+2024-07-05 22:11:06.8889 INFO No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-07-05 22:11:07.0178 INFO Now listening on: https://localhost:7150
+2024-07-05 22:11:07.0189 INFO Now listening on: http://localhost:5268
+2024-07-05 22:11:07.0189 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 22:11:07.0189 INFO Hosting environment: Development
+2024-07-05 22:11:07.0189 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 22:11:07.1910 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 22:11:07.3237 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 132.4345ms
+2024-07-05 22:11:07.3237 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 22:11:07.3237 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 22:11:07.3237 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.8981ms
+2024-07-05 22:11:07.3503 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 24.3875ms
+2024-07-05 22:11:07.3954 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 22:11:07.4110 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 15.6111ms

@@ -11,7 +11,7 @@
         "projectName": "GA.UniCard.Api",
         "projectPath": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Api\\GA.UniCard.Api.csproj",
         "packagesPath": "C:\\Users\\aapkh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aapkh\\Source\\Repos\\Unicard.Api\\GA.UniCard.Api\\obj\\",
+        "outputPath": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aapkh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[5.3.11, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"

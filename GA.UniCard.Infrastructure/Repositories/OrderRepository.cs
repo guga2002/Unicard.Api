@@ -75,5 +75,30 @@ namespace GA.UniCard.Infrastructure.Repositories
                 return order;
             }
         }
+
+        public async Task<bool> UpdateAsync(long Id, Order item)
+        {
+            using (var dbConnection = new SqlConnection(this.ConnectionString))
+            {
+                dbConnection.Open();
+
+                string updateQuery = @"
+                update Orders
+                set 
+                    Ordering_Date = @OrderDate,
+                    UserId = @UserId,
+                    Total_Amount = @TotalAmount
+                where Id = @Id";
+
+                long rowsAffected = await dbConnection.ExecuteAsync(updateQuery, new
+                {
+                    item.OrderDate,
+                    item.UserId,
+                    item.TotalAmount,
+                    Id
+                });
+                return rowsAffected > 0;
+            }
+        }
     }
 }

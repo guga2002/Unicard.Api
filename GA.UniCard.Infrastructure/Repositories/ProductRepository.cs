@@ -22,13 +22,13 @@ namespace GA.UniCard.Infrastructure.Repositories
                 values (@ProductName, @Price, @Description);
                 select scope_identity();";
 
-                long orderId = await dbConnection.ExecuteScalarAsync<long>(query, new
+                long ProductId = await dbConnection.ExecuteScalarAsync<long>(query, new
                 {
                     item.ProductName,
                     item.Price,
                     item.Description,
                 });
-                return orderId;
+                return ProductId;
             }
         }
 
@@ -54,9 +54,9 @@ namespace GA.UniCard.Infrastructure.Repositories
 
                 string query = "select * from Products";
 
-                var orders = await dbConnection.QueryAsync<Product>(query);
+                var products = await dbConnection.QueryAsync<Product>(query);
 
-                return orders;
+                return products;
             }
         }
 
@@ -68,10 +68,35 @@ namespace GA.UniCard.Infrastructure.Repositories
 
                 string query = "select * from Products where Id = @Id";
 
-                var user = await dbConnection.QueryFirstOrDefaultAsync<Product>(query, new { Id = Id }) ??
+                var product = await dbConnection.QueryFirstOrDefaultAsync<Product>(query, new { Id = Id }) ??
                     throw new ArgumentNullException("No product found on this Id");
 
-                return user;
+                return product;
+            }
+        }
+
+        public async Task<bool> UpdateAsync(long Id, Product item)
+        {
+            using (var dbConnection = new SqlConnection(this.ConnectionString))
+            {
+                dbConnection.Open();
+
+                string updateQuery = @"
+                update Products
+                set 
+                    Product_Price = @Price,
+                    Product_Name = @ProductName,
+                    Product_Description = @Description
+                where Id = @Id";
+
+                long rowsAffected = await dbConnection.ExecuteAsync(updateQuery, new
+                {
+                    item.Price,
+                    item.ProductName,
+                    item.Description,
+                    Id
+                });
+                return rowsAffected > 0;
             }
         }
     }
