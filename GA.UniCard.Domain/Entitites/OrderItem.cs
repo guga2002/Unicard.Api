@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GA.UniCard.Domain.Entitites
 {
-    [Table("Orders")]
+    [Table("OrderItems")]
     [Index(nameof(OrderId),IsDescending =new bool[] {true})]
     [Index(nameof(ProductId), IsDescending = new bool[] { true })]
     public class OrderItem:AbstractEntity

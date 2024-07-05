@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{73841DED-16B1-44A6-8FA9-979E79DC80DE}|GA.UniCard.Domain\\GA.UniCard.Domain.csproj|c:\\users\\aapkh\\source\\repos\\unicard.api\\ga.unicard.domain\\interfaces\\iuserrepostory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73841DED-16B1-44A6-8FA9-979E79DC80DE}|GA.UniCard.Domain\\GA.UniCard.Domain.csproj|solutionrelative:ga.unicard.domain\\interfaces\\iuserrepostory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IUserRepostory.cs",
-              "DocumentMoniker": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Domain\\Interfaces\\IUserRepostory.cs",
-              "RelativeDocumentMoniker": "GA.UniCard.Domain\\Interfaces\\IUserRepostory.cs",
-              "ToolTip": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Domain\\Interfaces\\IUserRepostory.cs",
-              "RelativeToolTip": "GA.UniCard.Domain\\Interfaces\\IUserRepostory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T15:03:47.759Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

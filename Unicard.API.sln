@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GA.UniCard.Api", "GA.UniCard.Api\GA.UniCard.Api.csproj", "{8B18B457-D3A6-45BC-9AEC-7D9CE4AB25DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GA.UniCard.Api", "GA.UniCard.Api\GA.UniCard.Api.csproj", "{8B18B457-D3A6-45BC-9AEC-7D9CE4AB25DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GA.UniCard.Domain", "GA.UniCard.Domain\GA.UniCard.Domain.csproj", "{73841DED-16B1-44A6-8FA9-979E79DC80DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GA.UniCard.Domain", "GA.UniCard.Domain\GA.UniCard.Domain.csproj", "{73841DED-16B1-44A6-8FA9-979E79DC80DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GA.UniCard.Infrastructure", "GA.UniCard.Infrastructure\GA.UniCard.Infrastructure.csproj", "{F4538563-2839-46F3-9875-F0620A071C5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{73841DED-16B1-44A6-8FA9-979E79DC80DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73841DED-16B1-44A6-8FA9-979E79DC80DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73841DED-16B1-44A6-8FA9-979E79DC80DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4538563-2839-46F3-9875-F0620A071C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4538563-2839-46F3-9875-F0620A071C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4538563-2839-46F3-9875-F0620A071C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4538563-2839-46F3-9875-F0620A071C5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

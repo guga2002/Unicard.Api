@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aapkh\\Source\\Repos\\Unicard.Api\\GA.UniCard.Api\\GA.UniCard.Api.csproj": {}
+    "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Api\\GA.UniCard.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aapkh\\Source\\Repos\\Unicard.Api\\GA.UniCard.Api\\GA.UniCard.Api.csproj": {
+    "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Api\\GA.UniCard.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aapkh\\Source\\Repos\\Unicard.Api\\GA.UniCard.Api\\GA.UniCard.Api.csproj",
+        "projectUniqueName": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Api\\GA.UniCard.Api.csproj",
         "projectName": "GA.UniCard.Api",
-        "projectPath": "C:\\Users\\aapkh\\Source\\Repos\\Unicard.Api\\GA.UniCard.Api\\GA.UniCard.Api.csproj",
+        "projectPath": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Api\\GA.UniCard.Api.csproj",
         "packagesPath": "C:\\Users\\aapkh\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\aapkh\\Source\\Repos\\Unicard.Api\\GA.UniCard.Api\\obj\\",
         "projectStyle": "PackageReference",
