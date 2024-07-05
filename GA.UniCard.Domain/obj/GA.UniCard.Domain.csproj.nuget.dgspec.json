@@ -11,7 +11,7 @@
         "projectName": "GA.UniCard.Domain",
         "projectPath": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Domain\\GA.UniCard.Domain.csproj",
         "packagesPath": "C:\\Users\\aapkh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aapkh\\Source\\Repos\\Unicard.Api\\GA.UniCard.Domain\\obj\\",
+        "outputPath": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aapkh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,6 +51,22 @@
               "version": "[8.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
             }

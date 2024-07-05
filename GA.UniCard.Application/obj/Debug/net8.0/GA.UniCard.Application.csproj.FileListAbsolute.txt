@@ -1,0 +1,16 @@
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\bin\Debug\net8.0\GA.UniCard.Application.deps.json
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\bin\Debug\net8.0\GA.UniCard.Application.dll
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\bin\Debug\net8.0\GA.UniCard.Application.pdb
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\bin\Debug\net8.0\GA.UniCard.Domain.dll
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\bin\Debug\net8.0\GA.UniCard.Domain.pdb
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\GA.UniCard.Application.csproj.AssemblyReference.cache
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\GA.UniCard.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\GA.UniCard.Application.AssemblyInfoInputs.cache
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\GA.UniCard.Application.AssemblyInfo.cs
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\GA.UniCard.Application.csproj.CoreCompileInputs.cache
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\GA.UniCard.Application.sourcelink.json
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\GA.UniCa.B0AB59D5.Up2Date
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\GA.UniCard.Application.dll
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\refint\GA.UniCard.Application.dll
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\GA.UniCard.Application.pdb
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\ref\GA.UniCard.Application.dll

@@ -7,13 +7,10 @@ namespace GA.UniCard.Infrastructure.UniteOfWork
     public class UnitOfWorkRepository : IUniteOfWork
     {
         private readonly IConfiguration Config;
-        private readonly string ConnectionString;
 
-        public UnitOfWorkRepository(IConfiguration config)
+        public UnitOfWorkRepository(IConfiguration Config)
         {
-            Config = config ?? throw new ArgumentNullException(nameof(config));
-            ConnectionString = Config.GetConnectionString("DapperConnection")
-                                ?? throw new InvalidOperationException("Connection string not found");
+            this.Config = Config;
         }
 
         private OrderRepository _orderRepository;
@@ -22,7 +19,7 @@ namespace GA.UniCard.Infrastructure.UniteOfWork
             get
             {
                 if (_orderRepository == null)
-                    _orderRepository = new OrderRepository(ConnectionString);
+                    _orderRepository = new OrderRepository(Config);
                 return _orderRepository;
             }
         }
@@ -33,7 +30,7 @@ namespace GA.UniCard.Infrastructure.UniteOfWork
             get
             {
                 if (_orderItemRepository == null)
-                    _orderItemRepository = new OrderItemRepository(ConnectionString);
+                    _orderItemRepository = new OrderItemRepository(Config);
                 return _orderItemRepository;
             }
         }
@@ -44,7 +41,7 @@ namespace GA.UniCard.Infrastructure.UniteOfWork
             get
             {
                 if (_productRepository == null)
-                    _productRepository = new ProductRepository(ConnectionString);
+                    _productRepository = new ProductRepository(Config);
                 return _productRepository;
             }
         }
@@ -55,21 +52,9 @@ namespace GA.UniCard.Infrastructure.UniteOfWork
             get
             {
                 if (_userRepository == null)
-                    _userRepository = new UserRepository(ConnectionString);
+                    _userRepository = new UserRepository(Config);
                 return _userRepository;
             }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            this.Dispose();
-
         }
     }
 }

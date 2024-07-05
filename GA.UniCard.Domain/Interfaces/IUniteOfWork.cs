@@ -1,6 +1,6 @@
 ﻿namespace GA.UniCard.Domain.Interfaces
 {
-    public interface IUniteOfWork:IDisposable
+    public interface IUniteOfWork
     {
         public  IOrderRepository OrderRepository { get; }
         public IOrderItemRepository OrderItemRepository { get; }

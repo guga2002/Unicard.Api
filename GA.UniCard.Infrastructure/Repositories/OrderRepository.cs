@@ -2,13 +2,14 @@
 using GA.UniCard.Domain.Entitites;
 using GA.UniCard.Domain.Interfaces;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using System.Data;
 
 namespace GA.UniCard.Infrastructure.Repositories
 {
     public class OrderRepository : AbstractRepository, IOrderRepository
     {
-        public OrderRepository(string ConnectionString) : base(ConnectionString)
+        public OrderRepository(IConfiguration Config) : base(Config)
         {
         }
 
@@ -54,7 +55,11 @@ namespace GA.UniCard.Infrastructure.Repositories
             {
                 dbConnection.Open();
 
-                string query = "select * from Orders";
+                string query = @"SELECT [Id]
+                                ,[UserId]
+                                ,[Ordering_Date] as OrderDate
+                                ,[Total_Amount] as TotalAmount
+                                 FROM  [Orders]";
 
                 var orders = await dbConnection.QueryAsync<Order>(query);
 
@@ -68,7 +73,12 @@ namespace GA.UniCard.Infrastructure.Repositories
             {
                 dbConnection.Open();
 
-                string query = "select * from orders where Id = @Id";
+                string query = @"SELECT [Id]
+                              ,[UserId]
+                              ,[Ordering_Date] as OrderDate
+                              ,[Total_Amount] as TotalAmount
+                               FROM  [Orders]
+                               where Id = @Id";
 
                 var order = await dbConnection.QueryFirstOrDefaultAsync<Order>(query, new { Id = Id }) ??
                     throw new ArgumentNullException("No Order found on this Id");

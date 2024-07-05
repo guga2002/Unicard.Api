@@ -2,12 +2,13 @@
 using GA.UniCard.Domain.Entitites;
 using GA.UniCard.Domain.Interfaces;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace GA.UniCard.Infrastructure.Repositories
 {
     public class ProductRepository : AbstractRepository, IProductRepository
     {
-        public ProductRepository(string ConnectionString) : base(ConnectionString)
+        public ProductRepository(IConfiguration Config) : base(Config)
         {
         }
 
@@ -52,10 +53,19 @@ namespace GA.UniCard.Infrastructure.Repositories
             {
                 dbConnection.Open();
 
-                string query = "select * from Products";
+                string query = @"SELECT [Id]
+                                ,[Product_Name] as productName
+                                ,[Product_Description] as description
+                                ,[Product_Price] as Price
+                                  FROM Products";
 
                 var products = await dbConnection.QueryAsync<Product>(query);
 
+                foreach (var product in products)
+                {
+
+                    Console.WriteLine(product.Id);
+                }
                 return products;
             }
         }
@@ -66,7 +76,12 @@ namespace GA.UniCard.Infrastructure.Repositories
             {
                 dbConnection.Open();
 
-                string query = "select * from Products where Id = @Id";
+                string query = @"SELECT [Id]
+                                ,[Product_Name] as productName
+                                ,[Product_Description] as description
+                                ,[Product_Price] as Price
+                                 FROM Products 
+								 where Id = @Id";
 
                 var product = await dbConnection.QueryFirstOrDefaultAsync<Product>(query, new { Id = Id }) ??
                     throw new ArgumentNullException("No product found on this Id");

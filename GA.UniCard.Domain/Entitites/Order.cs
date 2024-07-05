@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GA.UniCard.Domain.Entitites
@@ -11,6 +12,7 @@ namespace GA.UniCard.Domain.Entitites
         public long UserId { get; set; }
 
         [Column("Ordering_Date")]
+        [DataType(DataType.Date)]
         public DateTime OrderDate { get; set; }
 
         [Column("Total_Amount")]

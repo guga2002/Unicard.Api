@@ -2,12 +2,13 @@
 using GA.UniCard.Domain.Entitites;
 using GA.UniCard.Domain.Interfaces;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace GA.UniCard.Infrastructure.Repositories
 {
     public class UserRepository : AbstractRepository, IUserRepostory
     {
-        public UserRepository(string ConnectionString) : base(ConnectionString)
+        public UserRepository(IConfiguration Config) : base(Config)
         {
         }
 
@@ -38,7 +39,12 @@ namespace GA.UniCard.Infrastructure.Repositories
             {
                 dbConnection.Open();
 
-                string query = "delete from Users where Id = @Id";
+                string query = @"SELECT [Id]
+                              ,[User_Name] as UserName
+                              ,[Password]
+                              ,[Email]
+                              FROM [Users]
+                              where Id = @Id";
 
                 var rowsAffected = await dbConnection.ExecuteAsync(query, new { Id = Id });
 
@@ -52,7 +58,11 @@ namespace GA.UniCard.Infrastructure.Repositories
             {
                 dbConnection.Open();
 
-                string query = "select * from Users";
+                string query = @"SELECT [Id]
+                               ,[User_Name] as UserName
+                               ,[Password]
+                               ,[Email]
+                                FROM [Users]";
 
                 var users = await dbConnection.QueryAsync<User>(query);
 

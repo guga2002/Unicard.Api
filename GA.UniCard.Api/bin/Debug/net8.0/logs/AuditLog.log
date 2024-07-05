@@ -12,3 +12,589 @@
 2024-07-05 22:11:07.3503 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 24.3875ms
 2024-07-05 22:11:07.3954 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
 2024-07-05 22:11:07.4110 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 15.6111ms
+2024-07-05 23:00:56.0298 INFO Now listening on: https://localhost:7150
+2024-07-05 23:00:56.0536 INFO Now listening on: http://localhost:5268
+2024-07-05 23:00:56.0536 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:00:56.0536 INFO Hosting environment: Development
+2024-07-05 23:00:56.0536 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:00:56.3501 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:00:56.4783 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:00:56.6093 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 259.1148ms
+2024-07-05 23:00:56.6171 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:00:56.6171 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:00:56.6171 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.9613ms
+2024-07-05 23:00:56.6932 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 76.1154ms
+2024-07-05 23:00:56.7118 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:00:56.7118 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:00:56.7118 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 2.1569ms
+2024-07-05 23:01:40.6966 INFO Now listening on: https://localhost:7150
+2024-07-05 23:01:40.7200 INFO Now listening on: http://localhost:5268
+2024-07-05 23:01:40.7216 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:01:40.7216 INFO Hosting environment: Development
+2024-07-05 23:01:40.7216 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:01:41.2777 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:01:41.3647 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:01:41.4192 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 139.8168ms
+2024-07-05 23:01:41.4192 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:01:41.4192 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:01:41.4269 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.6032ms
+2024-07-05 23:01:41.4455 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 21.4452ms
+2024-07-05 23:01:41.4686 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:01:41.4686 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:01:41.4730 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 4.3871ms
+2024-07-05 23:01:52.6902 INFO Now listening on: https://localhost:7150
+2024-07-05 23:01:52.7150 INFO Now listening on: http://localhost:5268
+2024-07-05 23:01:52.7150 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:01:52.7150 INFO Hosting environment: Development
+2024-07-05 23:01:52.7150 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:01:52.8924 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:01:52.9593 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:01:52.9985 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 104.9283ms
+2024-07-05 23:01:53.0032 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:01:53.0032 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:01:53.0032 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.1907ms
+2024-07-05 23:01:53.0235 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 20.2977ms
+2024-07-05 23:01:53.0352 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:01:53.0352 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:01:53.0352 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 3.4249ms
+2024-07-05 23:01:58.8831 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:01:58.8831 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:01:58.8831 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 6.4469ms
+2024-07-05 23:01:58.9061 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:01:58.9061 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:01:58.9061 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.5993ms
+2024-07-05 23:01:58.9164 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 10.2427ms
+2024-07-05 23:01:58.9293 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:01:58.9293 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:01:58.9293 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 2.9327ms
+2024-07-05 23:01:59.6178 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:01:59.6178 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:01:59.6178 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 6.1920ms
+2024-07-05 23:01:59.6391 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:01:59.6391 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:01:59.6391 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.4794ms
+2024-07-05 23:01:59.6441 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 4.8641ms
+2024-07-05 23:01:59.6441 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:01:59.6441 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:01:59.6582 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 2.5945ms
+2024-07-05 23:01:59.7955 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:01:59.7955 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:01:59.8009 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 5.4349ms
+2024-07-05 23:01:59.8009 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:01:59.8009 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:01:59.8009 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.2471ms
+2024-07-05 23:01:59.8009 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 3.6183ms
+2024-07-05 23:01:59.8260 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:01:59.8260 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:01:59.8316 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 2.2075ms
+2024-07-05 23:02:00.1614 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:02:00.1614 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:00.1614 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 4.9797ms
+2024-07-05 23:02:00.1745 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:02:00.1745 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:02:00.1745 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.1863ms
+2024-07-05 23:02:00.1745 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 3.1145ms
+2024-07-05 23:02:00.1933 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:02:00.1933 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:00.1933 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 2.0470ms
+2024-07-05 23:02:00.4848 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:02:00.4862 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:00.4862 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 3.7620ms
+2024-07-05 23:02:00.5043 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:02:00.5043 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:02:00.5043 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.3093ms
+2024-07-05 23:02:00.5043 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 3.8481ms
+2024-07-05 23:02:00.5241 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:02:00.5241 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:00.5241 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 1.3895ms
+2024-07-05 23:02:00.7032 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:02:00.7052 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:00.7052 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 6.3259ms
+2024-07-05 23:02:00.7052 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:02:00.7052 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:02:00.7052 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.1753ms
+2024-07-05 23:02:00.7233 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 3.5221ms
+2024-07-05 23:02:00.7371 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:02:00.7371 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:00.7371 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 1.2122ms
+2024-07-05 23:02:01.0907 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:02:01.0907 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:01.0907 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 3.7117ms
+2024-07-05 23:02:01.1040 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:02:01.1040 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:02:01.1040 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.2255ms
+2024-07-05 23:02:01.1040 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 2.4605ms
+2024-07-05 23:02:01.1208 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:02:01.1208 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:01.1208 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 1.1447ms
+2024-07-05 23:02:01.3075 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:02:01.3075 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:01.3075 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 4.5798ms
+2024-07-05 23:02:01.3208 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:02:01.3208 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:02:01.3208 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.1824ms
+2024-07-05 23:02:01.3208 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 2.5285ms
+2024-07-05 23:02:01.3357 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:02:01.3357 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:01.3357 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 1.1064ms
+2024-07-05 23:02:01.5147 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:02:01.5147 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:01.5190 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 4.2504ms
+2024-07-05 23:02:01.5190 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:02:01.5190 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:02:01.5190 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.1606ms
+2024-07-05 23:02:01.5190 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 3.1610ms
+2024-07-05 23:02:01.5432 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:02:01.5432 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:01.5432 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 1.6066ms
+2024-07-05 23:02:02.6218 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:02:02.6218 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:02.6280 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 6.2055ms
+2024-07-05 23:02:02.6468 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:02:02.6468 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:02:02.6468 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.1409ms
+2024-07-05 23:02:02.6468 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 2.5631ms
+2024-07-05 23:02:02.6601 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:02:02.6601 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:02.6601 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 1.1924ms
+2024-07-05 23:02:03.3382 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:02:03.3382 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:03.3382 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 5.8631ms
+2024-07-05 23:02:03.3557 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:02:03.3557 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:02:03.3557 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.1303ms
+2024-07-05 23:02:03.3557 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 2.4085ms
+2024-07-05 23:02:03.3745 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:02:03.3745 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:03.3745 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 1.3061ms
+2024-07-05 23:02:03.5345 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:02:03.5345 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:03.5345 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 3.1550ms
+2024-07-05 23:02:03.5345 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:02:03.5345 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:02:03.5345 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.1377ms
+2024-07-05 23:02:03.5501 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 2.6691ms
+2024-07-05 23:02:03.5501 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:02:03.5648 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:03.5648 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 1.4838ms
+2024-07-05 23:02:03.7206 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:02:03.7220 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:03.7220 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 500 - text/html;+charset=utf-8 3.4527ms
+2024-07-05 23:02:03.7220 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:02:03.7220 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:02:03.7220 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.1499ms
+2024-07-05 23:02:03.7383 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 2.7856ms
+2024-07-05 23:02:03.7525 INFO Request starting HTTP/2 GET https://localhost:7150/favicon.ico - - -
+2024-07-05 23:02:03.7525 ERROR An unhandled exception has occurred while executing the request.
+2024-07-05 23:02:03.7525 INFO Request finished HTTP/2 GET https://localhost:7150/favicon.ico - 500 - text/plain;+charset=utf-8 1.1040ms
+2024-07-05 23:03:03.9344 INFO Now listening on: https://localhost:7150
+2024-07-05 23:03:03.9590 INFO Now listening on: http://localhost:5268
+2024-07-05 23:03:03.9590 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:03:03.9590 INFO Hosting environment: Development
+2024-07-05 23:03:03.9590 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:03:04.0592 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:03:04.2076 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 147.6522ms
+2024-07-05 23:03:04.2076 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:03:04.2076 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:03:04.2076 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.9035ms
+2024-07-05 23:03:04.2330 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 22.2414ms
+2024-07-05 23:03:04.2821 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:03:04.3611 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 78.9636ms
+2024-07-05 23:07:54.5151 ERROR Stopped program because of exception
+2024-07-05 23:10:31.8096 ERROR Stopped program because of exception
+2024-07-05 23:11:06.7965 ERROR Stopped program because of exception
+2024-07-05 23:16:05.2379 INFO Now listening on: https://localhost:7150
+2024-07-05 23:16:05.2626 INFO Now listening on: http://localhost:5268
+2024-07-05 23:16:05.2626 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:16:05.2626 INFO Hosting environment: Development
+2024-07-05 23:16:05.2626 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:16:05.3672 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:16:05.5139 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:16:05.5139 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:16:05.5139 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 146.6240ms
+2024-07-05 23:16:05.5139 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.2659ms
+2024-07-05 23:16:05.5383 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 24.2972ms
+2024-07-05 23:16:05.5786 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:16:05.6585 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 79.8110ms
+2024-07-05 23:16:11.7380 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:16:11.7380 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 5.5030ms
+2024-07-05 23:16:11.7569 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:16:11.7569 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:16:11.7569 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.5015ms
+2024-07-05 23:16:11.7569 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 10.1281ms
+2024-07-05 23:16:11.8334 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:16:11.8334 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 7.0006ms
+2024-07-05 23:16:22.9908 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:16:22.9908 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:16:23.0045 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:16:23.0045 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:16:33.7360 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 10708.9217ms
+2024-07-05 23:16:33.7373 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:16:33.7686 ERROR Something went wrong: Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "UniCard" requested by the login. The login failed.
+Login failed for user 'GugaApkh\aapkh'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at GA.UniCard.Infrastructure.Repositories.OrderRepository.GetAllAsync() in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\Repositories\OrderRepository.cs:line 56
+   at GA.UniCard.Application.Services.ProductServices.GetAllAsync() in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\Services\ProductServices.cs:line 58
+   at GA.UniCard.Api.Controllers.ProductController.GetAll() in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\Controllers\ProductController.cs:line 63
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.InvokeAsync(HttpContext context) in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\CustomMiddlwares\RateLimitingMiddleware.cs:line 67
+   at GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\CustomMiddlwares\LoggingMiddleware.cs:line 30
+   at GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\CustomMiddlwares\ExceptionMiddleware.cs:line 39
+ClientConnectionId:ca5af587-86b0-4ed8-ab0e-3bc88bd520b0
+Error Number:4060,State:1,Class:11
+2024-07-05 23:17:19.4583 ERROR Stopped program because of exception
+2024-07-05 23:18:30.8018 ERROR Stopped program because of exception
+2024-07-05 23:19:21.6450 ERROR Stopped program because of exception
+2024-07-05 23:19:29.3181 ERROR Stopped program because of exception
+2024-07-05 23:19:40.7849 ERROR Stopped program because of exception
+2024-07-05 23:19:47.3204 ERROR Stopped program because of exception
+2024-07-05 23:20:34.1663 ERROR Stopped program because of exception
+2024-07-05 23:20:49.8500 ERROR Stopped program because of exception
+2024-07-05 23:21:07.9451 ERROR Stopped program because of exception
+2024-07-05 23:23:39.6546 ERROR Stopped program because of exception
+2024-07-05 23:24:01.9269 ERROR Stopped program because of exception
+2024-07-05 23:25:22.3223 ERROR Stopped program because of exception
+2024-07-05 23:25:28.1295 ERROR Stopped program because of exception
+2024-07-05 23:28:46.9259 ERROR Stopped program because of exception
+2024-07-05 23:28:52.1319 ERROR Stopped program because of exception
+2024-07-05 23:29:35.5197 INFO Now listening on: https://localhost:7150
+2024-07-05 23:29:35.5444 INFO Now listening on: http://localhost:5268
+2024-07-05 23:29:35.5444 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:29:35.5444 INFO Hosting environment: Development
+2024-07-05 23:29:35.5444 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:29:36.0641 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:29:36.2081 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 143.1211ms
+2024-07-05 23:29:36.2081 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:29:36.2081 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:29:36.2081 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.7393ms
+2024-07-05 23:29:36.2319 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 19.9884ms
+2024-07-05 23:29:36.3446 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:29:36.4180 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 73.3343ms
+2024-07-05 23:29:46.2340 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:29:46.2416 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:29:46.2416 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:29:46.2591 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:29:47.1002 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 836.1589ms
+2024-07-05 23:29:47.1002 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:29:47.1218 ERROR Something went wrong: AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IEnumerable`1
+System.Collections.Generic.List`1[[GA.UniCard.Domain.Entitites.Order, GA.UniCard.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IEnumerable`1[[GA.UniCard.Application.Models.ProductDto, GA.UniCard.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Order -> ProductDto
+GA.UniCard.Domain.Entitites.Order -> GA.UniCard.Application.Models.ProductDto
+   at lambda_method14(Closure, Order, ProductDto, ResolutionContext)
+   at lambda_method13(Closure, Object, IEnumerable`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method13(Closure, Object, IEnumerable`1, ResolutionContext)
+   at GA.UniCard.Application.Services.ProductServices.GetAllAsync() in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\Services\ProductServices.cs:line 64
+   at GA.UniCard.Api.Controllers.ProductController.GetAll() in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\Controllers\ProductController.cs:line 63
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.InvokeAsync(HttpContext context) in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\CustomMiddlwares\RateLimitingMiddleware.cs:line 67
+   at GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\CustomMiddlwares\LoggingMiddleware.cs:line 30
+   at GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\CustomMiddlwares\ExceptionMiddleware.cs:line 39
+2024-07-05 23:31:25.9331 INFO Now listening on: https://localhost:7150
+2024-07-05 23:31:25.9582 INFO Now listening on: http://localhost:5268
+2024-07-05 23:31:25.9582 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:31:25.9582 INFO Hosting environment: Development
+2024-07-05 23:31:25.9582 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:31:26.0911 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:31:26.2222 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 130.2917ms
+2024-07-05 23:31:26.2222 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:31:26.2222 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:31:26.2222 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.5457ms
+2024-07-05 23:31:26.2443 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 19.8411ms
+2024-07-05 23:31:26.3156 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:31:26.3823 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 66.7066ms
+2024-07-05 23:31:34.2963 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:31:34.3057 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:31:34.3057 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:31:34.3249 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:31:34.6098 INFO Successfuly sent request
+2024-07-05 23:31:34.6148 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GA.UniCard.Application.Models.ProductDto, GA.UniCard.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-05 23:31:34.6275 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 298.1645ms
+2024-07-05 23:31:34.6275 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:31:34.6275 INFO Finished handling request: 200
+2024-07-05 23:32:42.7191 INFO Now listening on: https://localhost:7150
+2024-07-05 23:32:42.7428 INFO Now listening on: http://localhost:5268
+2024-07-05 23:32:42.7428 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:32:42.7428 INFO Hosting environment: Development
+2024-07-05 23:32:42.7428 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:32:43.0392 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:32:43.1758 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 136.5516ms
+2024-07-05 23:32:43.2082 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:32:43.2082 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:32:43.2082 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.0370ms
+2024-07-05 23:32:43.2283 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 20.0937ms
+2024-07-05 23:32:43.2516 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:32:43.3183 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 66.6377ms
+2024-07-05 23:32:54.3818 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product/2 - - -
+2024-07-05 23:32:54.3818 INFO Handling request: GET /api/v2.0/Product/2
+2024-07-05 23:32:54.3966 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetById (GA.UniCard.Api)'
+2024-07-05 23:32:54.4117 INFO Route matched with {action = "GetById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[GA.UniCard.Application.Models.ProductDto]] GetById(Int64) on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:32:54.7037 INFO Executing OkObjectResult, writing value of type 'GA.UniCard.Application.Models.ProductDto'.
+2024-07-05 23:32:54.7164 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetById (GA.UniCard.Api) in 300.6866ms
+2024-07-05 23:32:54.7164 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetById (GA.UniCard.Api)'
+2024-07-05 23:32:54.7164 INFO Finished handling request: 200
+2024-07-05 23:35:09.0988 INFO Now listening on: https://localhost:7150
+2024-07-05 23:35:09.1236 INFO Now listening on: http://localhost:5268
+2024-07-05 23:35:09.1236 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:35:09.1236 INFO Hosting environment: Development
+2024-07-05 23:35:09.1236 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:35:09.4151 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:35:09.5682 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 152.2256ms
+2024-07-05 23:35:09.6021 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:35:09.6021 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:35:09.6021 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 3.3343ms
+2024-07-05 23:35:09.6259 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 23.8659ms
+2024-07-05 23:35:09.6515 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:35:09.7319 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 80.4091ms
+2024-07-05 23:35:17.8064 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:35:17.8064 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:35:17.8208 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:35:17.8321 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:35:18.0974 INFO Successfuly sent request
+2024-07-05 23:35:18.0974 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GA.UniCard.Application.Models.ProductDto, GA.UniCard.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-05 23:35:18.1146 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 278.4346ms
+2024-07-05 23:35:18.1146 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:35:18.1146 INFO Finished handling request: 200
+2024-07-05 23:35:18.1146 INFO Request finished HTTP/2 GET https://localhost:7150/api/v2.0/Product - 200 - application/json;+charset=utf-8 310.9079ms
+2024-07-05 23:35:53.7063 INFO Now listening on: https://localhost:7150
+2024-07-05 23:35:53.7303 INFO Now listening on: http://localhost:5268
+2024-07-05 23:35:53.7303 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:35:53.7303 INFO Hosting environment: Development
+2024-07-05 23:35:53.7303 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:35:53.8427 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:35:53.9791 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 135.5872ms
+2024-07-05 23:35:53.9791 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:35:53.9791 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:35:53.9791 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.3035ms
+2024-07-05 23:35:54.0011 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 19.9077ms
+2024-07-05 23:35:54.0372 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:35:54.1028 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 65.6158ms
+2024-07-05 23:36:00.5050 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:36:00.5050 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:36:00.5239 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:36:00.5351 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:36:00.8403 INFO Successfuly sent request
+2024-07-05 23:36:00.8403 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GA.UniCard.Application.Models.ProductDto, GA.UniCard.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-05 23:36:00.8571 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 317.4982ms
+2024-07-05 23:36:00.8571 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:36:00.8571 INFO Finished handling request: 200
+2024-07-05 23:36:00.8571 INFO Request finished HTTP/2 GET https://localhost:7150/api/v2.0/Product - 200 - application/json;+charset=utf-8 354.8012ms
+2024-07-05 23:40:36.1305 INFO Now listening on: https://localhost:7150
+2024-07-05 23:40:36.1545 INFO Now listening on: http://localhost:5268
+2024-07-05 23:40:36.1545 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:40:36.1545 INFO Hosting environment: Development
+2024-07-05 23:40:36.1545 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:40:36.2118 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:40:36.3458 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 133.2679ms
+2024-07-05 23:40:36.3481 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:40:36.3481 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:40:36.3481 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.3120ms
+2024-07-05 23:40:36.3682 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 20.0487ms
+2024-07-05 23:40:36.5006 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:40:36.5687 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 68.0332ms
+2024-07-05 23:41:01.5358 INFO Now listening on: https://localhost:7150
+2024-07-05 23:41:01.5604 INFO Now listening on: http://localhost:5268
+2024-07-05 23:41:01.5604 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:41:01.5604 INFO Hosting environment: Development
+2024-07-05 23:41:01.5604 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:41:01.6626 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:41:01.7967 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 132.4648ms
+2024-07-05 23:41:01.7967 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:41:01.7967 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:41:01.7998 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.5131ms
+2024-07-05 23:41:01.8175 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 20.2681ms
+2024-07-05 23:41:01.8907 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:41:01.9578 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 67.0699ms
+2024-07-05 23:41:11.2649 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:41:11.2726 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:41:11.2726 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:41:11.2905 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:41:11.5572 INFO Successfuly sent request
+2024-07-05 23:41:11.5572 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GA.UniCard.Application.Models.ProductDto, GA.UniCard.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-05 23:41:11.5748 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 280.1552ms
+2024-07-05 23:41:11.5748 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:41:11.5748 INFO Finished handling request: 200
+2024-07-05 23:41:11.5748 INFO Request finished HTTP/2 GET https://localhost:7150/api/v2.0/Product - 200 - application/json;+charset=utf-8 312.6610ms
+2024-07-05 23:43:31.6459 INFO Now listening on: https://localhost:7150
+2024-07-05 23:43:31.6703 INFO Now listening on: http://localhost:5268
+2024-07-05 23:43:31.6703 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:43:31.6703 INFO Hosting environment: Development
+2024-07-05 23:43:31.6703 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:43:31.7165 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:43:31.8498 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 132.4476ms
+2024-07-05 23:43:31.8498 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:43:31.8498 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:43:31.8498 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.3879ms
+2024-07-05 23:43:31.8747 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 22.7279ms
+2024-07-05 23:43:31.9198 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:43:31.9891 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 69.2573ms
+2024-07-05 23:43:38.8688 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:43:38.8688 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:43:38.8835 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:43:38.8942 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:43:39.1659 INFO Successfuly sent request
+2024-07-05 23:43:39.1659 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GA.UniCard.Application.Models.ProductDto, GA.UniCard.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-05 23:43:39.1827 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 283.9917ms
+2024-07-05 23:43:39.1827 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:43:39.1827 INFO Finished handling request: 200
+2024-07-05 23:43:39.1827 INFO Request finished HTTP/2 GET https://localhost:7150/api/v2.0/Product - 200 - application/json;+charset=utf-8 316.7016ms
+2024-07-05 23:46:33.4116 INFO Now listening on: https://localhost:7150
+2024-07-05 23:46:33.4361 INFO Now listening on: http://localhost:5268
+2024-07-05 23:46:33.4361 INFO Application started. Press Ctrl+C to shut down.
+2024-07-05 23:46:33.4361 INFO Hosting environment: Development
+2024-07-05 23:46:33.4361 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-05 23:46:33.5567 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-05 23:46:33.6910 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 133.7818ms
+2024-07-05 23:46:33.6910 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-05 23:46:33.6910 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-05 23:46:33.6910 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.5645ms
+2024-07-05 23:46:33.7142 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 19.6455ms
+2024-07-05 23:46:33.8104 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-05 23:46:33.8797 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 69.2284ms
+2024-07-05 23:46:44.0399 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:46:44.0399 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:46:44.0540 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:46:44.0658 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:46:44.3322 INFO Successfuly sent request
+2024-07-05 23:46:44.3322 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GA.UniCard.Application.Models.ProductDto, GA.UniCard.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-05 23:46:44.3490 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 279.1517ms
+2024-07-05 23:46:44.3490 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:46:44.3490 INFO Finished handling request: 200
+2024-07-05 23:46:44.3490 INFO Request finished HTTP/2 GET https://localhost:7150/api/v2.0/Product - 200 - application/json;+charset=utf-8 311.6266ms
+2024-07-05 23:47:00.7496 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product/3 - - -
+2024-07-05 23:47:00.7496 INFO Handling request: GET /api/v2.0/Product/3
+2024-07-05 23:47:00.7496 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetById (GA.UniCard.Api)'
+2024-07-05 23:47:00.7591 INFO Route matched with {action = "GetById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[GA.UniCard.Application.Models.ProductDto]] GetById(Int64) on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:47:00.7913 INFO Executing OkObjectResult, writing value of type 'GA.UniCard.Application.Models.ProductDto'.
+2024-07-05 23:47:00.7913 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetById (GA.UniCard.Api) in 32.3499ms
+2024-07-05 23:47:00.7913 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetById (GA.UniCard.Api)'
+2024-07-05 23:47:00.7913 INFO Finished handling request: 200
+2024-07-05 23:47:00.7913 INFO Request finished HTTP/2 GET https://localhost:7150/api/v2.0/Product/3 - 200 - application/json;+charset=utf-8 42.2963ms
+2024-07-05 23:47:24.4464 INFO Request starting HTTP/2 POST https://localhost:7150/api/v2.0/Product - application/json 76
+2024-07-05 23:47:24.4464 INFO Handling request: POST /api/v2.0/Product
+2024-07-05 23:47:24.4464 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.Insert (GA.UniCard.Api)'
+2024-07-05 23:47:24.4464 INFO Route matched with {action = "Insert", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] Insert(GA.UniCard.Application.Models.ProductDto) on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:47:24.4832 INFO Successfuly sent request Wifi
+2024-07-05 23:47:24.4832 INFO Executing OkObjectResult, writing value of type 'System.Boolean'.
+2024-07-05 23:47:24.4832 INFO Executed action GA.UniCard.Api.Controllers.ProductController.Insert (GA.UniCard.Api) in 34.1871ms
+2024-07-05 23:47:24.4832 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.Insert (GA.UniCard.Api)'
+2024-07-05 23:47:24.4832 INFO Finished handling request: 200
+2024-07-05 23:47:24.4832 INFO Request finished HTTP/2 POST https://localhost:7150/api/v2.0/Product - 200 - application/json;+charset=utf-8 39.3000ms
+2024-07-05 23:47:29.5830 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:47:29.5830 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:47:29.5830 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:47:29.5830 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:47:29.5830 INFO Successfuly sent request
+2024-07-05 23:47:29.5830 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GA.UniCard.Application.Models.ProductDto, GA.UniCard.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-05 23:47:29.5830 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 4.5565ms
+2024-07-05 23:47:29.5830 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:47:29.5830 INFO Finished handling request: 200
+2024-07-05 23:47:29.5830 INFO Request finished HTTP/2 GET https://localhost:7150/api/v2.0/Product - 200 - application/json;+charset=utf-8 5.7603ms
+2024-07-05 23:48:25.6233 INFO Request starting HTTP/2 PUT https://localhost:7150/api/v2.0/Product/1 - application/json 74
+2024-07-05 23:48:25.6233 INFO Handling request: PUT /api/v2.0/Product/1
+2024-07-05 23:48:25.6233 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.Update (GA.UniCard.Api)'
+2024-07-05 23:48:25.6273 INFO Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] Update(Int64, GA.UniCard.Application.Models.ProductDto) on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:48:25.6273 INFO Executing OkObjectResult, writing value of type 'System.Boolean'.
+2024-07-05 23:48:25.6273 INFO Executed action GA.UniCard.Api.Controllers.ProductController.Update (GA.UniCard.Api) in 12.6844ms
+2024-07-05 23:48:25.6273 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.Update (GA.UniCard.Api)'
+2024-07-05 23:48:25.6273 INFO Finished handling request: 200
+2024-07-05 23:48:25.6273 INFO Request finished HTTP/2 PUT https://localhost:7150/api/v2.0/Product/1 - 200 - application/json;+charset=utf-8 17.0285ms
+2024-07-05 23:48:33.9198 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:48:33.9198 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:48:33.9198 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:48:33.9198 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:48:33.9262 INFO Successfuly sent request
+2024-07-05 23:48:33.9262 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GA.UniCard.Application.Models.ProductDto, GA.UniCard.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-05 23:48:33.9262 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 6.2117ms
+2024-07-05 23:48:33.9262 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:48:33.9262 INFO Finished handling request: 200
+2024-07-05 23:48:33.9262 INFO Request finished HTTP/2 GET https://localhost:7150/api/v2.0/Product - 200 - application/json;+charset=utf-8 7.6025ms
+2024-07-05 23:50:39.9109 INFO Request starting HTTP/2 DELETE https://localhost:7150/api/v2.0/Product/1 - - -
+2024-07-05 23:50:39.9109 INFO Handling request: DELETE /api/v2.0/Product/1
+2024-07-05 23:50:39.9109 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.Delete (GA.UniCard.Api)'
+2024-07-05 23:50:39.9109 INFO Route matched with {action = "Delete", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] Delete(Int64) on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:50:39.9109 INFO Succesfully deleted the data , with Id: 1
+2024-07-05 23:50:39.9109 INFO Executing OkObjectResult, writing value of type 'System.Boolean'.
+2024-07-05 23:50:39.9109 INFO Executed action GA.UniCard.Api.Controllers.ProductController.Delete (GA.UniCard.Api) in 8.2385ms
+2024-07-05 23:50:39.9109 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.Delete (GA.UniCard.Api)'
+2024-07-05 23:50:39.9109 INFO Finished handling request: 200
+2024-07-05 23:50:39.9109 INFO Request finished HTTP/2 DELETE https://localhost:7150/api/v2.0/Product/1 - 200 - application/json;+charset=utf-8 12.6544ms
+2024-07-05 23:50:47.9961 INFO Request starting HTTP/2 GET https://localhost:7150/api/v2.0/Product - - -
+2024-07-05 23:50:47.9961 INFO Handling request: GET /api/v2.0/Product
+2024-07-05 23:50:47.9961 INFO Executing endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:50:47.9961 INFO Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GA.UniCard.Application.Models.ProductDto]]] GetAll() on controller GA.UniCard.Api.Controllers.ProductController (GA.UniCard.Api).
+2024-07-05 23:50:47.9961 INFO Successfuly sent request
+2024-07-05 23:50:47.9961 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GA.UniCard.Application.Models.ProductDto, GA.UniCard.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-05 23:50:47.9961 INFO Executed action GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api) in 3.3458ms
+2024-07-05 23:50:47.9961 INFO Executed endpoint 'GA.UniCard.Api.Controllers.ProductController.GetAll (GA.UniCard.Api)'
+2024-07-05 23:50:47.9961 INFO Finished handling request: 200
+2024-07-05 23:50:47.9961 INFO Request finished HTTP/2 GET https://localhost:7150/api/v2.0/Product - 200 - application/json;+charset=utf-8 4.7749ms
+2024-07-06 00:22:34.1871 ERROR Stopped program because of exception
+2024-07-06 00:23:14.0612 INFO Now listening on: https://localhost:7150
+2024-07-06 00:23:14.0855 INFO Now listening on: http://localhost:5268
+2024-07-06 00:23:14.0855 INFO Application started. Press Ctrl+C to shut down.
+2024-07-06 00:23:14.0855 INFO Hosting environment: Development
+2024-07-06 00:23:14.0855 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-06 00:23:14.1622 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-06 00:23:14.2976 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 134.3342ms
+2024-07-06 00:23:14.2976 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-06 00:23:14.2976 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-06 00:23:14.3013 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 2.1350ms
+2024-07-06 00:23:14.3204 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 21.3027ms
+2024-07-06 00:23:14.4405 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-06 00:23:14.5141 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 73.6367ms
+2024-07-06 00:23:20.6508 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-06 00:23:20.6508 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 3.6390ms
+2024-07-06 00:23:20.6664 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-06 00:23:20.6664 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-06 00:23:20.6664 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.7068ms
+2024-07-06 00:23:20.6772 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 10.7011ms
+2024-07-06 00:23:20.7577 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-06 00:23:20.7885 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 30.8383ms

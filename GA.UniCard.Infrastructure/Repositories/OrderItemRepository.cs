@@ -2,12 +2,13 @@
 using GA.UniCard.Domain.Entitites;
 using GA.UniCard.Domain.Interfaces;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace GA.UniCard.Infrastructure.Repositories
 {
     public class OrderItemRepository : AbstractRepository, IOrderItemRepository
     {
-        public OrderItemRepository(string ConnectionString) : base(ConnectionString)
+        public OrderItemRepository(IConfiguration Config) : base(Config)
         {
         }
 
@@ -54,7 +55,12 @@ namespace GA.UniCard.Infrastructure.Repositories
             {
                 dbConnection.Open();
 
-                string query = "select * from OrderItems";
+                string query = @"SELECT [Id]
+                                ,[OrderId]
+                               ,[ProductId]
+                               ,[Item_Quantity] as Quantity
+                               ,[Item_Price] as Price
+                                 FROM OrderItems";
 
                 var orderitems = await dbConnection.QueryAsync<OrderItem>(query);
 
@@ -68,7 +74,13 @@ namespace GA.UniCard.Infrastructure.Repositories
             {
                 dbConnection.Open();
 
-                string query = "select * from OrderItems where Id = @Id";
+                string query = @"SELECT [Id]
+                                ,[OrderId]
+                               ,[ProductId]
+                               ,[Item_Quantity] as Quantity
+                               ,[Item_Price] as Price
+                                FROM OrderItems
+                                 where Id = @Id";
 
                 var orderItem = await dbConnection.QueryFirstOrDefaultAsync<OrderItem>(query, new { Id = Id }) ??
                     throw new ArgumentNullException("No OrderItem found on this Id");

@@ -14,5 +14,6 @@
         public const string General = " General Exception while send request";
         public const string ArgumentNull = " Argument is null , please check";
         public const string NoProduct = "No Such Product Exist in DB!";
+        public const string ModelState = "Model State is not valid!";
     }
 }

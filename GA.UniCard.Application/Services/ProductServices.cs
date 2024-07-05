@@ -55,7 +55,7 @@ namespace GA.UniCard.Application.Services
 
         public async Task<IEnumerable<ProductDto>> GetAllAsync()
         {
-            var Products = await work.OrderRepository.GetAllAsync();
+            var Products = await work.ProductRepository.GetAllAsync();
             if (!Products.Any())
             {
                 throw new ItemNotFoundException(ErrorKeys.NoProduct);
