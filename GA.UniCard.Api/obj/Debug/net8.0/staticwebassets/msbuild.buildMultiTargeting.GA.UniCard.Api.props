@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\GA.UniCard.Api.props" />
+</Project>

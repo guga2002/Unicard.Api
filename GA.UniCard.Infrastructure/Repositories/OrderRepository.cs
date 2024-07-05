@@ -1,0 +1,114 @@
+﻿using Dapper;
+using GA.UniCard.Domain.Entitites;
+using GA.UniCard.Domain.Interfaces;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System.Data;
+
+namespace GA.UniCard.Infrastructure.Repositories
+{
+    public class OrderRepository : AbstractRepository, IOrderRepository
+    {
+        public OrderRepository(IConfiguration Config) : base(Config)
+        {
+        }
+
+        public async Task<long> AddAsync(Order item)
+        {
+            using (var dbConnection = new SqlConnection(this.ConnectionString))
+            {
+                dbConnection.Open();
+
+                string query = @"
+                insert into orders (UserId, Ordering_Date, Total_Amount)
+                values (@UserId, @OrderDate, @TotalAmount);
+                select scope_identity();";
+
+                long orderId = await dbConnection.ExecuteScalarAsync<long>(query, new
+                {
+                    item.UserId,
+                    item.OrderDate,
+                    item.TotalAmount,
+                });
+
+                return orderId;
+            }
+        }
+
+        public async Task<bool> DeleteAsync(long Id)
+        {
+            using (var dbConnection = new SqlConnection(this.ConnectionString))
+            {
+                dbConnection.Open();
+
+                string query = "delete from orders where Id = @Id";
+
+                var rowsAffected = await dbConnection.ExecuteAsync(query, new { Id = Id });
+
+                return rowsAffected > 0;
+            }
+        }
+
+        public async Task<IEnumerable<Order>> GetAllAsync()
+        {
+            using (var dbConnection = new SqlConnection(this.ConnectionString))
+            {
+                dbConnection.Open();
+
+                string query = @"SELECT [Id]
+                                ,[UserId]
+                                ,[Ordering_Date] as OrderDate
+                                ,[Total_Amount] as TotalAmount
+                                 FROM  [Orders]";
+
+                var orders = await dbConnection.QueryAsync<Order>(query);
+
+                return orders;
+            }
+        }
+
+        public async Task<Order> GetByIdAsync(long Id)
+        {
+            using (var dbConnection = new SqlConnection(this.ConnectionString))
+            {
+                dbConnection.Open();
+
+                string query = @"SELECT [Id]
+                              ,[UserId]
+                              ,[Ordering_Date] as OrderDate
+                              ,[Total_Amount] as TotalAmount
+                               FROM  [Orders]
+                               where Id = @Id";
+
+                var order = await dbConnection.QueryFirstOrDefaultAsync<Order>(query, new { Id = Id }) ??
+                    throw new ArgumentNullException("No Order found on this Id");
+                return order;
+            }
+        }
+
+        public async Task<bool> UpdateAsync(long Id, Order item)
+        {
+            using (var dbConnection = new SqlConnection(this.ConnectionString))
+            {
+                dbConnection.Open();
+
+                string updateQuery = @"
+                update Orders
+                set 
+                    Ordering_Date = @OrderDate,
+                    UserId = @UserId,
+                    Total_Amount = @TotalAmount
+                where Id = @Id";
+
+                long rowsAffected = await dbConnection.ExecuteAsync(updateQuery, new
+                {
+                    item.OrderDate,
+                    item.UserId,
+                    item.TotalAmount,
+                    Id
+                });
+                return rowsAffected > 0;
+            }
+        }
+    }
+}

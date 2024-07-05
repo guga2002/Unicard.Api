@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GA.UniCard.Api</name>
+    </assembly>
+    <members>
+        <member name="T:GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware">
+            <summary>
+            Middleware for handling exceptions and logging errors.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware"/> class.
+            </summary>
+            <param name="next">The next middleware in the pipeline.</param>
+            <param name="logger">The logger instance for logging errors.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the middleware asynchronously.
+            </summary>
+            <param name="context">The HTTP context for the current request.</param>
+            <returns>A task that represents the completion of request processing.</returns>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware.HandleError(Microsoft.AspNetCore.Http.HttpContext,System.Exception)">
+            <summary>
+            Handles the error by writing an error response.
+            </summary>
+            <param name="context">The HTTP context for the current request.</param>
+            <param name="ex">The exception that occurred.</param>
+            <returns>A task that represents the completion of error handling.</returns>
+        </member>
+        <member name="T:GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware">
+            <summary>
+            Middleware for logging HTTP requests and responses.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware"/> class.
+            </summary>
+            <param name="next">The next middleware in the pipeline.</param>
+            <param name="logger">The logger instance for logging information.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the middleware asynchronously.
+            </summary>
+            <param name="context">The HTTP context for the current request.</param>
+            <returns>A task that represents the completion of request processing.</returns>
+        </member>
+        <member name="T:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware">
+            <summary>
+            Middleware for rate limiting client requests based on IP address.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware"/> class.
+            </summary>
+            <param name="next">The next middleware in the pipeline.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the middleware asynchronously.
+            </summary>
+            <param name="context">The HTTP context for the current request.</param>
+            <returns>A task that represents the completion of request processing.</returns>
+        </member>
+        <member name="T:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.ClientRequestInfo">
+            <summary>
+            Information about client requests for rate limiting.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.ClientRequestInfo.RequestCount">
+            <summary>
+            Gets or sets the number of requests made by the client.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.ClientRequestInfo.ExpiryTime">
+            <summary>
+            Gets or sets the time when the client's request count will be reset.
+            </summary>
+        </member>
+    </members>
+</doc>
