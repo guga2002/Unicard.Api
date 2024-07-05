@@ -14,3 +14,5 @@ C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\refint\GA.UniCard.Application.dll
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\GA.UniCard.Application.pdb
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\obj\Debug\net8.0\ref\GA.UniCard.Application.dll
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\bin\Debug\net8.0\GA.UniCard.Application.xml
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Application\bin\Debug\net8.0\GA.UniCard.Domain.xml

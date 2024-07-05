@@ -2,6 +2,10 @@
 
 namespace GA.UniCard.Application.CustomExceptions
 {
+    /// <summary>
+    /// Exception thrown during compile time.
+    /// </summary>
+    [Serializable]
     public class CompileTImeException : Exception
     {
         public CompileTImeException()

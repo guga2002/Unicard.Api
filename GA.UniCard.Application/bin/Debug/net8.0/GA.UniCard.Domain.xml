@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GA.UniCard.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:GA.UniCard.Domain.Configuration.OrderConfiguration">
+            <summary>
+            Configures the entity framework mapping and seed data for the Order entity.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Configuration.OrderConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{GA.UniCard.Domain.Entities.Order})">
+            <summary>
+            Configures the mapping and seeding of the Order entity.
+            </summary>
+            <param name="builder">The entity type builder for the Order entity.</param>
+        </member>
+        <member name="T:GA.UniCard.Domain.Configuration.OrderItemConfiguration">
+            <summary>
+            Configures the entity framework mapping and seed data for the OrderItem entity.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Configuration.OrderItemConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{GA.UniCard.Domain.Entities.OrderItem})">
+            <summary>
+            Configures the mapping and seeding of the OrderItem entity.
+            </summary>
+            <param name="builder">The entity type builder for the OrderItem entity.</param>
+        </member>
+        <member name="T:GA.UniCard.Domain.Configuration.ProductConfiguration">
+            <summary>
+            Configuration for the Product entity using Entity Framework Core.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Configuration.ProductConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{GA.UniCard.Domain.Entities.Product})">
+            <summary>
+            Configures the Product entity.
+            </summary>
+            <param name="builder">The entity type builder used to configure the entity.</param>
+        </member>
+        <member name="T:GA.UniCard.Domain.Configuration.UserConfiguration">
+            <summary>
+            Configuration for the User entity using Entity Framework Core.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Configuration.UserConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{GA.UniCard.Domain.Entities.User})">
+            <summary>
+            Configures the User entity.
+            </summary>
+            <param name="builder">The entity type builder used to configure the entity.</param>
+        </member>
+        <member name="T:GA.UniCard.Domain.Data.UniCardDbContext">
+            <summary>
+            Represents the database context for UniCard application, derived from DbContext.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Data.UniCardDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{GA.UniCard.Domain.Data.UniCardDbContext})">
+            <summary>
+            Initializes a new instance of the UniCardDbContext class.
+            </summary>
+            <param name="options">The DbContextOptions to be used by the context.</param>
+        </member>
+        <member name="P:GA.UniCard.Domain.Data.UniCardDbContext.Users">
+            <summary>
+            Gets or sets the DbSet of Users in the database.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Data.UniCardDbContext.OrderItems">
+            <summary>
+            Gets or sets the DbSet of OrderItems in the database.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Data.UniCardDbContext.Orders">
+            <summary>
+            Gets or sets the DbSet of Orders in the database.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Data.UniCardDbContext.Products">
+            <summary>
+            Gets or sets the DbSet of Products in the database.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Data.UniCardDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configures the model for the UniCardDbContext using the provided modelBuilder.
+            </summary>
+            <param name="modelBuilder">The ModelBuilder instance to configure the context.</param>
+        </member>
+        <member name="T:GA.UniCard.Domain.Entities.AbstractEntity">
+            <summary>
+            Abstract base class for entities with a primary key Id.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.AbstractEntity.Id">
+            <summary>
+            Gets or sets the primary key Id of the entity.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Entities.Order">
+            <summary>
+            Represents an order entity.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.Order.UserId">
+            <summary>
+            Gets or sets the ID of the user who placed the order.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.Order.OrderDate">
+            <summary>
+            Gets or sets the date when the order was placed.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.Order.TotalAmount">
+            <summary>
+            Gets or sets the total amount of the order.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.Order.User">
+            <summary>
+            Navigation property to the User who placed the order.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.Order.OrderItems">
+            <summary>
+            Navigation property to the list of items in the order.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Entities.Order.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Domain.Entities.Order"/> class.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Entities.OrderItem">
+            <summary>
+            Represents an item in an order.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.OrderItem.OrderId">
+            <summary>
+            Gets or sets the ID of the order to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.OrderItem.ProductId">
+            <summary>
+            Gets or sets the ID of the product associated with this order item.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.OrderItem.Quantity">
+            <summary>
+            Gets or sets the quantity of the product in this order item.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.OrderItem.Price">
+            <summary>
+            Gets or sets the price of the product in this order item.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.OrderItem.Order">
+            <summary>
+            Navigation property to the order to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.OrderItem.Product">
+            <summary>
+            Navigation property to the product associated with this order item.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Entities.Product">
+            <summary>
+            Represents a product entity.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.Product.ProductName">
+            <summary>
+            Gets or sets the name of the product.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.Product.Description">
+            <summary>
+            Gets or sets the description of the product.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.Product.Price">
+            <summary>
+            Gets or sets the price of the product.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.Product.OrderItems">
+            <summary>
+            Navigation property to the order items associated with this product.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Entities.Product.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Domain.Entities.Product"/> class.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Entities.User">
+            <summary>
+            Represents a user entity.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.User.UserName">
+            <summary>
+            Gets or sets the username of the user.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.User.Password">
+            <summary>
+            Gets or sets the password of the user.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.User.Email">
+            <summary>
+            Gets or sets the email address of the user.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.User.Orders">
+            <summary>
+            Navigation property to the orders placed by this user.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Entities.User.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Domain.Entities.User"/> class.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Interfaces.ICrudRepository`1">
+            <summary>
+            Generic interface for basic CRUD operations.
+            </summary>
+            <typeparam name="T">The type of entity.</typeparam>
+        </member>
+        <member name="M:GA.UniCard.Domain.Interfaces.ICrudRepository`1.AddAsync(`0)">
+            <summary>
+            Asynchronously adds a new entity to the repository.
+            </summary>
+            <param name="item">The entity to add.</param>
+            <returns>The ID of the newly added entity.</returns>
+        </member>
+        <member name="M:GA.UniCard.Domain.Interfaces.ICrudRepository`1.DeleteAsync(System.Int64)">
+            <summary>
+            Asynchronously deletes an entity from the repository based on its ID.
+            </summary>
+            <param name="Id">The ID of the entity to delete.</param>
+            <returns>True if deletion was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Domain.Interfaces.ICrudRepository`1.GetByIdAsync(System.Int64)">
+            <summary>
+            Asynchronously retrieves an entity from the repository based on its ID.
+            </summary>
+            <param name="Id">The ID of the entity to retrieve.</param>
+            <returns>The retrieved entity, or null if not found.</returns>
+        </member>
+        <member name="M:GA.UniCard.Domain.Interfaces.ICrudRepository`1.GetAllAsync">
+            <summary>
+            Asynchronously retrieves all entities from the repository.
+            </summary>
+            <returns>A collection of all entities.</returns>
+        </member>
+        <member name="M:GA.UniCard.Domain.Interfaces.ICrudRepository`1.UpdateAsync(System.Int64,`0)">
+            <summary>
+            Asynchronously updates an existing entity in the repository based on its ID.
+            </summary>
+            <param name="Id">The ID of the entity to update.</param>
+            <param name="item">The updated entity data.</param>
+            <returns>True if update was successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Domain.Interfaces.IOrderItemRepository">
+            <summary>
+            Interface for order item repository operations, inheriting CRUD operations.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Interfaces.IOrderRepository">
+            <summary>
+            Interface for order repository operations, inheriting CRUD operations.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Interfaces.IProductRepository">
+            <summary>
+            Interface for product repository operations, inheriting CRUD operations.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Interfaces.IUnitOfWork">
+            <summary>
+            Interface for the Unit of Work pattern, providing access to repositories for various entities.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Interfaces.IUnitOfWork.OrderRepository">
+            <summary>
+            Repository for orders.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Interfaces.IUnitOfWork.OrderItemRepository">
+            <summary>
+            Repository for order items.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Interfaces.IUnitOfWork.UserRepository">
+            <summary>
+            Repository for users.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Interfaces.IUnitOfWork.ProductRepository">
+            <summary>
+            Repository for products.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Interfaces.IUserRepository">
+            <summary>
+            Interface for user repository operations, inheriting CRUD operations.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Migrations.MigrateNow">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigrateNow.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigrateNow.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigrateNow.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GA.UniCard.Domain.Migrations.MigrateNowV1">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigrateNowV1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigrateNowV1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigrateNowV1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GA.UniCard.Domain.Migrations.MigrateNowV15">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigrateNowV15.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigrateNowV15.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigrateNowV15.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GA.UniCard.Domain.Migrations.MigRtB4">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigRtB4.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigRtB4.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.MigRtB4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

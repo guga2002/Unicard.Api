@@ -4,31 +4,45 @@ using GA.UniCard.Application.FluentValidates;
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using GA.UniCard.Application.StatickFiles;
-using GA.UniCard.Domain.Entitites;
+using GA.UniCard.Domain.Entities;
 using GA.UniCard.Domain.Interfaces;
 
 namespace GA.UniCard.Application.Services
 {
+    /// <summary>
+    /// Service class for managing operations related to order items.
+    /// </summary>
     public class OrderItemServices : AbstractService, IOrderItemServices
     {
         private readonly OrderItemDtoValidator _validator;
-        public OrderItemServices(IMapper mapper, IUniteOfWork work) : base(mapper, work)
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderItemServices"/> class with required dependencies.
+        /// </summary>
+        /// <param name="mapper">The AutoMapper instance for object mapping.</param>
+        /// <param name="work">The unit of work instance for data operations.</param>
+        public OrderItemServices(IMapper mapper, IUnitOfWork work) : base(mapper, work)
         {
             this._validator = new OrderItemDtoValidator();
         }
 
-        public async Task<bool> AddAsync(OrderItemDto orderitem)
+        /// <summary>
+        /// Adds a new order item asynchronously.
+        /// </summary>
+        /// <param name="orderItem">The order item DTO to add.</param>
+        /// <returns>True if the operation was successful, otherwise false.</returns>
+        public async Task<bool> AddAsync(OrderItemDto orderItem)
         {
-            var validationResult = _validator.Validate(orderitem);
+            var validationResult = _validator.Validate(orderItem);
             if (!validationResult.IsValid)
             {
                 throw new UniCardGeneralException(validationResult.Errors.FirstOrDefault()?.ErrorMessage);
             }
 
-            var MappedorderItem = mapper.Map<OrderItem>(orderitem) ??
-                throw new UniCardGeneralException(ErrorKeys.mapped);
+            var mappedOrderItem = mapper.Map<OrderItem>(orderItem) ??
+                throw new UniCardGeneralException(ErrorKeys.Mapped);
 
-            var result = await work.OrderItemRepository.AddAsync(MappedorderItem);
+            var result = await work.OrderItemRepository.AddAsync(mappedOrderItem);
             if (result > 0)
             {
                 return true;
@@ -37,6 +51,11 @@ namespace GA.UniCard.Application.Services
             throw new CompileTImeException(ErrorKeys.UnsuccesfullInsert);
         }
 
+        /// <summary>
+        /// Deletes an order item asynchronously.
+        /// </summary>
+        /// <param name="orderId">The ID of the order item to delete.</param>
+        /// <returns>True if the operation was successful, otherwise false.</returns>
         public async Task<bool> DeleteAsync(long orderId)
         {
             if (orderId < 0)
@@ -53,6 +72,10 @@ namespace GA.UniCard.Application.Services
             return false;
         }
 
+        /// <summary>
+        /// Retrieves all order items asynchronously.
+        /// </summary>
+        /// <returns>A collection of order item DTOs.</returns>
         public async Task<IEnumerable<OrderItemDto>> GetAllAsync()
         {
             var orderItems = await work.OrderItemRepository.GetAllAsync();
@@ -61,24 +84,37 @@ namespace GA.UniCard.Application.Services
                 throw new ItemNotFoundException(ErrorKeys.NoOrder);
             }
 
-            var OrderitemsDto = mapper.Map<IEnumerable<OrderItemDto>>(orderItems);
-            if (OrderitemsDto == null)
+            var orderItemsDto = mapper.Map<IEnumerable<OrderItemDto>>(orderItems);
+            if (orderItemsDto == null)
             {
-                throw new UniCardGeneralException(ErrorKeys.mapped);
+                throw new UniCardGeneralException(ErrorKeys.Mapped);
             }
 
-            return OrderitemsDto;
+            return orderItemsDto;
         }
 
-        public async Task<OrderItemDto> GetByIdAsync(long Id)
+        /// <summary>
+        /// Retrieves an order item by ID asynchronously.
+        /// </summary>
+        /// <param name="id">The ID of the order item to retrieve.</param>
+        /// <returns>The order item DTO if found, otherwise throws an exception.</returns>
+        public async Task<OrderItemDto> GetByIdAsync(long id)
         {
-            var OrderItem = await work.OrderItemRepository.GetByIdAsync(Id) ??
+            var orderItem = await work.OrderItemRepository.GetByIdAsync(id) ??
                 throw new ItemNotFoundException(ErrorKeys.NoOrder);
-            var orderitemDto = mapper.Map<OrderItemDto>(OrderItem)??
-                throw new UniCardGeneralException(ErrorKeys.mapped);
-            return orderitemDto;
+
+            var orderItemDto = mapper.Map<OrderItemDto>(orderItem) ??
+                throw new UniCardGeneralException(ErrorKeys.Mapped);
+
+            return orderItemDto;
         }
 
+        /// <summary>
+        /// Updates an existing order item asynchronously.
+        /// </summary>
+        /// <param name="id">The ID of the order item to update.</param>
+        /// <param name="orderItem">The updated order item DTO.</param>
+        /// <returns>True if the operation was successful, otherwise false.</returns>
         public async Task<bool> UpdateAsync(long id, OrderItemDto orderItem)
         {
             var validationResult = _validator.Validate(orderItem);
@@ -87,9 +123,10 @@ namespace GA.UniCard.Application.Services
                 throw new UniCardGeneralException(validationResult.Errors.FirstOrDefault()?.ErrorMessage);
             }
 
-            var MapepdOrderItem = mapper.Map<OrderItem>(orderItem) ??
-                throw new UniCardGeneralException(ErrorKeys.mapped);
-            var result = await work.OrderItemRepository.UpdateAsync(id, MapepdOrderItem);
+            var mappedOrderItem = mapper.Map<OrderItem>(orderItem) ??
+                throw new UniCardGeneralException(ErrorKeys.Mapped);
+
+            var result = await work.OrderItemRepository.UpdateAsync(id, mappedOrderItem);
             if (result)
             {
                 return true;

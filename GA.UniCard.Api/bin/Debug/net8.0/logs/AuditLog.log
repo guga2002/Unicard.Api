@@ -598,3 +598,31 @@ GA.UniCard.Domain.Entitites.Order -> GA.UniCard.Application.Models.ProductDto
 2024-07-06 00:23:20.6772 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 10.7011ms
 2024-07-06 00:23:20.7577 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
 2024-07-06 00:23:20.7885 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 30.8383ms
+2024-07-06 01:20:59.4851 ERROR Stopped program because of exception
+2024-07-06 01:21:17.5471 ERROR Stopped program because of exception
+2024-07-06 01:21:43.2043 INFO Now listening on: https://localhost:7150
+2024-07-06 01:21:43.2616 INFO Now listening on: http://localhost:5268
+2024-07-06 01:21:43.2616 INFO Application started. Press Ctrl+C to shut down.
+2024-07-06 01:21:43.2616 INFO Hosting environment: Development
+2024-07-06 01:21:43.2616 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-06 01:21:43.9253 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-06 01:21:44.4172 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 488.9222ms
+2024-07-06 01:21:44.4172 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-06 01:21:44.4242 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-06 01:21:44.4242 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 9.3892ms
+2024-07-06 01:21:44.5390 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 114.7426ms
+2024-07-06 01:21:44.6247 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-06 01:21:44.8022 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 177.5316ms
+2024-07-06 01:25:42.7280 INFO Now listening on: https://localhost:7150
+2024-07-06 01:25:42.7836 INFO Now listening on: http://localhost:5268
+2024-07-06 01:25:42.7836 INFO Application started. Press Ctrl+C to shut down.
+2024-07-06 01:25:42.7836 INFO Hosting environment: Development
+2024-07-06 01:25:42.7836 INFO Content root path: C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api
+2024-07-06 01:25:43.2689 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/index.html - - -
+2024-07-06 01:25:43.6191 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/index.html - 200 - text/html;charset=utf-8 348.8865ms
+2024-07-06 01:25:43.9849 INFO Request starting HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - - -
+2024-07-06 01:25:43.9849 INFO Request starting HTTP/2 GET https://localhost:7150/_vs/browserLink - - -
+2024-07-06 01:25:43.9967 INFO Request finished HTTP/2 GET https://localhost:7150/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 11.6070ms
+2024-07-06 01:25:44.0347 INFO Request finished HTTP/2 GET https://localhost:7150/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 49.6948ms
+2024-07-06 01:25:44.1393 INFO Request starting HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - - -
+2024-07-06 01:25:44.2992 INFO Request finished HTTP/2 GET https://localhost:7150/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 159.8590ms

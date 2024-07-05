@@ -1,10 +1,30 @@
-﻿namespace GA.UniCard.Domain.Interfaces
+﻿using GA.UniCard.Domain.Entities;
+
+namespace GA.UniCard.Domain.Interfaces
 {
-    public interface IUniteOfWork
+    /// <summary>
+    /// Interface for the Unit of Work pattern, providing access to repositories for various entities.
+    /// </summary>
+    public interface IUnitOfWork
     {
-        public  IOrderRepository OrderRepository { get; }
+        /// <summary>
+        /// Repository for orders.
+        /// </summary>
+        public IOrderRepository OrderRepository { get; }
+
+        /// <summary>
+        /// Repository for order items.
+        /// </summary>
         public IOrderItemRepository OrderItemRepository { get; }
-        public IUserRepostory UserRepostory { get; }
+
+        /// <summary>
+        /// Repository for users.
+        /// </summary>
+        public IUserRepository UserRepository { get; }
+
+        /// <summary>
+        /// Repository for products.
+        /// </summary>
         public IProductRepository ProductRepository { get; }
     }
 }

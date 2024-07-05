@@ -22,7 +22,7 @@ namespace GA.UniCard.Domain.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("GA.UniCard.Domain.Entitites.Order", b =>
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.Order", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,48 +52,48 @@ namespace GA.UniCard.Domain.Migrations
                         new
                         {
                             Id = 1L,
-                            OrderDate = new DateTime(2024, 4, 2, 23, 28, 47, 468, DateTimeKind.Local).AddTicks(7227),
-                            TotalAmount = 492m,
+                            OrderDate = new DateTime(2024, 4, 27, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(981),
+                            TotalAmount = 224m,
                             UserId = 1L
                         },
                         new
                         {
                             Id = 2L,
-                            OrderDate = new DateTime(2024, 6, 15, 23, 28, 47, 468, DateTimeKind.Local).AddTicks(7249),
-                            TotalAmount = 418m,
+                            OrderDate = new DateTime(2024, 5, 8, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(1007),
+                            TotalAmount = 969m,
                             UserId = 2L
                         },
                         new
                         {
                             Id = 3L,
-                            OrderDate = new DateTime(2024, 5, 9, 23, 28, 47, 468, DateTimeKind.Local).AddTicks(7251),
-                            TotalAmount = 290m,
+                            OrderDate = new DateTime(2024, 5, 20, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(1009),
+                            TotalAmount = 905m,
                             UserId = 3L
                         },
                         new
                         {
                             Id = 4L,
-                            OrderDate = new DateTime(2024, 4, 16, 23, 28, 47, 468, DateTimeKind.Local).AddTicks(7253),
-                            TotalAmount = 112m,
+                            OrderDate = new DateTime(2024, 4, 5, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(1011),
+                            TotalAmount = 605m,
                             UserId = 4L
                         },
                         new
                         {
                             Id = 5L,
-                            OrderDate = new DateTime(2024, 5, 14, 23, 28, 47, 468, DateTimeKind.Local).AddTicks(7254),
-                            TotalAmount = 501m,
+                            OrderDate = new DateTime(2024, 5, 20, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(1013),
+                            TotalAmount = 961m,
                             UserId = 5L
                         },
                         new
                         {
                             Id = 6L,
-                            OrderDate = new DateTime(2024, 6, 14, 23, 28, 47, 468, DateTimeKind.Local).AddTicks(7256),
-                            TotalAmount = 482m,
+                            OrderDate = new DateTime(2024, 5, 2, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(1014),
+                            TotalAmount = 986m,
                             UserId = 6L
                         });
                 });
 
-            modelBuilder.Entity("GA.UniCard.Domain.Entitites.OrderItem", b =>
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.OrderItem", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -130,23 +130,23 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = 1L,
                             OrderId = 1L,
-                            Price = 36m,
+                            Price = 46m,
                             ProductId = 1L,
-                            Quantity = 3
+                            Quantity = 7
                         },
                         new
                         {
                             Id = 2L,
                             OrderId = 2L,
-                            Price = 80m,
+                            Price = 37m,
                             ProductId = 2L,
-                            Quantity = 7
+                            Quantity = 4
                         },
                         new
                         {
                             Id = 3L,
                             OrderId = 3L,
-                            Price = 75m,
+                            Price = 43m,
                             ProductId = 3L,
                             Quantity = 3
                         },
@@ -154,37 +154,37 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = 4L,
                             OrderId = 4L,
-                            Price = 62m,
+                            Price = 18m,
                             ProductId = 4L,
-                            Quantity = 6
+                            Quantity = 4
                         },
                         new
                         {
                             Id = 5L,
                             OrderId = 5L,
-                            Price = 21m,
+                            Price = 80m,
                             ProductId = 5L,
-                            Quantity = 6
+                            Quantity = 3
                         },
                         new
                         {
                             Id = 6L,
                             OrderId = 3L,
-                            Price = 21m,
+                            Price = 90m,
                             ProductId = 2L,
-                            Quantity = 2
+                            Quantity = 3
                         },
                         new
                         {
                             Id = 7L,
                             OrderId = 6L,
-                            Price = 53m,
+                            Price = 63m,
                             ProductId = 4L,
-                            Quantity = 3
+                            Quantity = 9
                         });
                 });
 
-            modelBuilder.Entity("GA.UniCard.Domain.Entitites.Product", b =>
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.Product", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -217,62 +217,62 @@ namespace GA.UniCard.Domain.Migrations
                         new
                         {
                             Id = 1L,
-                            Description = "THe milk is  good produce in mountins",
-                            Price = 80m,
+                            Description = "The milk is good produce in mountains",
+                            Price = 59m,
                             ProductName = "Milk"
                         },
                         new
                         {
                             Id = 2L,
-                            Description = "The Apple is  good produce in mountins",
-                            Price = 26m,
+                            Description = "The Apple is good produce in mountains",
+                            Price = 77m,
                             ProductName = "Apple"
                         },
                         new
                         {
                             Id = 3L,
-                            Description = "THe Banana is  good produce in mountins",
-                            Price = 83m,
+                            Description = "The Banana is good produce in mountains",
+                            Price = 71m,
                             ProductName = "Banana"
                         },
                         new
                         {
                             Id = 4L,
-                            Description = "THe Bread is  good produce in mountins",
-                            Price = 12m,
+                            Description = "The Bread is good produce in mountains",
+                            Price = 93m,
                             ProductName = "Bread"
                         },
                         new
                         {
                             Id = 5L,
-                            Description = "THe Gold is  good produce in mountins",
-                            Price = 54m,
+                            Description = "The Gold is good produce in mountains",
+                            Price = 71m,
                             ProductName = "Gold"
                         },
                         new
                         {
                             Id = 6L,
-                            Description = "THe Fish is  good produce in mountins",
-                            Price = 89m,
+                            Description = "The Fish is good produce in mountains",
+                            Price = 71m,
                             ProductName = "Fish"
                         },
                         new
                         {
                             Id = 7L,
-                            Description = "THe Beans is  good produce in mountins",
-                            Price = 63m,
+                            Description = "The Beans is good produce in mountains",
+                            Price = 28m,
                             ProductName = "Beans"
                         },
                         new
                         {
                             Id = 8L,
-                            Description = "THe Suggar is  good produce in mountins",
-                            Price = 46m,
-                            ProductName = "Suggar"
+                            Description = "The Sugar is good produce in mountains",
+                            Price = 34m,
+                            ProductName = "Sugar"
                         });
                 });
 
-            modelBuilder.Entity("GA.UniCard.Domain.Entitites.User", b =>
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.User", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -349,9 +349,9 @@ namespace GA.UniCard.Domain.Migrations
                         });
                 });
 
-            modelBuilder.Entity("GA.UniCard.Domain.Entitites.Order", b =>
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.Order", b =>
                 {
-                    b.HasOne("GA.UniCard.Domain.Entitites.User", "User")
+                    b.HasOne("GA.UniCard.Domain.Entities.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -360,15 +360,15 @@ namespace GA.UniCard.Domain.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("GA.UniCard.Domain.Entitites.OrderItem", b =>
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.OrderItem", b =>
                 {
-                    b.HasOne("GA.UniCard.Domain.Entitites.Order", "Order")
+                    b.HasOne("GA.UniCard.Domain.Entities.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GA.UniCard.Domain.Entitites.Product", "Product")
+                    b.HasOne("GA.UniCard.Domain.Entities.Product", "Product")
                         .WithMany("OrderItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -379,17 +379,17 @@ namespace GA.UniCard.Domain.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("GA.UniCard.Domain.Entitites.Order", b =>
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.Order", b =>
                 {
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("GA.UniCard.Domain.Entitites.Product", b =>
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.Product", b =>
                 {
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("GA.UniCard.Domain.Entitites.User", b =>
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.User", b =>
                 {
                     b.Navigation("Orders");
                 });

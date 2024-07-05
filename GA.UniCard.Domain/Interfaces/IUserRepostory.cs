@@ -1,8 +1,11 @@
-﻿using GA.UniCard.Domain.Entitites;
+﻿using GA.UniCard.Domain.Entities;
 
 namespace GA.UniCard.Domain.Interfaces
 {
-    public interface IUserRepostory:ICrudRepostiroey<User>
+    /// <summary>
+    /// Interface for user repository operations, inheriting CRUD operations.
+    /// </summary>
+    public interface IUserRepository : ICrudRepository<User>
     {
     }
 }

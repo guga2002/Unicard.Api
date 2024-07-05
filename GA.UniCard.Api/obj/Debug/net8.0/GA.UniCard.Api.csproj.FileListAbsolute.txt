@@ -152,3 +152,6 @@ C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\bin\Debug\net8.0\runtimes
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\bin\Debug\net8.0\GA.UniCard.Infrastructure.dll
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\bin\Debug\net8.0\GA.UniCard.Infrastructure.pdb
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\obj\Debug\net8.0\GA.UniCard.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\bin\Debug\net8.0\GA.UniCard.Application.xml
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\bin\Debug\net8.0\GA.UniCard.Domain.xml
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\bin\Debug\net8.0\GA.UniCard.Infrastructure.xml

@@ -8,10 +8,10 @@ using Microsoft.OpenApi.Models;
 using NLog.Web;
 using System.Reflection;
 using GA.UniCard.Domain.Interfaces;
-using GA.UniCard.Infrastructure.UniteOfWork;
 using GA.UniCard.Infrastructure.Repositories;
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Services;
+using GA.UniCard.Infrastructure.UnitOfWork;
 
 var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 try
@@ -64,8 +64,8 @@ try
     });
     builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
-    builder.Services.AddScoped<IUniteOfWork, UnitOfWorkRepository>();
-    builder.Services.AddScoped<IUserRepostory, UserRepository>();
+    builder.Services.AddScoped<IUnitOfWork, UnitOfWorkRepository>();
+    builder.Services.AddScoped<IUserRepository, UserRepository>();
     builder.Services.AddScoped<IProductRepository, ProductRepository>();
     builder.Services.AddScoped<IOrderRepository, OrderRepository>(); 
     builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
