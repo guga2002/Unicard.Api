@@ -100,12 +100,12 @@ Postman
 This project is licensed under the MIT License 
 - contanct me  for licence : **aapkhazava22@gmail.com**
 
- ## Contributing
+ # Contributing
 If you would like to contribute to the project, please:
 - **fork the repository**
 - **submit a pull request**
- <br> for major changes,please open an issue first to discuss what you would like to change.<br>
-## Contact
+- for major changes,please open an issue first to discuss what you would like to change.
+# Contact
 For any questions or suggestions, please contact:
 - **Author**: Guga Apkhazava
 - **Email**: guram.apkhazava908@ens.tsu.ge
