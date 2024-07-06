@@ -16,7 +16,7 @@
             <summary>
             Constructor for OrderController.
             </summary>
-            <param name="ser">Order service dependency.</param>
+            <param name="orderService">Order service dependency.</param>
             <param name="logger">Logger dependency.</param>
         </member>
         <member name="M:GA.UniCard.Api.Controllers.OrderController.Insert(GA.UniCard.Application.Models.OrderDto)">
@@ -81,7 +81,7 @@
             <summary>
             Constructor for OrderItemController.
             </summary>
-            <param name="ser">Order item services dependency.</param>
+            <param name="orderItemService">Order item services dependency.</param>
             <param name="logger">Logger dependency.</param>
         </member>
         <member name="M:GA.UniCard.Api.Controllers.OrderItemController.Insert(GA.UniCard.Application.Models.OrderItemDto)">
@@ -98,7 +98,7 @@
             <summary>
             Delete an order item by its ID.
             </summary>
-            <param name="orderitemid">The ID of the order item to delete.</param>
+            <param name="orderItemId">The ID of the order item to delete.</param>
             <returns>True if deletion is successful, otherwise false.</returns>
             <remarks>
             Deletes an existing order item from the database by its ID. Returns success or failure.
@@ -117,7 +117,7 @@
             <summary>
             Get an order item by its ID.
             </summary>
-            <param name="orderitemid">The ID of the order item to retrieve.</param>
+            <param name="orderItemId">The ID of the order item to retrieve.</param>
             <returns>The order item with the specified ID.</returns>
             <remarks>
             Retrieves a specific order item from the database by its ID. Returns the order item if found, otherwise returns NotFound.
@@ -127,8 +127,8 @@
             <summary>
             Update an order item.
             </summary>
-            <param name="orderitemid">The ID of the order item to update.</param>
-            <param name="order">The updated order item data.</param>
+            <param name="orderItemId">The ID of the order item to update.</param>
+            <param name="orderItem">The updated order item data.</param>
             <returns>True if update is successful, otherwise false.</returns>
             <remarks>
             Updates an existing order item in the database with new data. Returns success or failure.
@@ -146,7 +146,7 @@
             <summary>
             Constructor for ProductController.
             </summary>
-            <param name="ser">Product services dependency.</param>
+            <param name="productService">Product services dependency.</param>
             <param name="logger">Logger dependency.</param>
         </member>
         <member name="M:GA.UniCard.Api.Controllers.ProductController.Insert(GA.UniCard.Application.Models.ProductDto)">
@@ -211,7 +211,7 @@
             <summary>
             Constructor for UserController.
             </summary>
-            <param name="ser">User service dependency.</param>
+            <param name="userService">User service dependency.</param>
             <param name="logger">Logger dependency.</param>
         </member>
         <member name="M:GA.UniCard.Api.Controllers.UserController.Insert(GA.UniCard.Application.Models.UserDto)">
@@ -257,7 +257,7 @@
             <summary>
             Update a user.
             </summary>
-            <param name="useriId">The ID of the user to update.</param>
+            <param name="userId">The ID of the user to update.</param>
             <param name="user">The updated user data.</param>
             <returns>True if update is successful, otherwise false.</returns>
             <remarks>

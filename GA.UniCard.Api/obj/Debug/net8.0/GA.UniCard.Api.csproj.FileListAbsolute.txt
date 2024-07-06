@@ -155,3 +155,4 @@ C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\obj\Debug\net8.0\GA.UniCa
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\bin\Debug\net8.0\GA.UniCard.Application.xml
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\bin\Debug\net8.0\GA.UniCard.Domain.xml
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\bin\Debug\net8.0\GA.UniCard.Infrastructure.xml
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll

@@ -3,7 +3,7 @@ using GA.UniCard.Application.CustomExceptions;
 using GA.UniCard.Application.FluentValidates;
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
-using GA.UniCard.Application.StatickFiles;
+using GA.UniCard.Application.StaticFiles;
 using GA.UniCard.Domain.Entities;
 using GA.UniCard.Domain.Interfaces;
 
@@ -35,7 +35,7 @@ namespace GA.UniCard.Application.Services
             var users = await work.UserRepository.GetAllAsync();
             if (!users.Any())
             {
-                throw new ItemNotFoundException(ErrorKeys.NoCustommer);
+                throw new ItemNotFoundException(ErrorKeys.NoCustomer);
             }
 
             var userDtos = mapper.Map<IEnumerable<UserDto>>(users);
@@ -57,7 +57,7 @@ namespace GA.UniCard.Application.Services
             var user = await work.UserRepository.GetByIdAsync(id);
             if (user == null)
             {
-                throw new ItemNotFoundException(ErrorKeys.NoCustommer);
+                throw new ItemNotFoundException(ErrorKeys.NoCustomer);
             }
 
             var userDto = mapper.Map<UserDto>(user);

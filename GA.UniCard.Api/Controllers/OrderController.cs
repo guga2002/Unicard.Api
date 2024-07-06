@@ -1,12 +1,10 @@
 ﻿using GA.UniCard.Application.CustomExceptions;
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
-using GA.UniCard.Application.StatickFiles;
+using GA.UniCard.Application.Models.ResponseModels;
+using GA.UniCard.Application.StaticFiles;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace GA.UniCard.Api.Controllers
 {
@@ -22,18 +20,18 @@ namespace GA.UniCard.Api.Controllers
     [Route("api/v{v:apiVersion}/[controller]")]
     public class OrderController : ControllerBase
     {
-        private readonly IOrderService ser;
-        private readonly ILogger<OrderController> Log;
+        private readonly IOrderService orderService;
+        private readonly ILogger<OrderController> logger;
 
         /// <summary>
         /// Constructor for OrderController.
         /// </summary>
-        /// <param name="ser">Order service dependency.</param>
+        /// <param name="orderService">Order service dependency.</param>
         /// <param name="logger">Logger dependency.</param>
-        public OrderController(IOrderService ser, ILogger<OrderController> logger)
+        public OrderController(IOrderService orderService, ILogger<OrderController> logger)
         {
-            this.ser = ser;
-            this.Log = logger;
+            this.orderService = orderService;
+            this.logger = logger;
         }
 
         /// <summary>
@@ -46,17 +44,23 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [MapToApiVersion("2.0")]
         [HttpPost]
-        public async Task<ActionResult<bool>> Insert([FromBody] OrderDto order)
+        [SwaggerOperation(Summary = "Insert and place a new order in the system", Description = "Inserts a new order if it does not already exist.")]
+        [SwaggerResponse(200, Description = SuccessKeys.InsertSuccess, Type = typeof(bool))]
+        [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(bool))]
+        [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(bool))]
+        public async Task<ActionResult<bool>> Insert([FromBody, SwaggerParameter(InfoKeys.orderInfo, Required = true)] OrderDto order)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);
-            var res = await ser.AddAsync(order);
-            if (res)
+
+            var result = await orderService.AddAsync(order);
+            if (result)
             {
-                Log.LogInformation($"{SuccessKeys.Success} {order.OrderDate}");
-                return Ok(res);
+                logger.LogInformation($"{SuccessKeys.Success} {order.OrderDate}");
+                return Ok(result);
             }
             else
             {
+                logger.LogWarning("Order insertion failed for order date {OrderDate}", order.OrderDate);
                 return BadRequest(ErrorKeys.UnsuccesfullInsert);
             }
         }
@@ -72,16 +76,21 @@ namespace GA.UniCard.Api.Controllers
         [HttpDelete]
         [Route("{orderId:long}")]
         [MapToApiVersion("2.0")]
-        public async Task<ActionResult<bool>> Delete([FromRoute] long orderId)
+        [SwaggerOperation(Summary = "Delete an order from the database", Description = "Deletes an order by its ID if it exists.")]
+        [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(bool))]
+        [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(bool))]
+        [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
+        public async Task<ActionResult<bool>> Delete([FromRoute, SwaggerParameter(InfoKeys.OrderId, Required = true)] long orderId)
         {
-            var res = await ser.DeleteAsync(orderId);
-            if (res)
+            var result = await orderService.DeleteAsync(orderId);
+            if (result)
             {
-                Log.LogInformation($"{SuccessKeys.Delete} {orderId}");
-                return Ok(res);
+                logger.LogInformation($"{SuccessKeys.Delete} {orderId}");
+                return Ok(result);
             }
             else
             {
+                logger.LogWarning("Order deletion failed for order ID {OrderId}", orderId);
                 return BadRequest(ErrorKeys.UnsuccesfullInsert);
             }
         }
@@ -95,16 +104,21 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [HttpGet]
         [MapToApiVersion("2.0")]
+        [SwaggerOperation(Summary = "Get all order history", Description = "Retrieves all orders stored by users.")]
+        [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(IEnumerable<OrderDto>))]
+        [SwaggerResponse(404, Description = ErrorKeys.NotFound, Type = typeof(ErrorResponce))]
+        [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
         public async Task<ActionResult<IEnumerable<OrderDto>>> GetAll()
         {
-            var res = await ser.GetAllAsync();
-            if (res.Any())
+            var result = await orderService.GetAllAsync();
+            if (result.Any())
             {
-                Log.LogInformation($"{SuccessKeys.Success}");
-                return Ok(res);
+                logger.LogInformation(SuccessKeys.Success);
+                return Ok(result);
             }
             else
             {
+                logger.LogWarning("No orders found.");
                 return NotFound(ErrorKeys.NotFound);
             }
         }
@@ -120,16 +134,22 @@ namespace GA.UniCard.Api.Controllers
         [HttpGet]
         [Route("{orderId:long}")]
         [MapToApiVersion("2.0")]
-        public async Task<ActionResult<OrderDto>> GetById([FromRoute] long orderId)
+        [SwaggerOperation(Summary = "Get order history by ID", Description = "Retrieves a specific order from the database by its ID.")]
+        [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(OrderDto))]
+        [SwaggerResponse(404, Description = ErrorKeys.NotFound, Type = typeof(ErrorResponce))]
+        [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
+        public async Task<ActionResult<OrderDto>> GetById([FromRoute, SwaggerParameter(InfoKeys.OrderId, Required = true)] long orderId)
         {
-            var res = await ser.GetByIdAsync(orderId);
-            if (res is null)
+            var result = await orderService.GetByIdAsync(orderId);
+            if (result == null)
             {
+                logger.LogWarning("Order not found for ID {OrderId}", orderId);
                 return NotFound(ErrorKeys.NotFound);
             }
             else
             {
-                return Ok(res);
+                logger.LogInformation(SuccessKeys.Success);
+                return Ok(result);
             }
         }
 
@@ -145,16 +165,23 @@ namespace GA.UniCard.Api.Controllers
         [HttpPut]
         [Route("{orderId:long}")]
         [MapToApiVersion("2.0")]
-        public async Task<ActionResult<bool>> Update([FromRoute] long orderId, [FromBody] OrderDto order)
+        [SwaggerOperation(Summary = "Update order details", Description = "Updates an existing order in the database with new data.")]
+        [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(bool))]
+        [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(ErrorResponce))]
+        [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
+        public async Task<ActionResult<bool>> Update([FromRoute, SwaggerParameter("OrderId for searching order in the database", Required = true)] long orderId, [FromBody, SwaggerParameter("Order data for updating info")] OrderDto order)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);
-            var res = await ser.UpdateAsync(orderId, order);
-            if (res)
+
+            var result = await orderService.UpdateAsync(orderId, order);
+            if (result)
             {
-                return Ok(res);
+                logger.LogInformation("Order updated successfully for ID {OrderId}", orderId);
+                return Ok(result);
             }
             else
             {
+                logger.LogWarning("Order update failed for ID {OrderId}", orderId);
                 return BadRequest(ErrorKeys.UnsucessfullUpdate);
             }
         }

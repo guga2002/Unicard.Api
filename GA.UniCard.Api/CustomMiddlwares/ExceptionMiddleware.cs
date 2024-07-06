@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using GA.UniCard.Application.Models.ResponseModels;
+using System.Net;
 
 namespace GA.UniCard.Api.CustomMiddlwares
 {
@@ -66,7 +67,7 @@ namespace GA.UniCard.Api.CustomMiddlwares
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-            var response = new
+            var response = new ErrorResponce
             {
                 StatusCode = context.Response.StatusCode,
                 Message = ex.Message,

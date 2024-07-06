@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
 	  <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\GA.UniCard.Api.xml</DocumentationFile>
+	  <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
     </PackageReference>
     <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.11" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>

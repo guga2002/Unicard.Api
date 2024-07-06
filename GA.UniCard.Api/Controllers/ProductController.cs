@@ -1,13 +1,10 @@
 ﻿using GA.UniCard.Application.CustomExceptions;
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
-using GA.UniCard.Application.Services;
-using GA.UniCard.Application.StatickFiles;
+using GA.UniCard.Application.Models.ResponseModels;
+using GA.UniCard.Application.StaticFiles;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace GA.UniCard.Api.Controllers
 {
@@ -23,18 +20,18 @@ namespace GA.UniCard.Api.Controllers
     [Route("api/v{v:apiVersion}/[controller]")]
     public class ProductController : ControllerBase
     {
-        private readonly IproductServices ser;
-        private readonly ILogger<ProductController> Log;
+        private readonly IproductServices productService;
+        private readonly ILogger<ProductController> logger;
 
         /// <summary>
         /// Constructor for ProductController.
         /// </summary>
-        /// <param name="ser">Product services dependency.</param>
+        /// <param name="productService">Product services dependency.</param>
         /// <param name="logger">Logger dependency.</param>
-        public ProductController(IproductServices ser, ILogger<ProductController> logger)
+        public ProductController(IproductServices productService, ILogger<ProductController> logger)
         {
-            this.ser = ser;
-            this.Log = logger;
+            this.productService = productService;
+            this.logger = logger;
         }
 
         /// <summary>
@@ -47,14 +44,18 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [MapToApiVersion("2.0")]
         [HttpPost]
-        public async Task<ActionResult<bool>> Insert([FromBody] ProductDto product)
+        [SwaggerOperation(Summary = "Insert a new product", Description = "Inserts a new product into the database if it does not already exist.")]
+        [SwaggerResponse(200, SuccessKeys.InsertSuccess, typeof(bool))]
+        [SwaggerResponse(404, ErrorKeys.BadRequest, typeof(string))]
+        [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        public async Task<ActionResult<bool>> Insert([FromBody, SwaggerParameter(InfoKeys.ProductInfo, Required = true)] ProductDto product)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);
-            var res = await ser.AddAsync(product);
-            if (res)
+            var result = await productService.AddAsync(product);
+            if (result)
             {
-                Log.LogInformation($"{SuccessKeys.Success} {product.ProductName}");
-                return Ok(res);
+                logger.LogInformation($"{SuccessKeys.Success} {product.ProductName}");
+                return Ok(result);
             }
             else
             {
@@ -73,13 +74,17 @@ namespace GA.UniCard.Api.Controllers
         [HttpDelete]
         [Route("{productId:long}")]
         [MapToApiVersion("2.0")]
-        public async Task<ActionResult<bool>> Delete([FromRoute] long productId)
+        [SwaggerOperation(Summary = "Delete a product", Description = "Deletes an existing product from the database by its ID.")]
+        [SwaggerResponse(200, SuccessKeys.Success, typeof(bool))]
+        [SwaggerResponse(404, ErrorKeys.BadRequest, typeof(string))]
+        [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        public async Task<ActionResult<bool>> Delete([FromRoute, SwaggerParameter(InfoKeys.ProductId, Required = true)] long productId)
         {
-            var res = await ser.DeleteAsync(productId);
-            if (res)
+            var result = await productService.DeleteAsync(productId);
+            if (result)
             {
-                Log.LogInformation($"{SuccessKeys.Delete} {productId}");
-                return Ok(res);
+                logger.LogInformation($"{SuccessKeys.Delete} {productId}");
+                return Ok(result);
             }
             else
             {
@@ -96,13 +101,17 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [HttpGet]
         [MapToApiVersion("2.0")]
+        [SwaggerOperation(Summary = "Get all products", Description = "Retrieves all products from the database.")]
+        [SwaggerResponse(200, SuccessKeys.Success, typeof(IEnumerable<ProductDto>))]
+        [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
+        [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
         public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll()
         {
-            var res = await ser.GetAllAsync();
-            if (res.Any())
+            var result = await productService.GetAllAsync();
+            if (result.Any())
             {
-                Log.LogInformation($"{SuccessKeys.Success}");
-                return Ok(res);
+                logger.LogInformation($"{SuccessKeys.Success}");
+                return Ok(result);
             }
             else
             {
@@ -121,16 +130,20 @@ namespace GA.UniCard.Api.Controllers
         [HttpGet]
         [Route("{productId:long}")]
         [MapToApiVersion("2.0")]
-        public async Task<ActionResult<ProductDto>> GetById([FromRoute] long productId)
+        [SwaggerOperation(Summary = "Get a product by ID", Description = "Retrieves a specific product from the database by its ID.")]
+        [SwaggerResponse(200, SuccessKeys.Success, typeof(ProductDto))]
+        [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
+        [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        public async Task<ActionResult<ProductDto>> GetById([FromRoute, SwaggerParameter(InfoKeys.ProductId, Required = true)] long productId)
         {
-            var res = await ser.GetByIdAsync(productId);
-            if (res is null)
+            var result = await productService.GetByIdAsync(productId);
+            if (result is null)
             {
                 return NotFound(ErrorKeys.NotFound);
             }
             else
             {
-                return Ok(res);
+                return Ok(result);
             }
         }
 
@@ -146,13 +159,17 @@ namespace GA.UniCard.Api.Controllers
         [HttpPut]
         [Route("{productId:long}")]
         [MapToApiVersion("2.0")]
-        public async Task<ActionResult<bool>> Update([FromRoute] long productId, [FromBody] ProductDto product)
+        [SwaggerOperation(Summary = "Update a product", Description = "Updates an existing product in the database with new data.")]
+        [SwaggerResponse(200, SuccessKeys.Success, typeof(bool))]
+        [SwaggerResponse(404, ErrorKeys.BadRequest, typeof(string))]
+        [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        public async Task<ActionResult<bool>> Update([FromRoute, SwaggerParameter(InfoKeys.ProductId, Required = true)] long productId, [FromBody, SwaggerParameter(InfoKeys.ProductInfo, Required = true)] ProductDto product)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);
-            var res = await ser.UpdateAsync(productId, product);
-            if (res)
+            var result = await productService.UpdateAsync(productId, product);
+            if (result)
             {
-                return Ok(res);
+                return Ok(result);
             }
             else
             {

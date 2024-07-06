@@ -3,7 +3,7 @@ using GA.UniCard.Application.CustomExceptions;
 using GA.UniCard.Application.FluentValidates;
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
-using GA.UniCard.Application.StatickFiles;
+using GA.UniCard.Application.StaticFiles;
 using GA.UniCard.Domain.Entities;
 using GA.UniCard.Domain.Interfaces;
 

@@ -197,6 +197,26 @@
             Gets or sets the price of the product.
             </summary>
         </member>
+        <member name="T:GA.UniCard.Application.Models.ResponseModels.ErrorResponce">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.ErrorResponce.StatusCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.ErrorResponce.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.ErrorResponce.Detailed">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:GA.UniCard.Application.Models.UserDto">
             <summary>
             Data transfer object (DTO) for representing a user.
@@ -417,99 +437,139 @@
             <param name="userDto">The updated user DTO.</param>
             <returns>True if the update was successful, otherwise false.</returns>
         </member>
-        <member name="T:GA.UniCard.Application.StatickFiles.ErrorKeys">
+        <member name="T:GA.UniCard.Application.StaticFiles.ErrorKeys">
             <summary>
             Error message constants used throughout the application.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.BadRequest">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.BadRequest">
             <summary>
             Bad request error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.UnsuccesfullInsert">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.UnsuccesfullInsert">
             <summary>
             Unsuccessful insert error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.UnsucessfullUpdate">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.UnsucessfullUpdate">
             <summary>
             Unsuccessful update error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.NotFound">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NotFound">
             <summary>
             Not found error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.NoOrder">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NoOrder">
             <summary>
             No order exists error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.NoCustommer">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NoCustomer">
             <summary>
             Customer does not exist error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.InternalServerError">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.InternalServerError">
             <summary>
             Internal server error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.DateValidation">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.DateValidation">
             <summary>
             Date validation error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.Mapped">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.Mapped">
             <summary>
             Mapping error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.General">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.General">
             <summary>
             General exception error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.ArgumentNull">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.ArgumentNull">
             <summary>
             Argument null error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.NoProduct">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NoProduct">
             <summary>
             No such product exists error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.ModelState">
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.ModelState">
             <summary>
             Model state error message.
             </summary>
         </member>
-        <member name="T:GA.UniCard.Application.StatickFiles.SuccessKeys">
+        <member name="T:GA.UniCard.Application.StaticFiles.InfoKeys">
+            <summary>
+            Informational message constants used throughout the application.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.orderInfo">
+            <summary>
+            Information about the order that will be sent to the server.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.OrderId">
+            <summary>
+            The Order ID used for searching the record.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.ProductId">
+            <summary>
+            The Product ID used for searching the product in the database.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.ProductInfo">
+            <summary>
+            Information about the product that will be sent to the server.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.UserId">
+            <summary>
+            The User ID used for searching a specific user in the database.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.UserInfo">
+            <summary>
+            The User DTO model that will be sent to the server.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.StaticFiles.SuccessKeys">
             <summary>
             Success message constants used throughout the application.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.SuccessKeys.EmailSent">
+        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.EmailSent">
             <summary>
             Success message for email sent.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.SuccessKeys.Success">
+        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.Success">
             <summary>
             Generic success message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.SuccessKeys.Warmateba">
+        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.Warmateba">
             <summary>
             Success message for a warmateba request.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StatickFiles.SuccessKeys.Delete">
+        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.Delete">
             <summary>
             Success message for deletion with ID.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.InsertSuccess">
+            <summary>
+            Success message for successful insertion.
             </summary>
         </member>
     </members>

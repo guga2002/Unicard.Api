@@ -54,6 +54,8 @@ try
         var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
         var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
         opt.IncludeXmlComments(xmlPath);
+
+        opt.EnableAnnotations();
     });
     #endregion
 
