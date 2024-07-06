@@ -1,10 +1,13 @@
 # Creating Database Schema:
 
-Create database UniCardFirst
-
 --Design a database schema for a simple e-commerce platform with the following requirement
 use UniCardFirst
 
+``sh
+Create database UniCardFirst
+
+use UniCardFirst
+```
 
 # 1.Users (UserId, Username, Password, Email) 
 ```sh
