@@ -20,8 +20,10 @@ local machine for development and testing purposes.
 # Prerequisites
 To set up the project, you need to have the following tools installed:<br>
 
-- .NET Core SDK (version 8.0 or later)
-  
+```sh
+NET Core SDK (version 8.0 or later)
+  ```
+
 ```sh
 Visual Studio or Visual Studio Code
 ```
@@ -83,18 +85,22 @@ Postman
   http://localhost:5000/swagger.
 
 # Relational models:
-![image](https://github.com/guga2002/AGRB.Optio.API/assets/74540934/f3a2aacf-49ce-4567-acbd-ae820ffef948)
+![2024-07-06 (1)](https://github.com/guga2002/Unicard.Api/assets/74540934/b61880c4-599e-4cec-9842-a801d17f9bd3)
+
 
 # Used Architecture:
 
-![image](https://github.com/guga2002/AGRB.Optio.API/assets/74540934/acc022c0-ae1e-4d78-99ee-185dd8bad84a)
+![image](https://github.com/guga2002/Unicard.Api/assets/74540934/63a00d4a-8b11-48e0-9de1-dc5d7c2bd068)
+
 <br>
 - **onion Architecture**
 - **UniteOfWork Pattern**
 - **solid Pricncipes**
 - **DI for IOC** ( Inversion of controll)
 - **Restfull principes**
-- 
+- Dapper  For Data access
+- Ef for Code First
+
 # License
 This project is licensed under the MIT License 
 - contanct me  for licence : **aapkhazava22@gmail.com**
