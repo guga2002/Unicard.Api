@@ -17,7 +17,9 @@ create table Users (  -- user Table
 ```
 go
 - 2.Products (ProductId, ProductName, Description, Price)
-  ```sh
+
+ 
+ ```sh
 create table  Products ( -- Product table
     ProductId int primary key identity,
     ProductName nvarchar(100) not null,
@@ -27,6 +29,7 @@ create table  Products ( -- Product table
 ```
 go
 - 3.Orders (OrderId, UserId, OrderDate, TotalAmount)
+<br>
 ```sh
 create table Orders ( -- order table
     OrderId int primary key identity,
@@ -38,6 +41,7 @@ create table Orders ( -- order table
 ```
 go
 - 4.OrderItems (OrderItemId, OrderId, ProductId, Quantity, Price)
+  <br>
   ```sh
 create table OrderItems (
     OrderItemId int primary key identity,
@@ -52,6 +56,7 @@ create table OrderItems (
 
 
 -add indexes for optimizy queries:
+<br>
 ```sh
 create unique index IDX_Username on Users(Username);
 create unique index IDX_Email on Users(Email);
@@ -64,6 +69,7 @@ create index IDX_ProductId on OrderItems(ProductId);
 # Write stored procedures for the following:
 
 - 1.Retrieve all users who have placed an order:
+  <br>
   ```sh
 go
 create procedure GetUsersWithOrders
