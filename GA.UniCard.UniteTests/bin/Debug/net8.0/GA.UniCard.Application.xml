@@ -1,0 +1,576 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GA.UniCard.Application</name>
+    </assembly>
+    <members>
+        <member name="T:GA.UniCard.Application.CustomExceptions.CompileTImeException">
+            <summary>
+            Exception thrown during compile time.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.FluentValidates.OrderDtoValidations">
+            <summary>
+            Validator for the OrderDto class using FluentValidation.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.FluentValidates.OrderItemDtoValidator">
+            <summary>
+            Validator for the OrderItemDto class using FluentValidation.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.FluentValidates.ProductDtoValidations">
+            <summary>
+            Validator for the ProductDto class using FluentValidation.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.FluentValidates.UserDtoValidations">
+            <summary>
+            Validator for the UserDto class using FluentValidation.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Interfaces.BasicOperations.IGetService`1">
+            <summary>
+            Interface for a service that provides basic retrieval operations.
+            </summary>
+            <typeparam name="T">The type of entity.</typeparam>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.BasicOperations.IGetService`1.GetByIdAsync(System.Int64)">
+            <summary>
+            Retrieves an entity by its unique identifier asynchronously.
+            </summary>
+            <param name="Id">The unique identifier of the entity.</param>
+            <returns>A task that represents the asynchronous operation, returning the entity.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.BasicOperations.IGetService`1.GetAllAsync">
+            <summary>
+            Retrieves all entities of type T asynchronously.
+            </summary>
+            <returns>A task that represents the asynchronous operation, returning a collection of entities.</returns>
+        </member>
+        <member name="T:GA.UniCard.Application.Interfaces.ICrudService`1">
+            <summary>
+            Interface for a service that provides basic CRUD operations.
+            </summary>
+            <typeparam name="T">The type of entity.</typeparam>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.ICrudService`1.AddAsync(`0)">
+            <summary>
+            Adds a new entity asynchronously.
+            </summary>
+            <param name="order">The entity to add.</param>
+            <returns>A task that represents the asynchronous operation, returning true if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.ICrudService`1.DeleteAsync(System.Int64)">
+            <summary>
+            Deletes an entity by its unique identifier asynchronously.
+            </summary>
+            <param name="orderId">The unique identifier of the entity to delete.</param>
+            <returns>A task that represents the asynchronous operation, returning true if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.ICrudService`1.UpdateAsync(System.Int64,`0)">
+            <summary>
+            Updates an entity by its unique identifier asynchronously.
+            </summary>
+            <param name="id">The unique identifier of the entity to update.</param>
+            <param name="order">The updated entity.</param>
+            <returns>A task that represents the asynchronous operation, returning true if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Application.Interfaces.IOrderItemServices">
+            <summary>
+            Interface for a service that provides operations specific to order items,
+            including basic retrieval and CRUD operations.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Interfaces.IOrderService">
+            <summary>
+            Interface for a service that provides operations specific to orders,
+            including basic retrieval and CRUD operations.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Interfaces.IproductServices">
+            <summary>
+            Interface for a service that provides operations specific to products,
+            including basic retrieval and CRUD operations.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Interfaces.IUserService">
+            <summary>
+            Interface for a service that provides operations specific to users,
+            including basic retrieval, registration, user removal, and update operations.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.IUserService.Register(GA.UniCard.Application.Models.UserDto)">
+            <summary>
+            Registers a new user asynchronously.
+            </summary>
+            <param name="user">The user to register.</param>
+            <returns>A task that represents the asynchronous operation, returning true if the registration was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.IUserService.RemoveUser(System.Int64)">
+            <summary>
+            Removes a user by their unique identifier asynchronously.
+            </summary>
+            <param name="id">The unique identifier of the user to remove.</param>
+            <returns>A task that represents the asynchronous operation, returning true if the removal was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.IUserService.UpdateAsync(System.Int64,GA.UniCard.Application.Models.UserDto)">
+            <summary>
+            Updates a user by their unique identifier asynchronously.
+            </summary>
+            <param name="id">The unique identifier of the user to update.</param>
+            <param name="user">The updated user data.</param>
+            <returns>A task that represents the asynchronous operation, returning true if the update was successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Application.Mapper.AutoMapperProfile">
+            <summary>
+            AutoMapper profile for mapping between DTOs and entities.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Mapper.AutoMapperProfile.#ctor">
+            <summary>
+            Constructor to create mappings between DTOs and entities.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.OrderDto">
+            <summary>
+            Data transfer object (DTO) for representing an order.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.OrderDto.UserId">
+            <summary>
+            Gets or sets the ID of the user placing the order.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.OrderDto.OrderDate">
+            <summary>
+            Gets or sets the date and time when the order was placed.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.OrderDto.TotalAmount">
+            <summary>
+            Gets or sets the total amount of the order.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.OrderItemDto">
+            <summary>
+            Data transfer object (DTO) for representing an order item.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.OrderItemDto.OrderId">
+            <summary>
+            Gets or sets the ID of the order associated with this order item.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.OrderItemDto.ProductId">
+            <summary>
+            Gets or sets the ID of the product associated with this order item.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.OrderItemDto.Quantity">
+            <summary>
+            Gets or sets the quantity of the product in this order item.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.OrderItemDto.Price">
+            <summary>
+            Gets or sets the price per unit of the product in this order item.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.ProductDto">
+            <summary>
+            Data transfer object (DTO) for representing a product.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ProductDto.ProductName">
+            <summary>
+            Gets or sets the name of the product.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ProductDto.Description">
+            <summary>
+            Gets or sets the description of the product.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ProductDto.Price">
+            <summary>
+            Gets or sets the price of the product.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.ResponseModels.ErrorResponce">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.ErrorResponce.StatusCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.ErrorResponce.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.ErrorResponce.Detailed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.UserDto">
+            <summary>
+            Data transfer object (DTO) for representing a user.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.UserDto.UserName">
+            <summary>
+            Gets or sets the username of the user.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.UserDto.Password">
+            <summary>
+            Gets or sets the password of the user.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.UserDto.Email">
+            <summary>
+            Gets or sets the email address of the user.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Services.AbstractService">
+            <summary>
+            Abstract base class for services providing common dependencies.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.AbstractService.#ctor(AutoMapper.IMapper,GA.UniCard.Domain.Interfaces.IUnitOfWork)">
+            <summary>
+            Constructs an instance of AbstractService with required dependencies.
+            </summary>
+            <param name="mapper">Instance of IMapper for object mapping.</param>
+            <param name="work">Instance of IUnitOfWork for data operations.</param>
+        </member>
+        <member name="T:GA.UniCard.Application.Services.OrderItemServices">
+            <summary>
+            Service class for managing operations related to order items.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderItemServices.#ctor(AutoMapper.IMapper,GA.UniCard.Domain.Interfaces.IUnitOfWork)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Application.Services.OrderItemServices"/> class with required dependencies.
+            </summary>
+            <param name="mapper">The AutoMapper instance for object mapping.</param>
+            <param name="work">The unit of work instance for data operations.</param>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderItemServices.AddAsync(GA.UniCard.Application.Models.OrderItemDto)">
+            <summary>
+            Adds a new order item asynchronously.
+            </summary>
+            <param name="orderItem">The order item DTO to add.</param>
+            <returns>True if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderItemServices.DeleteAsync(System.Int64)">
+            <summary>
+            Deletes an order item asynchronously.
+            </summary>
+            <param name="orderId">The ID of the order item to delete.</param>
+            <returns>True if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderItemServices.GetAllAsync">
+            <summary>
+            Retrieves all order items asynchronously.
+            </summary>
+            <returns>A collection of order item DTOs.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderItemServices.GetByIdAsync(System.Int64)">
+            <summary>
+            Retrieves an order item by ID asynchronously.
+            </summary>
+            <param name="id">The ID of the order item to retrieve.</param>
+            <returns>The order item DTO if found, otherwise throws an exception.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderItemServices.UpdateAsync(System.Int64,GA.UniCard.Application.Models.OrderItemDto)">
+            <summary>
+            Updates an existing order item asynchronously.
+            </summary>
+            <param name="id">The ID of the order item to update.</param>
+            <param name="orderItem">The updated order item DTO.</param>
+            <returns>True if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Application.Services.OrderServices">
+            <summary>
+            Service class for managing operations related to orders.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderServices.#ctor(AutoMapper.IMapper,GA.UniCard.Domain.Interfaces.IUnitOfWork)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Application.Services.OrderServices"/> class with required dependencies.
+            </summary>
+            <param name="mapper">The AutoMapper instance for object mapping.</param>
+            <param name="work">The unit of work instance for data operations.</param>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderServices.AddAsync(GA.UniCard.Application.Models.OrderDto)">
+            <summary>
+            Adds a new order asynchronously.
+            </summary>
+            <param name="order">The order DTO to add.</param>
+            <returns>True if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderServices.DeleteAsync(System.Int64)">
+            <summary>
+            Deletes an order asynchronously.
+            </summary>
+            <param name="orderId">The ID of the order to delete.</param>
+            <returns>True if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderServices.GetAllAsync">
+            <summary>
+            Retrieves all orders asynchronously.
+            </summary>
+            <returns>A collection of order DTOs.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderServices.GetByIdAsync(System.Int64)">
+            <summary>
+            Retrieves an order by ID asynchronously.
+            </summary>
+            <param name="id">The ID of the order to retrieve.</param>
+            <returns>The order DTO if found, otherwise throws an exception.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.OrderServices.UpdateAsync(System.Int64,GA.UniCard.Application.Models.OrderDto)">
+            <summary>
+            Updates an existing order asynchronously.
+            </summary>
+            <param name="id">The ID of the order to update.</param>
+            <param name="order">The updated order DTO.</param>
+            <returns>True if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Application.Services.ProductServices">
+            <summary>
+            Service class for managing operations related to products.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.ProductServices.#ctor(AutoMapper.IMapper,GA.UniCard.Domain.Interfaces.IUnitOfWork)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Application.Services.ProductServices"/> class with required dependencies.
+            </summary>
+            <param name="mapper">The AutoMapper instance for object mapping.</param>
+            <param name="work">The unit of work instance for data operations.</param>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.ProductServices.AddAsync(GA.UniCard.Application.Models.ProductDto)">
+            <summary>
+            Adds a new product asynchronously.
+            </summary>
+            <param name="product">The product DTO to add.</param>
+            <returns>True if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.ProductServices.DeleteAsync(System.Int64)">
+            <summary>
+            Deletes a product asynchronously.
+            </summary>
+            <param name="productId">The ID of the product to delete.</param>
+            <returns>True if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.ProductServices.GetAllAsync">
+            <summary>
+            Retrieves all products asynchronously.
+            </summary>
+            <returns>A collection of product DTOs.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.ProductServices.GetByIdAsync(System.Int64)">
+            <summary>
+            Retrieves a product by ID asynchronously.
+            </summary>
+            <param name="id">The ID of the product to retrieve.</param>
+            <returns>The product DTO if found, otherwise throws an exception.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.ProductServices.UpdateAsync(System.Int64,GA.UniCard.Application.Models.ProductDto)">
+            <summary>
+            Updates an existing product asynchronously.
+            </summary>
+            <param name="id">The ID of the product to update.</param>
+            <param name="product">The updated product DTO.</param>
+            <returns>True if the operation was successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Application.Services.UserServices">
+            <summary>
+            Service class for managing operations related to users.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.UserServices.#ctor(AutoMapper.IMapper,GA.UniCard.Domain.Interfaces.IUnitOfWork)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Application.Services.UserServices"/> class with required dependencies.
+            </summary>
+            <param name="mapper">The AutoMapper instance for object mapping.</param>
+            <param name="unitOfWork">The unit of work instance for data operations.</param>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.UserServices.GetAllAsync">
+            <summary>
+            Retrieves all users asynchronously.
+            </summary>
+            <returns>A collection of user DTOs.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.UserServices.GetByIdAsync(System.Int64)">
+            <summary>
+            Retrieves a user by ID asynchronously.
+            </summary>
+            <param name="id">The ID of the user to retrieve.</param>
+            <returns>The user DTO if found, otherwise throws an exception.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.UserServices.Register(GA.UniCard.Application.Models.UserDto)">
+            <summary>
+            Registers a new user asynchronously.
+            </summary>
+            <param name="userDto">The user DTO to register.</param>
+            <returns>True if the registration was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.UserServices.RemoveUser(System.Int64)">
+            <summary>
+            Removes a user asynchronously.
+            </summary>
+            <param name="id">The ID of the user to remove.</param>
+            <returns>True if the removal was successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.UserServices.UpdateAsync(System.Int64,GA.UniCard.Application.Models.UserDto)">
+            <summary>
+            Updates an existing user asynchronously.
+            </summary>
+            <param name="id">The ID of the user to update.</param>
+            <param name="userDto">The updated user DTO.</param>
+            <returns>True if the update was successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Application.StaticFiles.ErrorKeys">
+            <summary>
+            Error message constants used throughout the application.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.BadRequest">
+            <summary>
+            Bad request error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.UnsuccesfullInsert">
+            <summary>
+            Unsuccessful insert error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.UnsucessfullUpdate">
+            <summary>
+            Unsuccessful update error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NotFound">
+            <summary>
+            Not found error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NoOrder">
+            <summary>
+            No order exists error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NoCustomer">
+            <summary>
+            Customer does not exist error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.InternalServerError">
+            <summary>
+            Internal server error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.DateValidation">
+            <summary>
+            Date validation error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.Mapped">
+            <summary>
+            Mapping error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.General">
+            <summary>
+            General exception error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.ArgumentNull">
+            <summary>
+            Argument null error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NoProduct">
+            <summary>
+            No such product exists error message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.ModelState">
+            <summary>
+            Model state error message.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.StaticFiles.InfoKeys">
+            <summary>
+            Informational message constants used throughout the application.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.orderInfo">
+            <summary>
+            Information about the order that will be sent to the server.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.OrderId">
+            <summary>
+            The Order ID used for searching the record.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.ProductId">
+            <summary>
+            The Product ID used for searching the product in the database.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.ProductInfo">
+            <summary>
+            Information about the product that will be sent to the server.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.UserId">
+            <summary>
+            The User ID used for searching a specific user in the database.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.UserInfo">
+            <summary>
+            The User DTO model that will be sent to the server.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.StaticFiles.SuccessKeys">
+            <summary>
+            Success message constants used throughout the application.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.EmailSent">
+            <summary>
+            Success message for email sent.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.Success">
+            <summary>
+            Generic success message.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.Warmateba">
+            <summary>
+            Success message for a warmateba request.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.Delete">
+            <summary>
+            Success message for deletion with ID.
+            </summary>
+        </member>
+        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.InsertSuccess">
+            <summary>
+            Success message for successful insertion.
+            </summary>
+        </member>
+    </members>
+</doc>

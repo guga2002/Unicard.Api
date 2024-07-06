@@ -88,7 +88,7 @@ namespace GA.UniCard.Api.Controllers
             }
             else
             {
-                return BadRequest(ErrorKeys.UnsuccesfullInsert);
+                return NotFound(ErrorKeys.UnsuccesfullInsert);
             }
         }
 

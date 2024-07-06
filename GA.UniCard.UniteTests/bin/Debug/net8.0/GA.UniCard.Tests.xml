@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GA.UniCard.UniteTests</name>
+    </assembly>
+    <members>
+        <member name="T:GA.UniCard.UniteTests.OrderControllerTests">
+            <summary>
+            Unit tests for the OrderController class.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderControllerTests.#ctor">
+            <summary>
+            Order Controller Test Constructor for inicialize private fields using moq
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderControllerTests.Insert_InvalidOrder_ReturnsBadRequest">
+            <summary>
+            Test for inserting an invalid order, expecting a BadRequest response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderControllerTests.Update_InvalidOrder_ReturnsBadRequest">
+            <summary>
+            Test for updating an invalid order, expecting a BadRequest response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderControllerTests.GetById_NonExistingOrderId_ReturnsNotFound">
+            <summary>
+            Test for retrieving a non-existing order by ID, expecting a NotFound response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderControllerTests.Delete_NonExistingOrderId_ReturnsNotFound">
+            <summary>
+            Test for deleting a non-existing order by ID, expecting a NotFound response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderControllerTests.Insert_ValidOrder_ReturnsOk">
+            <summary>
+            Test for inserting a valid order, expecting an OK response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderControllerTests.Delete_ExistingOrderId_ReturnsOk">
+            <summary>
+            Test for deleting an existing order by ID, expecting an OK response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderControllerTests.GetAll_OrdersExist_ReturnsOkWithOrders">
+            <summary>
+            Test for retrieving all orders when orders exist, expecting an OK response with orders.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderControllerTests.GetById_ExistingOrderId_ReturnsOkWithOrder">
+            <summary>
+            Test for retrieving an existing order by ID, expecting an OK response with the order.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderControllerTests.Update_ValidOrder_ReturnsOk">
+            <summary>
+            Test for updating a valid order, expecting an OK response.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.UniteTests.OrderItemControllerTests">
+            <summary>
+            Unite test class for  test order item functionalities
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderItemControllerTests.#ctor">
+            <summary>
+            Order item Controller Test Constructor for inicialize private fields using moq
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderItemControllerTests.Insert_InvalidOrderItem_ReturnsBadRequest">
+            <summary>
+            Test for inserting an invalid order item, expecting a BadRequest response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderItemControllerTests.Update_InvalidOrderItem_ReturnsBadRequest">
+            <summary>
+            Test for updating an invalid order item, expecting a BadRequest response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderItemControllerTests.GetById_NonExistingOrderItemId_ReturnsNotFound">
+            <summary>
+            Test for retrieving a non-existing order item by ID, expecting a NotFound response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderItemControllerTests.Delete_NonExistingOrderItemId_ReturnsNotFound">
+            <summary>
+            Test for deleting a non-existing order item by ID, expecting a NotFound response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderItemControllerTests.Insert_ValidOrderItem_ReturnsOk">
+            <summary>
+            Test for inserting a valid Order Item, expecting an OK response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderItemControllerTests.Delete_ExistingOrderItemId_ReturnsOk">
+            <summary>
+            Test for deleting an existing order item by ID, expecting an OK response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderItemControllerTests.GetAll_OrderItemsExist_ReturnsOkWithOrderItems">
+            <summary>
+            Test for retrieving all order items when order items exist, expecting an OK response with orders.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderItemControllerTests.GetById_ExistingOrderItemId_ReturnsOkWithOrderItem">
+            <summary>
+            Test for retrieving an existing ordeitem by ID, expecting an OK response with the orderItem.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.OrderItemControllerTests.Update_ValidOrderItem_ReturnsOk">
+            <summary>
+            Test for updating a valid order Item, expecting an OK response.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.UniteTests.ProductControllerTests">
+            <summary>
+            ProductController tests  for  test  endpoints
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.ProductControllerTests.#ctor">
+            <summary>
+            Product Controller Test Constructor for inicialize private fields using moq
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.ProductControllerTests.Insert_InvalidProduct_ReturnsBadRequest">
+            <summary>
+            Test for inserting an invalid Product, expecting a BadRequest response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.ProductControllerTests.Update_InvalidProduct_ReturnsBadRequest">
+            <summary>
+            Test for updating an invalid Product, expecting a BadRequest response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.ProductControllerTests.GetById_NonExistingProductId_ReturnsNotFound">
+            <summary>
+            Test for retrieving a non-existing product by ID, expecting a NotFound response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.ProductControllerTests.Delete_NonExistingproductId_ReturnsNotFound">
+            <summary>
+            Test for deleting a non-existing Product by ID, expecting a NotFound response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.ProductControllerTests.Insert_ValidProduct_ReturnsOk">
+            <summary>
+            Test for inserting a valid product, expecting an OK response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.ProductControllerTests.Delete_ExistingProductId_ReturnsOk">
+            <summary>
+            Test for deleting an existing Product by ID, expecting an OK response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.ProductControllerTests.GetAll_ProductsExist_ReturnsOkWithProducts">
+            <summary>
+            Test for retrieving all products when products exist, expecting an OK response with orders.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.ProductControllerTests.GetById_ExistingProductId_ReturnsOkWithOrder">
+            <summary>
+            Test for retrieving an existing product by ID, expecting an OK response with the order.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.ProductControllerTests.Update_ValidProduct_ReturnsOk">
+            <summary>
+            Test for updating a valid Product, expecting an OK response.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.UniteTests.UserControllerTests">
+            <summary>
+            Unite tests for test User Functionalities
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.UserControllerTests.#ctor">
+            <summary>
+            User Controller Test Constructor for inicialize private fields using moq
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.UserControllerTests.Register_InvalidUser_ReturnsBadRequest">
+            <summary>
+            Test for inserting an invalid User, expecting a BadRequest response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.UserControllerTests.Update_InvalidUser_ReturnsBadRequest">
+            <summary>
+            Test for updating an invalid User, expecting a BadRequest response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.UserControllerTests.GetById_NonExistingUserId_ReturnsNotFound">
+            <summary>
+            Test for retrieving a non-existing User by ID, expecting a NotFound response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.UserControllerTests.Delete_NonExistingUserId_ReturnsNotFound">
+            <summary>
+            Test for deleting a non-existing User by ID, expecting a NotFound response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.UserControllerTests.Register_ValidUser_ReturnsOk">
+            <summary>
+            Test for inserting a valid User, expecting an OK response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.UserControllerTests.Delete_ExistingUserId_ReturnsOk">
+            <summary>
+            Test for deleting an existing User by ID, expecting an OK response.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.UserControllerTests.GetAll_UsersExist_ReturnsOkWithOrders">
+            <summary>
+            Test for retrieving all Users when Users exist, expecting an OK response with orders.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.UserControllerTests.GetById_ExistingUserId_ReturnsOkWithUser">
+            <summary>
+            Test for retrieving an existing User by ID, expecting an OK response with the User.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.UniteTests.UserControllerTests.Update_ValidUser_ReturnsOk">
+            <summary>
+            Test for updating a valid User, expecting an OK response.
+            </summary>
+        </member>
+    </members>
+</doc>

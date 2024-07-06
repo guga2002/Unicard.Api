@@ -50,6 +50,7 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(bool))]
         public async Task<ActionResult<bool>> Insert([FromBody, SwaggerParameter(InfoKeys.orderInfo, Required = true)] OrderDto order)
         {
+            ArgumentNullException.ThrowIfNull(order);
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);
 
             var result = await orderService.AddAsync(order);
@@ -60,7 +61,7 @@ namespace GA.UniCard.Api.Controllers
             }
             else
             {
-                logger.LogWarning("Order insertion failed for order date {OrderDate}", order.OrderDate);
+                logger.LogWarning($"Order insertion failed for order date {order}", order.OrderDate);
                 return BadRequest(ErrorKeys.UnsuccesfullInsert);
             }
         }
@@ -90,8 +91,8 @@ namespace GA.UniCard.Api.Controllers
             }
             else
             {
-                logger.LogWarning("Order deletion failed for order ID {OrderId}", orderId);
-                return BadRequest(ErrorKeys.UnsuccesfullInsert);
+                logger.LogWarning($"Order deletion failed for order ID {orderId}", orderId);
+                return NotFound(ErrorKeys.UnsuccesfullInsert);
             }
         }
 
@@ -143,7 +144,7 @@ namespace GA.UniCard.Api.Controllers
             var result = await orderService.GetByIdAsync(orderId);
             if (result == null)
             {
-                logger.LogWarning("Order not found for ID {OrderId}", orderId);
+                logger.LogWarning($"Order not found for ID {orderId}", orderId);
                 return NotFound(ErrorKeys.NotFound);
             }
             else
@@ -181,7 +182,7 @@ namespace GA.UniCard.Api.Controllers
             }
             else
             {
-                logger.LogWarning("Order update failed for ID {OrderId}", orderId);
+                logger.LogWarning($"Order update failed for ID {orderId}", orderId);
                 return BadRequest(ErrorKeys.UnsucessfullUpdate);
             }
         }

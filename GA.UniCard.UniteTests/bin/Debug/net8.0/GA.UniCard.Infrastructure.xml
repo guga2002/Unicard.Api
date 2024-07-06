@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GA.UniCard.Infrastructure</name>
+    </assembly>
+    <members>
+        <member name="T:GA.UniCard.Infrastructure.Repositories.AbstractRepository">
+            <summary>
+            Base class for repositories providing access to configuration settings and connection string.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.AbstractRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Infrastructure.Repositories.AbstractRepository"/> class.
+            </summary>
+            <param name="conf">The configuration instance to retrieve settings from.</param>
+        </member>
+        <member name="T:GA.UniCard.Infrastructure.Repositories.OrderItemRepository">
+            <summary>
+            Repository for managing OrderItem entities using Dapper.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderItemRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Controler for inicialize
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderItemRepository.AddAsync(GA.UniCard.Domain.Entities.OrderItem)">
+            <summary>
+            Adds a new OrderItem asynchronously.
+            </summary>
+            <param name="item">The OrderItem to add.</param>
+            <returns>The Id of the newly added OrderItem.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderItemRepository.DeleteAsync(System.Int64)">
+            <summary>
+            Deletes an OrderItem asynchronously.
+            </summary>
+            <param name="Id">The Id of the OrderItem to delete.</param>
+            <returns>True if deletion is successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderItemRepository.GetAllAsync">
+            <summary>
+            Retrieves all OrderItems asynchronously.
+            </summary>
+            <returns>A collection of OrderItems.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderItemRepository.GetByIdAsync(System.Int64)">
+            <summary>
+            Retrieves an OrderItem by Id asynchronously.
+            </summary>
+            <param name="Id">The Id of the OrderItem to retrieve.</param>
+            <returns>The OrderItem if found, otherwise throws an exception.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderItemRepository.UpdateAsync(System.Int64,GA.UniCard.Domain.Entities.OrderItem)">
+            <summary>
+            Updates an existing OrderItem asynchronously.
+            </summary>
+            <param name="Id">The Id of the OrderItem to update.</param>
+            <param name="item">The updated OrderItem object.</param>
+            <returns>True if update is successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Infrastructure.Repositories.OrderRepository">
+            <summary>
+            Order repository implementation
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Consftructor for inicialize
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderRepository.AddAsync(GA.UniCard.Domain.Entities.Order)">
+            <summary>
+            Adds a new Order asynchronously.
+            </summary>
+            <param name="item">The Order to add.</param>
+            <returns>The Id of the newly added Order.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderRepository.DeleteAsync(System.Int64)">
+            <summary>
+            Deletes an Order asynchronously.
+            </summary>
+            <param name="Id">The Id of the Order to delete.</param>
+            <returns>True if deletion is successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderRepository.GetAllAsync">
+            <summary>
+            Retrieves all Orders asynchronously.
+            </summary>
+            <returns>A collection of Orders.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderRepository.GetByIdAsync(System.Int64)">
+            <summary>
+            Retrieves an Order by Id asynchronously.
+            </summary>
+            <param name="Id">The Id of the Order to retrieve.</param>
+            <returns>The Order if found, otherwise throws an exception.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.OrderRepository.UpdateAsync(System.Int64,GA.UniCard.Domain.Entities.Order)">
+            <summary>
+            Updates an existing Order asynchronously.
+            </summary>
+            <param name="Id">The Id of the Order to update.</param>
+            <param name="item">The updated Order object.</param>
+            <returns>True if update is successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Infrastructure.Repositories.ProductRepository">
+            <summary>
+            Product repository 
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.ProductRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor for Product Class , for inicialize fields
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.ProductRepository.AddAsync(GA.UniCard.Domain.Entities.Product)">
+            <summary>
+            Adds a new Product asynchronously.
+            </summary>
+            <param name="item">The Product to add.</param>
+            <returns>The Id of the newly added Product.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.ProductRepository.DeleteAsync(System.Int64)">
+            <summary>
+            Deletes a Product asynchronously.
+            </summary>
+            <param name="Id">The Id of the Product to delete.</param>
+            <returns>True if deletion is successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.ProductRepository.GetAllAsync">
+            <summary>
+            Retrieves all Products asynchronously.
+            </summary>
+            <returns>A collection of Products.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.ProductRepository.GetByIdAsync(System.Int64)">
+            <summary>
+            Retrieves a Product by Id asynchronously.
+            </summary>
+            <param name="Id">The Id of the Product to retrieve.</param>
+            <returns>The Product if found, otherwise throws an exception.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.ProductRepository.UpdateAsync(System.Int64,GA.UniCard.Domain.Entities.Product)">
+            <summary>
+            Updates an existing Product asynchronously.
+            </summary>
+            <param name="Id">The Id of the Product to update.</param>
+            <param name="item">The updated Product object.</param>
+            <returns>True if update is successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Infrastructure.Repositories.UserRepository">
+            <summary>
+            User repository Implementation
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.UserRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor for User Repository
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.UserRepository.AddAsync(GA.UniCard.Domain.Entities.User)">
+            <summary>
+            Adds a new User asynchronously.
+            </summary>
+            <param name="item">The User to add.</param>
+            <returns>The Id of the newly added User.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.UserRepository.DeleteAsync(System.Int64)">
+            <summary>
+            Deletes a User asynchronously.
+            </summary>
+            <param name="Id">The Id of the User to delete.</param>
+            <returns>True if deletion is successful, otherwise false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.UserRepository.GetAllAsync">
+            <summary>
+            Retrieves all Users asynchronously.
+            </summary>
+            <returns>A collection of Users.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.UserRepository.GetByIdAsync(System.Int64)">
+            <summary>
+            Retrieves a User by Id asynchronously.
+            </summary>
+            <param name="Id">The Id of the User to retrieve.</param>
+            <returns>The User if found, otherwise throws an exception.</returns>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.Repositories.UserRepository.UpdateAsync(System.Int64,GA.UniCard.Domain.Entities.User)">
+            <summary>
+            Updates an existing User asynchronously.
+            </summary>
+            <param name="Id">The Id of the User to update.</param>
+            <param name="item">The updated User object.</param>
+            <returns>True if update is successful, otherwise false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Infrastructure.UnitOfWork.UnitOfWorkRepository">
+            <summary>
+            Represents a Unit of Work pattern implementation for managing repositories.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Infrastructure.UnitOfWork.UnitOfWorkRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Infrastructure.UnitOfWork.UnitOfWorkRepository"/> class.
+            </summary>
+            <param name="config">The configuration instance.</param>
+        </member>
+        <member name="P:GA.UniCard.Infrastructure.UnitOfWork.UnitOfWorkRepository.OrderRepository">
+            <summary>
+            Gets the repository instance for managing orders.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Infrastructure.UnitOfWork.UnitOfWorkRepository.OrderItemRepository">
+            <summary>
+            Gets the repository instance for managing order items.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Infrastructure.UnitOfWork.UnitOfWorkRepository.ProductRepository">
+            <summary>
+            Gets the repository instance for managing products.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Infrastructure.UnitOfWork.UnitOfWorkRepository.UserRepository">
+            <summary>
+            Gets the repository instance for managing users.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,347 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GA.UniCard.Api</name>
+    </assembly>
+    <members>
+        <member name="T:GA.UniCard.Api.Controllers.OrderController">
+            <summary>
+            API controller for managing orders.
+            </summary>
+            <remarks>
+            This controller provides endpoints for CRUD operations on orders.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderController.#ctor(GA.UniCard.Application.Interfaces.IOrderService,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.OrderController})">
+            <summary>
+            Constructor for OrderController.
+            </summary>
+            <param name="orderService">Order service dependency.</param>
+            <param name="logger">Logger dependency.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderController.Insert(GA.UniCard.Application.Models.OrderDto)">
+            <summary>
+            Insert a new order.
+            </summary>
+            <param name="order">The order to insert.</param>
+            <returns>True if insertion is successful, otherwise false.</returns>
+            <remarks>
+            Inserts a new order into the database. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderController.Delete(System.Int64)">
+            <summary>
+            Delete an order by its ID.
+            </summary>
+            <param name="orderId">The ID of the order to delete.</param>
+            <returns>True if deletion is successful, otherwise false.</returns>
+            <remarks>
+            Deletes an existing order from the database by its ID. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderController.GetAll">
+            <summary>
+            Get all orders.
+            </summary>
+            <returns>A list of all orders.</returns>
+            <remarks>
+            Retrieves all orders from the database. Returns a list of orders.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderController.GetById(System.Int64)">
+            <summary>
+            Get an order by its ID.
+            </summary>
+            <param name="orderId">The ID of the order to retrieve.</param>
+            <returns>The order with the specified ID.</returns>
+            <remarks>
+            Retrieves a specific order from the database by its ID. Returns the order if found, otherwise returns NotFound.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderController.Update(System.Int64,GA.UniCard.Application.Models.OrderDto)">
+            <summary>
+            Update an order.
+            </summary>
+            <param name="orderId">The ID of the order to update.</param>
+            <param name="order">The updated order data.</param>
+            <returns>True if update is successful, otherwise false.</returns>
+            <remarks>
+            Updates an existing order in the database with new data. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="T:GA.UniCard.Api.Controllers.OrderItemController">
+            <summary>
+            API controller for managing order items.
+            </summary>
+            <remarks>
+            This controller provides endpoints for CRUD operations on order items.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderItemController.#ctor(GA.UniCard.Application.Interfaces.IOrderItemServices,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.OrderItemController})">
+            <summary>
+            Constructor for OrderItemController.
+            </summary>
+            <param name="orderItemService">Order item services dependency.</param>
+            <param name="logger">Logger dependency.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderItemController.Insert(GA.UniCard.Application.Models.OrderItemDto)">
+            <summary>
+            Insert a new order item.
+            </summary>
+            <param name="orderItem">The order item to insert.</param>
+            <returns>True if insertion is successful, otherwise false.</returns>
+            <remarks>
+            Inserts a new order item into the database. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderItemController.Delete(System.Int64)">
+            <summary>
+            Delete an order item by its ID.
+            </summary>
+            <param name="orderItemId">The ID of the order item to delete.</param>
+            <returns>True if deletion is successful, otherwise false.</returns>
+            <remarks>
+            Deletes an existing order item from the database by its ID. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderItemController.GetAll">
+            <summary>
+            Get all order items.
+            </summary>
+            <returns>A list of all order items.</returns>
+            <remarks>
+            Retrieves all order items from the database. Returns a list of order items.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderItemController.GetById(System.Int64)">
+            <summary>
+            Get an order item by its ID.
+            </summary>
+            <param name="orderItemId">The ID of the order item to retrieve.</param>
+            <returns>The order item with the specified ID.</returns>
+            <remarks>
+            Retrieves a specific order item from the database by its ID. Returns the order item if found, otherwise returns NotFound.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.OrderItemController.Update(System.Int64,GA.UniCard.Application.Models.OrderItemDto)">
+            <summary>
+            Update an order item.
+            </summary>
+            <param name="orderItemId">The ID of the order item to update.</param>
+            <param name="orderItem">The updated order item data.</param>
+            <returns>True if update is successful, otherwise false.</returns>
+            <remarks>
+            Updates an existing order item in the database with new data. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="T:GA.UniCard.Api.Controllers.ProductController">
+            <summary>
+            API controller for managing products.
+            </summary>
+            <remarks>
+            This controller provides endpoints for CRUD operations on products.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.ProductController.#ctor(GA.UniCard.Application.Interfaces.IproductServices,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.ProductController})">
+            <summary>
+            Constructor for ProductController.
+            </summary>
+            <param name="productService">Product services dependency.</param>
+            <param name="logger">Logger dependency.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.ProductController.Insert(GA.UniCard.Application.Models.ProductDto)">
+            <summary>
+            Insert a new product.
+            </summary>
+            <param name="product">The product to insert.</param>
+            <returns>True if insertion is successful, otherwise false.</returns>
+            <remarks>
+            Inserts a new product into the database. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.ProductController.Delete(System.Int64)">
+            <summary>
+            Delete a product by its ID.
+            </summary>
+            <param name="productId">The ID of the product to delete.</param>
+            <returns>True if deletion is successful, otherwise false.</returns>
+            <remarks>
+            Deletes an existing product from the database by its ID. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.ProductController.GetAll">
+            <summary>
+            Get all products.
+            </summary>
+            <returns>A list of all products.</returns>
+            <remarks>
+            Retrieves all products from the database. Returns a list of products.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.ProductController.GetById(System.Int64)">
+            <summary>
+            Get a product by its ID.
+            </summary>
+            <param name="productId">The ID of the product to retrieve.</param>
+            <returns>The product with the specified ID.</returns>
+            <remarks>
+            Retrieves a specific product from the database by its ID. Returns the product if found, otherwise returns NotFound.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.ProductController.Update(System.Int64,GA.UniCard.Application.Models.ProductDto)">
+            <summary>
+            Update a product.
+            </summary>
+            <param name="productId">The ID of the product to update.</param>
+            <param name="product">The updated product data.</param>
+            <returns>True if update is successful, otherwise false.</returns>
+            <remarks>
+            Updates an existing product in the database with new data. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="T:GA.UniCard.Api.Controllers.UserController">
+            <summary>
+            API controller for managing users.
+            </summary>
+            <remarks>
+            This controller provides endpoints for CRUD operations on users.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.UserController.#ctor(GA.UniCard.Application.Interfaces.IUserService,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.UserController})">
+            <summary>
+            Constructor for UserController.
+            </summary>
+            <param name="userService">User service dependency.</param>
+            <param name="logger">Logger dependency.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.UserController.Insert(GA.UniCard.Application.Models.UserDto)">
+            <summary>
+            Register a new user.
+            </summary>
+            <param name="user">The user to register.</param>
+            <returns>True if registration is successful, otherwise false.</returns>
+            <remarks>
+            Registers a new user in the system. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.UserController.Delete(System.Int64)">
+            <summary>
+            Delete a user by their ID.
+            </summary>
+            <param name="userId">The ID of the user to delete.</param>
+            <returns>True if deletion is successful, otherwise false.</returns>
+            <remarks>
+            Deletes an existing user from the system by their ID. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.UserController.GetAll">
+            <summary>
+            Get all users.
+            </summary>
+            <returns>A list of all users.</returns>
+            <remarks>
+            Retrieves all users from the system. Returns a list of users.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.UserController.GetById(System.Int64)">
+            <summary>
+            Get a user by their ID.
+            </summary>
+            <param name="userId">The ID of the user to retrieve.</param>
+            <returns>The user with the specified ID.</returns>
+            <remarks>
+            Retrieves a specific user from the system by their ID. Returns the user if found, otherwise returns NotFound.
+            </remarks>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.UserController.Update(System.Int64,GA.UniCard.Application.Models.UserDto)">
+            <summary>
+            Update a user.
+            </summary>
+            <param name="userId">The ID of the user to update.</param>
+            <param name="user">The updated user data.</param>
+            <returns>True if update is successful, otherwise false.</returns>
+            <remarks>
+            Updates an existing user in the system with new data. Returns success or failure.
+            </remarks>
+        </member>
+        <member name="T:GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware">
+            <summary>
+            Middleware for handling exceptions and logging errors.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware"/> class.
+            </summary>
+            <param name="next">The next middleware in the pipeline.</param>
+            <param name="logger">The logger instance for logging errors.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the middleware asynchronously.
+            </summary>
+            <param name="context">The HTTP context for the current request.</param>
+            <returns>A task that represents the completion of request processing.</returns>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.ExceptionMiddleware.HandleError(Microsoft.AspNetCore.Http.HttpContext,System.Exception)">
+            <summary>
+            Handles the error by writing an error response.
+            </summary>
+            <param name="context">The HTTP context for the current request.</param>
+            <param name="ex">The exception that occurred.</param>
+            <returns>A task that represents the completion of error handling.</returns>
+        </member>
+        <member name="T:GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware">
+            <summary>
+            Middleware for logging HTTP requests and responses.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware"/> class.
+            </summary>
+            <param name="next">The next middleware in the pipeline.</param>
+            <param name="logger">The logger instance for logging information.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.LoggingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the middleware asynchronously.
+            </summary>
+            <param name="context">The HTTP context for the current request.</param>
+            <returns>A task that represents the completion of request processing.</returns>
+        </member>
+        <member name="T:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware">
+            <summary>
+            Middleware for rate limiting client requests based on IP address.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware"/> class.
+            </summary>
+            <param name="next">The next middleware in the pipeline.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the middleware asynchronously.
+            </summary>
+            <param name="context">The HTTP context for the current request.</param>
+            <returns>A task that represents the completion of request processing.</returns>
+        </member>
+        <member name="T:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.ClientRequestInfo">
+            <summary>
+            Information about client requests for rate limiting.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.ClientRequestInfo.RequestCount">
+            <summary>
+            Gets or sets the number of requests made by the client.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Api.CustomMiddlwares.RateLimitingMiddleware.ClientRequestInfo.ExpiryTime">
+            <summary>
+            Gets or sets the time when the client's request count will be reset.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GA.UniCard.Domain", "GA.Uni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GA.UniCard.Infrastructure", "GA.UniCard.Infrastructure\GA.UniCard.Infrastructure.csproj", "{F4538563-2839-46F3-9875-F0620A071C5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GA.UniCard.Application", "GA.UniCard.Application\GA.UniCard.Application.csproj", "{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GA.UniCard.Application", "GA.UniCard.Application\GA.UniCard.Application.csproj", "{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GA.UniCard.UniteTests", "GA.UniCard.UniteTests\GA.UniCard.UniteTests.csproj", "{1EB834E8-8AF1-4F91-B86F-FCCD2A024F8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EB834E8-8AF1-4F91-B86F-FCCD2A024F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB834E8-8AF1-4F91-B86F-FCCD2A024F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB834E8-8AF1-4F91-B86F-FCCD2A024F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB834E8-8AF1-4F91-B86F-FCCD2A024F8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

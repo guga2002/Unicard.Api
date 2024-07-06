@@ -33,6 +33,7 @@ namespace GA.UniCard.Application.Services
         /// <returns>True if the operation was successful, otherwise false.</returns>
         public async Task<bool> AddAsync(OrderItemDto orderItem)
         {
+            ArgumentNullException.ThrowIfNull(orderItem);
             var validationResult = _validator.Validate(orderItem);
             if (!validationResult.IsValid)
             {
@@ -117,6 +118,7 @@ namespace GA.UniCard.Application.Services
         /// <returns>True if the operation was successful, otherwise false.</returns>
         public async Task<bool> UpdateAsync(long id, OrderItemDto orderItem)
         {
+            ArgumentNullException.ThrowIfNull(orderItem);
             var validationResult = _validator.Validate(orderItem);
             if (!validationResult.IsValid)
             {
