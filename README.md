@@ -29,9 +29,6 @@ Visual Studio or Visual Studio Code
 ```sh
 SQL Server or another compatible database
 ```
-```sh
-Mongo Server (Version 7.0 or later)
-```
 
 # Installation
 Clone the repository to your local machine:
