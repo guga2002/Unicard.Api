@@ -15,7 +15,6 @@ create table Users (  -- user Table
     Email nvarchar(100) not null
 );
 ```
-go
 - 2.Products (ProductId, ProductName, Description, Price)
 
  
@@ -27,10 +26,10 @@ create table  Products ( -- Product table
     price DECIMAL(10, 2) not null
 );
 ```
-go
 - 3.Orders (OrderId, UserId, OrderDate, TotalAmount)
+
 <br>
-```sh
+``` sh
 create table Orders ( -- order table
     OrderId int primary key identity,
     UserId int not null,
