@@ -3,8 +3,7 @@
 https://github.com/guga2002/Unicard.Api/blob/ca2aa1b864a137ae2091cb27b1565897de1b3548/SQLSIdeReadMe.md
 ```
 # Bank.Unicard.API
-<br>
-The Unicard Universal Loyalty Program provides you an opportunity to get three types of benefits:<br>
+The Unicard Universal Loyalty Program provides you an opportunity to get three types of benefits:
 - points
 - discounts
 - gifts with any purchase at participating partner organizations.
