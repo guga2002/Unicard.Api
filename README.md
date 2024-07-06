@@ -88,7 +88,6 @@ Postman
 
 ![image](https://github.com/guga2002/Unicard.Api/assets/74540934/63a00d4a-8b11-48e0-9de1-dc5d7c2bd068)
 
-<br>
 - **onion Architecture**
 - **UniteOfWork Pattern**
 - **solid Pricncipes**
