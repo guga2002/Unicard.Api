@@ -60,7 +60,7 @@ create index IDX_ProductId on OrderItems(ProductId);
 ```
 # Write stored procedures for the following:
 
-- 1.Retrieve all users who have placed an order:
+# 1.Retrieve all users who have placed an order:
   
 ```sh
 go
@@ -72,9 +72,8 @@ begin
     inner join Orders o on u.UserId = o.UserId;
 END;
 ```
-<br>
-- 2.Retrieve the top 5 products based on the total quantity sold:
-<br>
+
+# 2.Retrieve the top 5 products based on the total quantity sold:
 ```sh
 go
 create procedure GetTop5ProductsByQuantitySold
@@ -87,9 +86,7 @@ begin
     order  by TotalQuantitySold desc;
 end;
 ```
-<br>
-- 3.Calculate the total revenue generated from orders in the last month:
-<br>
+# 3.Calculate the total revenue generated from orders in the last month:
 ```sh
 go
 Create procedure GetTotalRevenueLastMonth
@@ -100,10 +97,7 @@ begin
     where OrderDate >= DATEADD(MONTH, -1, GETDATE()) and OrderDate < GETDATE();
 end;
 ```
-
-<br>
-- 4.Retrieve the list of orders along with the user and product details for each order item.
-<br>
+# 4.Retrieve the list of orders along with the user and product details for each order item.
 ```sh
 go
 create procedure GetOrdersWithDetails
