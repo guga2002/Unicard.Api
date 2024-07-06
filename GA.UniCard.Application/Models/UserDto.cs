@@ -19,5 +19,10 @@
         /// Gets or sets the email address of the user.
         /// </summary>
         public string Email { get; set; }
+
+        /// <summary>
+        /// Person ID for assign User to Person
+        /// </summary>
+        public string PersonId { get; set; }
     }
 }

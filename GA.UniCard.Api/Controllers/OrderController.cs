@@ -3,6 +3,7 @@ using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -18,6 +19,7 @@ namespace GA.UniCard.Api.Controllers
     [ApiVersion("2.0")]
     [ApiVersion("1.0", Deprecated = true)]
     [Route("api/v{v:apiVersion}/[controller]")]
+    [Authorize]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService orderService;
@@ -44,10 +46,11 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [MapToApiVersion("2.0")]
         [HttpPost]
-        [SwaggerOperation(Summary = "Insert and place a new order in the system", Description = "Inserts a new order if it does not already exist.")]
+        [SwaggerOperation(Summary = "Insert and place a new order in the system V2.0", Description = "Inserts a new order if it does not already exist. **CUSTOMER**")]
         [SwaggerResponse(200, Description = SuccessKeys.InsertSuccess, Type = typeof(bool))]
         [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(bool))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(bool))]
+        [Authorize(Roles = "CUSTOMER")]
         public async Task<ActionResult<bool>> Insert([FromBody, SwaggerParameter(InfoKeys.orderInfo, Required = true)] OrderDto order)
         {
             ArgumentNullException.ThrowIfNull(order);
@@ -77,10 +80,11 @@ namespace GA.UniCard.Api.Controllers
         [HttpDelete]
         [Route("{orderId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Delete an order from the database", Description = "Deletes an order by its ID if it exists.")]
+        [SwaggerOperation(Summary = "Delete an order from the database V2.0", Description = "Deletes an order by its ID if it exists. **CUSTOMER,OPERATOR,ADMIN**")]
         [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(bool))]
         [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(bool))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
+        [Authorize(Roles ="CUSTOMER,OPERATOR,ADMIN")]
         public async Task<ActionResult<bool>> Delete([FromRoute, SwaggerParameter(InfoKeys.OrderId, Required = true)] long orderId)
         {
             var result = await orderService.DeleteAsync(orderId);
@@ -105,7 +109,7 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [HttpGet]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get all order history", Description = "Retrieves all orders stored by users.")]
+        [SwaggerOperation(Summary = "Get all order history V2.0", Description = "Retrieves all orders stored by users. **Authorize User**")]
         [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(IEnumerable<OrderDto>))]
         [SwaggerResponse(404, Description = ErrorKeys.NotFound, Type = typeof(ErrorResponce))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
@@ -135,7 +139,7 @@ namespace GA.UniCard.Api.Controllers
         [HttpGet]
         [Route("{orderId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get order history by ID", Description = "Retrieves a specific order from the database by its ID.")]
+        [SwaggerOperation(Summary = "Get order history by ID V2.0", Description = "Retrieves a specific order from the database by its ID. ** Authoorize User**")]
         [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(OrderDto))]
         [SwaggerResponse(404, Description = ErrorKeys.NotFound, Type = typeof(ErrorResponce))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
@@ -166,10 +170,11 @@ namespace GA.UniCard.Api.Controllers
         [HttpPut]
         [Route("{orderId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Update order details", Description = "Updates an existing order in the database with new data.")]
+        [SwaggerOperation(Summary = "Update order details V2.0", Description = "Updates an existing order in the database with new data.**CUSTOMER,OPERATOR,ADMIN**")]
         [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(bool))]
         [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(ErrorResponce))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
+        [Authorize(Roles ="CUSTOMER,OPERATOR,ADMIN")]
         public async Task<ActionResult<bool>> Update([FromRoute, SwaggerParameter("OrderId for searching order in the database", Required = true)] long orderId, [FromBody, SwaggerParameter("Order data for updating info")] OrderDto order)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);

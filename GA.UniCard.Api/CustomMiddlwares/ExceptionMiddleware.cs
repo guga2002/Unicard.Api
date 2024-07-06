@@ -41,7 +41,7 @@ namespace GA.UniCard.Api.CustomMiddlwares
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError($"Something went wrong: {ex}");
+                    _logger.LogError($"Something went wrong: {ex} {ex.Message} {ex.StackTrace}");
                     await HandleError(context, ex);
                 }
 

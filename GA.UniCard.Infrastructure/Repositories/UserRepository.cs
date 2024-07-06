@@ -31,8 +31,8 @@ namespace GA.UniCard.Infrastructure.Repositories
                 await dbConnection.OpenAsync();
 
                 string query = @"
-                insert into Users (Email, Password, User_Name)
-                values (@Email, @Password, @UserName);
+                insert into Users (Email, Password, User_Name,PersonId)
+                values (@Email, @Password, @UserName,@PersonId);
                 select scope_identity();";
 
                 long userId = await dbConnection.ExecuteScalarAsync<long>(query, new
@@ -40,6 +40,7 @@ namespace GA.UniCard.Infrastructure.Repositories
                     item.Email,
                     item.Password,
                     item.UserName,
+                    item.PersonId,
                 });
 
                 return userId;
@@ -79,6 +80,7 @@ namespace GA.UniCard.Infrastructure.Repositories
                                ,[User_Name] as UserName
                                ,[Password]
                                ,[Email]
+                               ,PersonId
                                 FROM Users";
 
                 var users = await dbConnection.QueryAsync<User>(query);
@@ -128,7 +130,8 @@ namespace GA.UniCard.Infrastructure.Repositories
                 set 
                     User_Name = @UserName,
                     Email = @Email,
-                    Password = @Password
+                    Password = @Password,
+                    PersonId =@PersonId,
                 where Id = @Id";
 
                 var rowsAffected = await dbConnection.ExecuteAsync(updateQuery, new
@@ -136,6 +139,7 @@ namespace GA.UniCard.Infrastructure.Repositories
                     item.UserName,
                     item.Email,
                     item.Password,
+                    item.PersonId,
                     Id
                 });
 

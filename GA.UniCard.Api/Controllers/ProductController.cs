@@ -3,6 +3,7 @@ using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -18,6 +19,7 @@ namespace GA.UniCard.Api.Controllers
     [ApiVersion("2.0")]
     [ApiVersion("1.0", Deprecated = true)]
     [Route("api/v{v:apiVersion}/[controller]")]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IproductServices productService;
@@ -44,10 +46,11 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [MapToApiVersion("2.0")]
         [HttpPost]
-        [SwaggerOperation(Summary = "Insert a new product", Description = "Inserts a new product into the database if it does not already exist.")]
+        [SwaggerOperation(Summary = "Insert a new product V2.0", Description = "Inserts a new product into the database if it does not already exist. **ADMIN,OPERATOR**")]
         [SwaggerResponse(200, SuccessKeys.InsertSuccess, typeof(bool))]
         [SwaggerResponse(404, ErrorKeys.BadRequest, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        [Authorize(Roles = "ADMIN,OPERATOR")]
         public async Task<ActionResult<bool>> Insert([FromBody, SwaggerParameter(InfoKeys.ProductInfo, Required = true)] ProductDto product)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);
@@ -74,10 +77,11 @@ namespace GA.UniCard.Api.Controllers
         [HttpDelete]
         [Route("{productId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Delete a product", Description = "Deletes an existing product from the database by its ID.")]
+        [SwaggerOperation(Summary = "Delete a product V2.0", Description = "Deletes an existing product from the database by its ID. **ADMIN,OPERATOR**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(bool))]
         [SwaggerResponse(404, ErrorKeys.BadRequest, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        [Authorize(Roles = "ADMIN,OPERATOR")]
         public async Task<ActionResult<bool>> Delete([FromRoute, SwaggerParameter(InfoKeys.ProductId, Required = true)] long productId)
         {
             var result = await productService.DeleteAsync(productId);
@@ -101,10 +105,11 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [HttpGet]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get all products", Description = "Retrieves all products from the database.")]
+        [SwaggerOperation(Summary = "Get all products V2.0", Description = "Retrieves all products from the database. **Authorize User**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(IEnumerable<ProductDto>))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll()
         {
             var result = await productService.GetAllAsync();
@@ -130,10 +135,11 @@ namespace GA.UniCard.Api.Controllers
         [HttpGet]
         [Route("{productId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get a product by ID", Description = "Retrieves a specific product from the database by its ID.")]
+        [SwaggerOperation(Summary = "Get a product by ID V2.0", Description = "Retrieves a specific product from the database by its ID. ** Allow Anymous**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(ProductDto))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        [AllowAnonymous]
         public async Task<ActionResult<ProductDto>> GetById([FromRoute, SwaggerParameter(InfoKeys.ProductId, Required = true)] long productId)
         {
             var result = await productService.GetByIdAsync(productId);
@@ -159,10 +165,11 @@ namespace GA.UniCard.Api.Controllers
         [HttpPut]
         [Route("{productId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Update a product", Description = "Updates an existing product in the database with new data.")]
+        [SwaggerOperation(Summary = "Update a product V2.0", Description = "Updates an existing product in the database with new data. **ADMIN,OPERATOR**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(bool))]
         [SwaggerResponse(404, ErrorKeys.BadRequest, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        [Authorize(Roles = "ADMIN,OPERATOR")]
         public async Task<ActionResult<bool>> Update([FromRoute, SwaggerParameter(InfoKeys.ProductId, Required = true)] long productId, [FromBody, SwaggerParameter(InfoKeys.ProductInfo, Required = true)] ProductDto product)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);

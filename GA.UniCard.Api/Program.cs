@@ -6,20 +6,27 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using NLog.Web;
-using System.Reflection;
 using GA.UniCard.Domain.Interfaces;
 using GA.UniCard.Infrastructure.Repositories;
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Services;
 using GA.UniCard.Infrastructure.UnitOfWork;
-
-var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+using NLog.Extensions.Logging;
+using System.Reflection;
+using GA.UniCard.Application.Interfaces.Identity;
+using GA.UniCard.Application.Services.Identity;
+using Microsoft.AspNetCore.Identity;
+using GA.UniCard.Domain.Entities;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 try
 {
     var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
 
+    #region AddApiVersioning
     builder.Services.AddApiVersioning(options =>
     {
         options.DefaultApiVersion = new ApiVersion(DateTime.Now);
@@ -29,6 +36,7 @@ try
             new UrlSegmentApiVersionReader(),
             new HeaderApiVersionReader("X-Api-Version"));
     });
+    #endregion
 
     #region Swagger config
     builder.Services.AddSwaggerGen(opt =>
@@ -56,14 +64,47 @@ try
         opt.IncludeXmlComments(xmlPath);
 
         opt.EnableAnnotations();
+
+        opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+        {
+            Type = SecuritySchemeType.Http,
+            BearerFormat = "JWT",
+            Name = "Authorization",
+            In = ParameterLocation.Header,
+            Scheme = "Bearer",
+            Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\""
+        });
+
+        opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+
     });
     #endregion
 
-
+    #region AddDbContext
     builder.Services.AddDbContext<UniCardDbContext>(opt =>
     {
         opt.UseSqlServer(builder.Configuration.GetConnectionString("DapperConnection"));
     });
+    #endregion
+
+    #region Services LifeTime
+    builder.Services.AddScoped<UserManager<Person>>();
+    builder.Services.AddScoped<RoleManager<IdentityRole>>();
+    builder.Services.AddScoped<SignInManager<Person>>();
+
     builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
     builder.Services.AddScoped<IUnitOfWork, UnitOfWorkRepository>();
@@ -77,14 +118,66 @@ try
     builder.Services.AddScoped<IUserService,UserServices>();
     builder.Services.AddScoped<IproductServices, ProductServices>();
 
-    builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+    builder.Services.AddScoped<IAdminPanelServices,AdminPanelServices>();
+    builder.Services.AddScoped<IPersonServices, PersonServices>();
+    #endregion
 
-    builder.Logging.ClearProviders();
-    builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Information);
+    #region AutoMapper
+    builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+    #endregion
+
+    #region NLogConfig
+    builder.Services.AddLogging(logging =>
+    {
+        logging.ClearProviders();
+        logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+        logging.AddNLog(builder.Configuration.GetSection("v"));
+    });
     builder.Host.UseNLog();
+    #endregion
+
+    #region Identity
+    builder.Services.AddIdentity<Person, IdentityRole>()
+        .AddEntityFrameworkStores<UniCardDbContext>()
+        .AddDefaultTokenProviders();
+    #endregion
+
+    #region Authentification
+    var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options =>
+        {
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = jwtSettings["Issuer"],
+                ValidAudience = jwtSettings["Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"])),
+            };
+        });
+    #endregion
+
+    #region Cors
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("RequestPipeline",
+            builder =>
+            {
+                if (builder == null) throw new ArgumentNullException(nameof(builder));
+                builder.WithOrigins()
+                       .AllowAnyHeader()
+                       .AllowAnyMethod();
+            });
+    });
+    #endregion
 
     var app = builder.Build();
-    if (app.Environment.IsDevelopment())
+
+    #region Use Swagger
+    if (app.Environment.IsDevelopment()||app.Environment.IsProduction())
     {
         app.UseSwagger();
         app.UseSwaggerUI(c =>
@@ -92,20 +185,22 @@ try
             c.SwaggerEndpoint("/swagger/v1/swagger.json", "Uni Card Georgia v1");
         });
     }
+    #endregion
+
+
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();
 
+    #region Custom Middlwares
     app.UseMiddleware<ExceptionMiddleware>();
     app.UseMiddleware<LoggingMiddleware>();
     app.UseMiddleware<RateLimitingMiddleware>();
+    #endregion
+
     app.MapControllers();
+    app.UseCors("RequestPipeline");
     app.Run();
-}
-catch (Exception ex)
-{
-    logger.Error(ex, "Stopped program because of exception");
-    throw;
 }
 finally
 {

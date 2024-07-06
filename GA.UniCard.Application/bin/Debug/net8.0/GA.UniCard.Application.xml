@@ -76,6 +76,79 @@
             <param name="order">The updated entity.</param>
             <returns>A task that represents the asynchronous operation, returning true if the operation was successful, otherwise false.</returns>
         </member>
+        <member name="T:GA.UniCard.Application.Interfaces.Identity.IAdminPanelServices">
+            <summary>
+            Interface for Admin Panell
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IAdminPanelServices.DeleteRole(System.String)">
+            <summary>
+            Deletes a role from the application.
+            </summary>
+            <param name="role">The name of the role to delete.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IAdminPanelServices.AddRolesAsync(System.String)">
+            <summary>
+            Adds a new role to the application.
+            </summary>
+            <param name="roleName">The name of the role to add.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IAdminPanelServices.AssignRoleToUserAsync(System.String,System.String)">
+            <summary>
+            Assigns a role to a user identified by their user ID.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+            <param name="role">The role to assign to the user.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IAdminPanelServices.DeleteUser(System.String)">
+            <summary>
+            Deletes a user from the application.
+            </summary>
+            <param name="id">The ID of the user to delete.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IAdminPanelServices.GetAllRoles">
+            <summary>
+            Retrieves all roles defined in the application.
+            </summary>
+            <returns>A collection of <see cref="T:GA.UniCard.Application.Models.ResponseModels.RoleModel"/> representing all roles.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IAdminPanelServices.IsUserExist(System.String)">
+            <summary>
+            Checks if a user with the specified email exists in the application.
+            </summary>
+            <param name="email">The email address of the user to check.</param>
+            <returns>True if the user exists; otherwise, false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Application.Interfaces.Identity.IPersonServices">
+            <summary>
+            Interface for user-related services.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IPersonServices.RegisterUserAsync(GA.UniCard.Application.Models.IdentityModel.PersonModel,System.String)">
+            <summary>
+            Registers a new user asynchronously.
+            </summary>
+            <param name="user">The model containing user information.</param>
+            <param name="password">The password for the new user.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the user registration operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IPersonServices.SignInAsync(GA.UniCard.Application.Models.IdentityModel.SignInModel)">
+            <summary>
+            Signs in a user asynchronously.
+            </summary>
+            <param name="mod">The sign-in model containing user credentials.</param>
+            <returns>A tuple containing the sign-in result and an optional message.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IPersonServices.SignOut">
+            <summary>
+            Methods for signed out from system
+            </summary>
+            <returns> Boolean, if succesfully  signed out</returns>
+        </member>
         <member name="T:GA.UniCard.Application.Interfaces.IOrderItemServices">
             <summary>
             Interface for a service that provides operations specific to order items,
@@ -130,6 +203,71 @@
         <member name="M:GA.UniCard.Application.Mapper.AutoMapperProfile.#ctor">
             <summary>
             Constructor to create mappings between DTOs and entities.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.IdentityModel.PersonModel">
+            <summary>
+            Person Model for Identity
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.IdentityModel.PersonModel.UserName">
+            <summary>
+            UserName For Identity
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.IdentityModel.PersonModel.Email">
+            <summary>
+            Email For Identity Person
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.IdentityModel.PersonModel.PhoneNumber">
+            <summary>
+            Phone Number For Identity User
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.IdentityModel.PersonModel.Name">
+            <summary>
+            Name for Person
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.IdentityModel.PersonModel.Surname">
+            <summary>
+            Surname for Person
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.IdentityModel.RegistrationModel">
+            <summary>
+            User Model for registration.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.IdentityModel.RegistrationModel.Person">
+            <summary>
+            Gets or sets the person details for registration.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.IdentityModel.RegistrationModel.Password">
+            <summary>
+            Gets or sets the password for the user registration.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.IdentityModel.SignInModel">
+            <summary>
+            Represents a model for user sign-in credentials.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.IdentityModel.SignInModel.Username">
+            <summary>
+            Gets or sets the username for sign-in.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.IdentityModel.SignInModel.Password">
+            <summary>
+            Gets or sets the password for sign-in.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.IdentityModel.SignInModel.SetCookie">
+            <summary>
+            Gets or sets a value indicating whether to set a persistent cookie during sign-in.
             </summary>
         </member>
         <member name="T:GA.UniCard.Application.Models.OrderDto">
@@ -199,22 +337,72 @@
         </member>
         <member name="T:GA.UniCard.Application.Models.ResponseModels.ErrorResponce">
             <summary>
-            
+            Represents an error response returned by the API.
             </summary>
         </member>
         <member name="P:GA.UniCard.Application.Models.ResponseModels.ErrorResponce.StatusCode">
             <summary>
-            
+            Gets or sets the HTTP status code of the error response.
             </summary>
         </member>
         <member name="P:GA.UniCard.Application.Models.ResponseModels.ErrorResponce.Message">
             <summary>
-            
+            Gets or sets the message describing the error.
             </summary>
         </member>
         <member name="P:GA.UniCard.Application.Models.ResponseModels.ErrorResponce.Detailed">
             <summary>
-            
+            Gets or sets additional details about the error, if available.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.ResponseModels.RefreshTokenModel">
+            <summary>
+            Represents a refresh token model containing token and expiry date.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.RefreshTokenModel.Token">
+            <summary>
+            Gets or sets the refresh token string.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.RefreshTokenModel.ExpiryDate">
+            <summary>
+            Gets or sets the expiry date of the refresh token.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.ResponseModels.RoleModel">
+            <summary>
+            Represents a model for roles in the application.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.RoleModel.Name">
+            <summary>
+            Gets or sets the name of the role.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.RoleModel.NormalizedName">
+            <summary>
+            Gets or sets the normalized name of the role.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Application.Models.ResponseModels.SignInResponse">
+            <summary>
+            Represents a response model for sign-in operations.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.SignInResponse.AuthToken">
+            <summary>
+            Gets or sets the authentication token for the signed-in user.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.SignInResponse.RefreshToken">
+            <summary>
+            Gets or sets the refresh token for the signed-in user.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Application.Models.ResponseModels.SignInResponse.ValidateTill">
+            <summary>
+            Gets or sets the expiration date/time until which the authentication token is valid.
             </summary>
         </member>
         <member name="T:GA.UniCard.Application.Models.UserDto">
@@ -237,6 +425,11 @@
             Gets or sets the email address of the user.
             </summary>
         </member>
+        <member name="P:GA.UniCard.Application.Models.UserDto.PersonId">
+            <summary>
+            Person ID for assign User to Person
+            </summary>
+        </member>
         <member name="T:GA.UniCard.Application.Services.AbstractService">
             <summary>
             Abstract base class for services providing common dependencies.
@@ -248,6 +441,117 @@
             </summary>
             <param name="mapper">Instance of IMapper for object mapping.</param>
             <param name="work">Instance of IUnitOfWork for data operations.</param>
+        </member>
+        <member name="T:GA.UniCard.Application.Services.Identity.AdminPanelServices">
+            <summary>
+            Service class providing administrative functionalities for managing roles and users.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.AdminPanelServices.#ctor(Microsoft.AspNetCore.Identity.UserManager{GA.UniCard.Domain.Entities.Person},Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole})">
+            <summary>
+            Constructor for initializing the AdminPanelServices with required services.
+            </summary>
+            <param name="userManager">The UserManager instance.</param>
+            <param name="role">The RoleManager instance.</param>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.AdminPanelServices.AddRolesAsync(System.String)">
+            <summary>
+            Adds a new role to the application.
+            </summary>
+            <param name="roleName">The name of the role to add.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.AdminPanelServices.IsUserExist(System.String)">
+            <summary>
+            Checks if a user with the specified email exists in the application.
+            </summary>
+            <param name="email">The email address of the user to check.</param>
+            <returns>True if the user exists; otherwise, false.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.AdminPanelServices.AssignRoleToUserAsync(System.String,System.String)">
+            <summary>
+            Assigns a role to a user identified by their user ID.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+            <param name="roleAsync">The role to assign to the user.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.AdminPanelServices.DeleteRole(System.String)">
+            <summary>
+            Deletes a role from the application.
+            </summary>
+            <param name="rol">The name of the role to delete.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.AdminPanelServices.DeleteUser(System.String)">
+            <summary>
+            Deletes a user from the application.
+            </summary>
+            <param name="id">The ID of the user to delete.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.AdminPanelServices.GetAllRoles">
+            <summary>
+            Retrieves all roles defined in the application.
+            </summary>
+            <returns>A collection of <see cref="T:GA.UniCard.Application.Models.ResponseModels.RoleModel"/> representing all roles.</returns>
+        </member>
+        <member name="T:GA.UniCard.Application.Services.Identity.PersonServices">
+            <summary>
+            Service class implementing user-related operations.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.#ctor(Microsoft.AspNetCore.Identity.UserManager{GA.UniCard.Domain.Entities.Person},Microsoft.AspNetCore.Identity.SignInManager{GA.UniCard.Domain.Entities.Person},AutoMapper.IMapper,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Application.Services.Identity.PersonServices"/> class.
+            </summary>
+            <param name="userManager">The UserManager instance.</param>
+            <param name="signInManager">The SignInManager instance.</param>
+            <param name="map">The AutoMapper instance.</param>
+            <param name="config">The IConfiguration instance.</param>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.RegisterUserAsync(GA.UniCard.Application.Models.IdentityModel.PersonModel,System.String)">
+            <summary>
+            Registers a new user asynchronously.
+            </summary>
+            <param name="user">The user model to register.</param>
+            <param name="password">The password for the new user.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> indicating the result of the user registration operation.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the user already exists or registration fails.</exception>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.SignInAsync(GA.UniCard.Application.Models.IdentityModel.SignInModel)">
+            <summary>
+            Signs in a user asynchronously.
+            </summary>
+            <param name="mod">The sign-in model containing user credentials.</param>
+            <returns>A <see cref="T:GA.UniCard.Application.Models.ResponseModels.SignInResponse"/> containing authentication and refresh token information.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when sign-in fails.</exception>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.GenerateJwtToken(System.String)">
+            <summary>
+            Generates a JWT token for the specified username.
+            </summary>
+            <param name="username">The username for which to generate the token.</param>
+            <returns>The generated JWT token as a string.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.GenerateRefreshToken">
+            <summary>
+            Generates a refresh token with a unique token and expiry date.
+            </summary>
+            <returns>The generated <see cref="T:GA.UniCard.Application.Models.ResponseModels.RefreshTokenModel"/>.</returns>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.SaveRefreshToken(System.String,GA.UniCard.Application.Models.ResponseModels.RefreshTokenModel)">
+            <summary>
+            Saves a refresh token for the specified user ID.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+            <param name="refreshToken">The refresh token to save.</param>
+        </member>
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.SignOut">
+            <summary>
+            method for sign out
+            </summary>
+            <returns> return boolean</returns>
         </member>
         <member name="T:GA.UniCard.Application.Services.OrderItemServices">
             <summary>

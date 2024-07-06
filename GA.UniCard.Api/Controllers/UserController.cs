@@ -3,6 +3,7 @@ using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -18,6 +19,7 @@ namespace GA.UniCard.Api.Controllers
     [ApiVersion("2.0")]
     [ApiVersion("1.0", Deprecated = true)]
     [Route("api/v{v:apiVersion}/[controller]")]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService userService;
@@ -44,10 +46,11 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [MapToApiVersion("2.0")]
         [HttpPost]
-        [SwaggerOperation(Summary = "Register a new user", Description = "Registers a new user in the system.")]
+        [SwaggerOperation(Summary = "Register a new user V2.0", Description = "Registers a new user in the system. **CUSTOMER,ADMIN,OPERATOR**")]
         [SwaggerResponse(200, SuccessKeys.InsertSuccess, typeof(bool))]
         [SwaggerResponse(400, ErrorKeys.BadRequest, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        [Authorize(Roles = "CUSTOMER,ADMIN,OPERATOR")]
         public async Task<ActionResult<bool>> Insert([FromBody, SwaggerParameter(InfoKeys.UserInfo, Required = true)] UserDto user)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);
@@ -74,10 +77,11 @@ namespace GA.UniCard.Api.Controllers
         [HttpDelete]
         [Route("{userId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Delete a user", Description = "Deletes an existing user from the system by their ID.")]
+        [SwaggerOperation(Summary = "Delete a user V2.0", Description = "Deletes an existing user from the system by their ID. **ADMIN,OPERATOR**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(bool))]
         [SwaggerResponse(400, ErrorKeys.BadRequest, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        [Authorize(Roles = "ADMIN,OPERATOR")]
         public async Task<ActionResult<bool>> Delete([FromRoute, SwaggerParameter(InfoKeys.UserId, Required = true)] long userId)
         {
             var res = await userService.RemoveUser(userId);
@@ -101,10 +105,11 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [HttpGet]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get all users", Description = "Retrieves all users from the system.")]
+        [SwaggerOperation(Summary = "Get all users V2.0", Description = "Retrieves all users from the system. **Allow Anymous**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(IEnumerable<UserDto>))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetAll()
         {
             var res = await userService.GetAllAsync();
@@ -130,10 +135,11 @@ namespace GA.UniCard.Api.Controllers
         [HttpGet]
         [Route("{userId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get a user by ID", Description = "Retrieves a specific user from the system by their ID.")]
+        [SwaggerOperation(Summary = "Get a user by ID V2.0", Description = "Retrieves a specific user from the system by their ID. ** Allow Anymous**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(UserDto))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        [AllowAnonymous]
         public async Task<ActionResult<UserDto>> GetById([FromRoute, SwaggerParameter(InfoKeys.UserId, Required = true)] long userId)
         {
             var res = await userService.GetByIdAsync(userId);
@@ -159,10 +165,11 @@ namespace GA.UniCard.Api.Controllers
         [HttpPut]
         [Route("{userId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Update a user", Description = "Updates an existing user in the system with new data.")]
+        [SwaggerOperation(Summary = "Update a user V2.0", Description = "Updates an existing user in the system with new data. **CUSTOMER,ADMIN,OPERATOR**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(bool))]
         [SwaggerResponse(400, ErrorKeys.BadRequest, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
+        [Authorize(Roles = "CUSTOMER,ADMIN,OPERATOR")]
         public async Task<ActionResult<bool>> Update([FromRoute, SwaggerParameter(InfoKeys.UserId, Required = true)] long userId, [FromBody, SwaggerParameter(InfoKeys.orderInfo, Required = true)] UserDto user)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);

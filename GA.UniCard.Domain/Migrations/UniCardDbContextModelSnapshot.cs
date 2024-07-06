@@ -52,43 +52,43 @@ namespace GA.UniCard.Domain.Migrations
                         new
                         {
                             Id = 1L,
-                            OrderDate = new DateTime(2024, 4, 27, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(981),
-                            TotalAmount = 224m,
+                            OrderDate = new DateTime(2024, 5, 17, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2645),
+                            TotalAmount = 932m,
                             UserId = 1L
                         },
                         new
                         {
                             Id = 2L,
-                            OrderDate = new DateTime(2024, 5, 8, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(1007),
-                            TotalAmount = 969m,
+                            OrderDate = new DateTime(2024, 6, 19, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2664),
+                            TotalAmount = 168m,
                             UserId = 2L
                         },
                         new
                         {
                             Id = 3L,
-                            OrderDate = new DateTime(2024, 5, 20, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(1009),
-                            TotalAmount = 905m,
+                            OrderDate = new DateTime(2024, 4, 14, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2666),
+                            TotalAmount = 778m,
                             UserId = 3L
                         },
                         new
                         {
                             Id = 4L,
-                            OrderDate = new DateTime(2024, 4, 5, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(1011),
-                            TotalAmount = 605m,
+                            OrderDate = new DateTime(2024, 5, 21, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2668),
+                            TotalAmount = 991m,
                             UserId = 4L
                         },
                         new
                         {
                             Id = 5L,
-                            OrderDate = new DateTime(2024, 5, 20, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(1013),
-                            TotalAmount = 961m,
+                            OrderDate = new DateTime(2024, 6, 7, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2670),
+                            TotalAmount = 759m,
                             UserId = 5L
                         },
                         new
                         {
                             Id = 6L,
-                            OrderDate = new DateTime(2024, 5, 2, 1, 21, 0, 413, DateTimeKind.Local).AddTicks(1014),
-                            TotalAmount = 986m,
+                            OrderDate = new DateTime(2024, 4, 20, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2672),
+                            TotalAmount = 683m,
                             UserId = 6L
                         });
                 });
@@ -130,57 +130,215 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = 1L,
                             OrderId = 1L,
-                            Price = 46m,
+                            Price = 91m,
                             ProductId = 1L,
-                            Quantity = 7
+                            Quantity = 3
                         },
                         new
                         {
                             Id = 2L,
                             OrderId = 2L,
-                            Price = 37m,
+                            Price = 32m,
                             ProductId = 2L,
-                            Quantity = 4
+                            Quantity = 3
                         },
                         new
                         {
                             Id = 3L,
                             OrderId = 3L,
-                            Price = 43m,
+                            Price = 45m,
                             ProductId = 3L,
-                            Quantity = 3
+                            Quantity = 8
                         },
                         new
                         {
                             Id = 4L,
                             OrderId = 4L,
-                            Price = 18m,
+                            Price = 77m,
                             ProductId = 4L,
-                            Quantity = 4
+                            Quantity = 5
                         },
                         new
                         {
                             Id = 5L,
                             OrderId = 5L,
-                            Price = 80m,
+                            Price = 82m,
                             ProductId = 5L,
-                            Quantity = 3
+                            Quantity = 5
                         },
                         new
                         {
                             Id = 6L,
                             OrderId = 3L,
-                            Price = 90m,
+                            Price = 75m,
                             ProductId = 2L,
-                            Quantity = 3
+                            Quantity = 7
                         },
                         new
                         {
                             Id = 7L,
                             OrderId = 6L,
-                            Price = 63m,
+                            Price = 98m,
                             ProductId = 4L,
-                            Quantity = 9
+                            Quantity = 1
+                        });
+                });
+
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.Person", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e05abdc2-993f-4107-9ddc-51a426d39680",
+                            Email = "GigaGiga@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "df7d98fb-42c1-4193-a07b-d7b9d5d2e9a2",
+                            TwoFactorEnabled = false,
+                            UserName = "Guga$445"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "33a16f9f-c3d2-4e4b-85fb-2ae3039f92b8",
+                            Email = "GugaG3434uga@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "3c61df7a-8278-47f8-83a1-0cbd7a23aa56",
+                            TwoFactorEnabled = false,
+                            UserName = "Guga13guga#43"
+                        },
+                        new
+                        {
+                            Id = "3",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "376edc51-1fbf-44d5-9ef7-b080394b61cb",
+                            Email = "3443@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "0fd5e52d-90e6-468d-8109-cd63f744f9a8",
+                            TwoFactorEnabled = false,
+                            UserName = "#3445"
+                        },
+                        new
+                        {
+                            Id = "4",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "686c471e-6326-4397-a1bb-54f92e6f2022",
+                            Email = "Guga4334Guga@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "6d294996-524d-4164-9b6e-b433d35f33cb",
+                            TwoFactorEnabled = false,
+                            UserName = "Gia3454"
+                        },
+                        new
+                        {
+                            Id = "5",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "1fc9c69c-ea34-4154-a691-68161407b457",
+                            Email = "344334@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "ebde7d40-16a9-4678-8ad4-c0f7d33ea69c",
+                            TwoFactorEnabled = false,
+                            UserName = "Gaga45454"
+                        },
+                        new
+                        {
+                            Id = "6",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "bc2eb702-f9cf-4f8c-b08a-b7e2dbc4f26c",
+                            Email = "GugaGu343ga@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "212d31c0-7c17-40c6-9301-84bebfeaec5d",
+                            TwoFactorEnabled = false,
+                            UserName = "Tekla$#43"
+                        },
+                        new
+                        {
+                            Id = "7",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "03c47668-7a63-4faf-b3aa-2fee0d321b18",
+                            Email = "Gug3434aGuga@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "f4595ac3-dab9-40ec-aa64-c66699c355d9",
+                            TwoFactorEnabled = false,
+                            UserName = "Tek3445"
                         });
                 });
 
@@ -218,56 +376,56 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = 1L,
                             Description = "The milk is good produce in mountains",
-                            Price = 59m,
+                            Price = 43m,
                             ProductName = "Milk"
                         },
                         new
                         {
                             Id = 2L,
                             Description = "The Apple is good produce in mountains",
-                            Price = 77m,
+                            Price = 83m,
                             ProductName = "Apple"
                         },
                         new
                         {
                             Id = 3L,
                             Description = "The Banana is good produce in mountains",
-                            Price = 71m,
+                            Price = 95m,
                             ProductName = "Banana"
                         },
                         new
                         {
                             Id = 4L,
                             Description = "The Bread is good produce in mountains",
-                            Price = 93m,
+                            Price = 37m,
                             ProductName = "Bread"
                         },
                         new
                         {
                             Id = 5L,
                             Description = "The Gold is good produce in mountains",
-                            Price = 71m,
+                            Price = 78m,
                             ProductName = "Gold"
                         },
                         new
                         {
                             Id = 6L,
                             Description = "The Fish is good produce in mountains",
-                            Price = 71m,
+                            Price = 57m,
                             ProductName = "Fish"
                         },
                         new
                         {
                             Id = 7L,
                             Description = "The Beans is good produce in mountains",
-                            Price = 28m,
+                            Price = 99m,
                             ProductName = "Beans"
                         },
                         new
                         {
                             Id = 8L,
                             Description = "The Sugar is good produce in mountains",
-                            Price = 34m,
+                            Price = 73m,
                             ProductName = "Sugar"
                         });
                 });
@@ -288,12 +446,19 @@ namespace GA.UniCard.Domain.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PersonId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("User_Name");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PersonId")
+                        .IsUnique();
 
                     b.ToTable("Users");
 
@@ -303,6 +468,7 @@ namespace GA.UniCard.Domain.Migrations
                             Id = 1L,
                             Email = "Aapkhazava22@gmail.com",
                             Password = "Guga123",
+                            PersonId = "1",
                             UserName = "Guga123#"
                         },
                         new
@@ -310,6 +476,7 @@ namespace GA.UniCard.Domain.Migrations
                             Id = 2L,
                             Email = "Guga342@gmail.com",
                             Password = "Gaga1234",
+                            PersonId = "2",
                             UserName = "Guga13guga##"
                         },
                         new
@@ -317,6 +484,7 @@ namespace GA.UniCard.Domain.Migrations
                             Id = 3L,
                             Email = "Aapkhazava22@gmail.com",
                             Password = "Giga12346$",
+                            PersonId = "3",
                             UserName = "Guga123#"
                         },
                         new
@@ -324,6 +492,7 @@ namespace GA.UniCard.Domain.Migrations
                             Id = 4L,
                             Email = "NikaArtmeladze@gmail.com",
                             Password = "Guga%34",
+                            PersonId = "4",
                             UserName = "Guga123#"
                         },
                         new
@@ -331,6 +500,7 @@ namespace GA.UniCard.Domain.Migrations
                             Id = 5L,
                             Email = "Giorgi123@gmail.com",
                             Password = "Giorgi324",
+                            PersonId = "5",
                             UserName = "Guga123#"
                         },
                         new
@@ -338,6 +508,7 @@ namespace GA.UniCard.Domain.Migrations
                             Id = 6L,
                             Email = "UniPayAdmin@gmail.com",
                             Password = "Admin",
+                            PersonId = "6",
                             UserName = "Admin#"
                         },
                         new
@@ -345,8 +516,142 @@ namespace GA.UniCard.Domain.Migrations
                             Id = 7L,
                             Email = "Aapkhazava2200@gmail.com",
                             Password = "User4562",
+                            PersonId = "7",
                             UserName = "User#"
                         });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("GA.UniCard.Domain.Entities.Order", b =>
@@ -379,9 +684,77 @@ namespace GA.UniCard.Domain.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.User", b =>
+                {
+                    b.HasOne("GA.UniCard.Domain.Entities.Person", "Person")
+                        .WithOne("Users")
+                        .HasForeignKey("GA.UniCard.Domain.Entities.User", "PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("GA.UniCard.Domain.Entities.Person", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("GA.UniCard.Domain.Entities.Person", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GA.UniCard.Domain.Entities.Person", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("GA.UniCard.Domain.Entities.Person", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("GA.UniCard.Domain.Entities.Order", b =>
                 {
                     b.Navigation("OrderItems");
+                });
+
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.Person", b =>
+                {
+                    b.Navigation("Users")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("GA.UniCard.Domain.Entities.Product", b =>

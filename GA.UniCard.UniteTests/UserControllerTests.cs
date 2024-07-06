@@ -79,7 +79,7 @@ namespace GA.UniCard.UniteTests
         [Fact]
         public async Task Register_ValidUser_ReturnsOk()
         {
-            var userDto = new UserDto {Email="Admin@gmail.com",Password="Guga13$",UserName="Gaga2345"};
+            var userDto = new UserDto {Email="Admin@gmail.com",Password="Guga13$",UserName="Gaga2345",PersonId="3"};
             mockUserService.Setup(service => service.Register(It.IsAny<UserDto>())).ReturnsAsync(true);
             var result = await controller.Insert(userDto);
             var okResult = Assert.IsType<OkObjectResult>(result.Result);
@@ -106,8 +106,8 @@ namespace GA.UniCard.UniteTests
         public async Task GetAll_UsersExist_ReturnsOkWithOrders()
         {
             var users = new List<UserDto> {
-                new UserDto(){Email="Giorgi@gmail.com",Password="Gaga234",UserName="There1234"},
-                new UserDto(){Email="Pnguin@gmail.com",Password="Penguin234",UserName="Penguin1234"},
+                new UserDto(){Email="Giorgi@gmail.com",Password="Gaga234",UserName="There1234",PersonId= "3"},
+                new UserDto(){Email="Pnguin@gmail.com",Password="Penguin234",UserName="Penguin1234", PersonId = "2"},
                                             };
             mockUserService.Setup(service => service.GetAllAsync()).ReturnsAsync(users);
             var result = await controller.GetAll();
@@ -123,7 +123,7 @@ namespace GA.UniCard.UniteTests
         public async Task GetById_ExistingUserId_ReturnsOkWithUser()
         {
             long UserId = 1;
-            var UserDto = new UserDto { Email="Gaga123@gmail.com",Password="Ramdeni123#",UserName="Cxvari123"};
+            var UserDto = new UserDto { Email="Gaga123@gmail.com",Password="Ramdeni123#",UserName="Cxvari123", PersonId = "1" };
             mockUserService.Setup(service => service.GetByIdAsync(UserId)).ReturnsAsync(UserDto);
             var result = await controller.GetById(UserId);
             var okResult = Assert.IsType<OkObjectResult>(result.Result);
@@ -138,7 +138,7 @@ namespace GA.UniCard.UniteTests
         public async Task Update_ValidUser_ReturnsOk()
         {
             long UserId = 1;
-            var UserDto = new UserDto { Email = "Gaga123@gmail.com", Password = "Ramdeni123#", UserName = "Cxvari123" };
+            var UserDto = new UserDto { Email = "Gaga123@gmail.com", Password = "Ramdeni123#", UserName = "Cxvari123",PersonId="4" };
             mockUserService.Setup(service => service.UpdateAsync(UserId, UserDto)).ReturnsAsync(true);
             var result = await controller.Update(UserId, UserDto);
             var okResult = Assert.IsType<OkObjectResult>(result.Result);

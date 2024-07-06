@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GA.UniCard.Application.Models;
+using GA.UniCard.Application.Models.IdentityModel;
 using GA.UniCard.Domain.Entities;
 
 namespace GA.UniCard.Application.Mapper
@@ -25,6 +26,9 @@ namespace GA.UniCard.Application.Mapper
 
             // OrderItem mappings
             CreateMap<OrderItem, OrderItemDto>().ReverseMap();
+
+            //map Person To PersonDto
+            CreateMap<Person,PersonModel>().ReverseMap();
         }
     }
 }

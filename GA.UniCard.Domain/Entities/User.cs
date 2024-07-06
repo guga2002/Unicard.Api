@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GA.UniCard.Domain.Entities
 {
@@ -23,6 +24,17 @@ namespace GA.UniCard.Domain.Entities
         /// Gets or sets the email address of the user.
         /// </summary>
         public string Email { get; set; }
+
+        /// <summary>
+        /// Foreign Key for Assign Identity User
+        /// </summary>
+        [ForeignKey("Person")]
+        public string PersonId { get; set; }
+
+        /// <summary>
+        /// Navigation property to IdentityUser
+        /// </summary>
+        public Person Person { get; set; }
 
         /// <summary>
         /// Navigation property to the orders placed by this user.

@@ -1,5 +1,6 @@
 ﻿using GA.UniCard.Domain.Configuration;
 using GA.UniCard.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace GA.UniCard.Domain.Data
@@ -7,7 +8,7 @@ namespace GA.UniCard.Domain.Data
     /// <summary>
     /// Represents the database context for UniCard application, derived from DbContext.
     /// </summary>
-    public class UniCardDbContext : DbContext
+    public class UniCardDbContext : IdentityDbContext<Person>
     {
         /// <summary>
         /// Initializes a new instance of the UniCardDbContext class.
@@ -43,6 +44,7 @@ namespace GA.UniCard.Domain.Data
         /// <param name="modelBuilder">The ModelBuilder instance to configure the context.</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new PersonConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());

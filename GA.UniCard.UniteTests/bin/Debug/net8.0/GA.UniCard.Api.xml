@@ -4,6 +4,91 @@
         <name>GA.UniCard.Api</name>
     </assembly>
     <members>
+        <member name="T:GA.UniCard.Api.Controllers.AdminPanellController">
+            <summary>
+            API controller for administrative Exercises.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.AdminPanellController.#ctor(GA.UniCard.Application.Interfaces.Identity.IAdminPanelServices)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Api.Controllers.AdminPanellController"/> class.
+            </summary>
+            <param name="adminPanelServices">The admin panel services.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.AdminPanellController.DeleteRole(System.String)">
+            <summary>
+            Deletes a role from the application. V2.0
+            </summary>
+            <param name="role">The name of the role to delete.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.AdminPanellController.AddRole(System.String)">
+            <summary>
+            Adds a new role to the application. V2.0
+            </summary>
+            <param name="roleName">The name of the role to add.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.AdminPanellController.AssignRoleToUser(System.String,System.String)">
+            <summary>
+            Assigns a role to a user identified by their user ID. V2.0
+            </summary>
+            <param name="userId">The ID of the user.</param>
+            <param name="role">The role to assign to the user.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.AdminPanellController.DeleteUser(System.String)">
+            <summary>
+            Deletes a user from the application. V2.0
+            </summary>
+            <param name="id">The ID of the user to delete.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> representing the result of the operation.</returns>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.AdminPanellController.GetAllRoles">
+            <summary>
+            Retrieves all roles defined in the application. V2.0
+            </summary>
+            <returns>A collection of <see cref="T:GA.UniCard.Application.Models.ResponseModels.RoleModel"/> representing all roles.</returns>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.AdminPanellController.IsUserExist(System.String)">
+            <summary>
+            Checks if a user with the specified email exists in the application.V2.0
+            </summary>
+            <param name="email">The email address of the user to check.</param>
+            <returns>True if the user exists; otherwise, false.</returns>
+        </member>
+        <member name="T:GA.UniCard.Api.Controllers.IdentityController">
+            <summary>
+            API controller for user identity operations.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.IdentityController.#ctor(GA.UniCard.Application.Interfaces.Identity.IPersonServices,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.IdentityController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GA.UniCard.Api.Controllers.IdentityController"/> class.
+            </summary>
+            <param name="ser">The user identity service.</param>
+            <param name="logger">The logger for logging.</param>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.IdentityController.RegisterUser(GA.UniCard.Application.Models.IdentityModel.RegistrationModel)">
+            <summary>
+            Registers a new user to the system.V2.0
+            </summary>
+            <param name="identity">Registration model for registering a new user.</param>
+            <returns>Returns the result of user registration.</returns>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.IdentityController.SignIn(GA.UniCard.Application.Models.IdentityModel.SignInModel)">
+            <summary>
+            Signs in a user to the system. V2.0
+            </summary>
+            <param name="mod">Sign-in model for signing in a user.</param>
+            <returns>Returns the result of user sign-in.</returns>
+        </member>
+        <member name="M:GA.UniCard.Api.Controllers.IdentityController.SignOutNow">
+            <summary>
+            Signs out the current user from the system. 
+            </summary>
+            <returns>Returns true if sign-out is successful; otherwise, false.</returns>
+        </member>
         <member name="T:GA.UniCard.Api.Controllers.OrderController">
             <summary>
             API controller for managing orders.

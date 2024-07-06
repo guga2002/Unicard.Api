@@ -26,6 +26,17 @@
             </summary>
             <param name="builder">The entity type builder for the OrderItem entity.</param>
         </member>
+        <member name="T:GA.UniCard.Domain.Configuration.PersonConfiguration">
+            <summary>
+            Configuration class for the Person entity in Entity Framework Core.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Configuration.PersonConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{GA.UniCard.Domain.Entities.Person})">
+            <summary>
+            Configures the Person entity.
+            </summary>
+            <param name="builder">The builder used to configure the entity type.</param>
+        </member>
         <member name="T:GA.UniCard.Domain.Configuration.ProductConfiguration">
             <summary>
             Configuration for the Product entity using Entity Framework Core.
@@ -165,6 +176,16 @@
             Navigation property to the product associated with this order item.
             </summary>
         </member>
+        <member name="T:GA.UniCard.Domain.Entities.Person">
+            <summary>
+            Identity User Table
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.Person.Users">
+            <summary>
+            One User Assign to one Person
+            </summary>
+        </member>
         <member name="T:GA.UniCard.Domain.Entities.Product">
             <summary>
             Represents a product entity.
@@ -213,6 +234,16 @@
         <member name="P:GA.UniCard.Domain.Entities.User.Email">
             <summary>
             Gets or sets the email address of the user.
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.User.PersonId">
+            <summary>
+            Foreign Key for Assign Identity User
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.User.Person">
+            <summary>
+            Navigation property to IdentityUser
             </summary>
         </member>
         <member name="P:GA.UniCard.Domain.Entities.User.Orders">
@@ -357,6 +388,18 @@
             <inheritdoc />
         </member>
         <member name="M:GA.UniCard.Domain.Migrations.MigRtB4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GA.UniCard.Domain.Migrations.NewIdentityMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.NewIdentityMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.NewIdentityMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.NewIdentityMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>
