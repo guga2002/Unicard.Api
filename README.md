@@ -2,27 +2,26 @@
 ```sh
 https://github.com/guga2002/Unicard.Api/blob/ca2aa1b864a137ae2091cb27b1565897de1b3548/SQLSIdeReadMe.md
 ```
-# Bank.Unicard.API**
+# Bank.Unicard.API
 <br>
 The Unicard Universal Loyalty Program provides you an opportunity to get three types of benefits:<br>
 - points
 - discounts
 - gifts with any purchase at participating partner organizations.
 
-## Project Description
-AGRB.Optio.API is designed to support various aspects of Transacions management, including Analys, planning,
-resource allocation, and financial tracking.<br> The API offers endpoints for managing data related cases, fields,
-Transactions, and resources, allowing users to streamline their operations and make informed decisions based on real-time
-data analysis.<br> By integrating AGRB.Optio.API into your Buisnes workflow, you can enhance efficiency, reduce costs, and improve overall productivity.<br>
+# Project Description
+Unicard.APi is designed to support various aspects of Online Store management, including Crud operation, The API offers endpoints for managing data related cases, fields,
+Orders, and resources<br>
 
-## Getting Started
+# Getting Started
 Here you can find instructions to set up and configure the project on your
-local machine for development and testing purposes.<br>
+local machine for development and testing purposes.
 
-## Prerequisites
+# Prerequisites
 To set up the project, you need to have the following tools installed:<br>
 
-**.NET Core SDK (version 8.0 or later)**<br>
+- .NET Core SDK (version 8.0 or later)
+  
 ```sh
 Visual Studio or Visual Studio Code
 ```
@@ -33,40 +32,39 @@ SQL Server or another compatible database
 Mongo Server (Version 7.0 or later)
 ```
 
-## Installation
-Clone the repository to your local machine:<br>
+# Installation
+Clone the repository to your local machine:
 ```sh
-git clone https://github.com/guga2002/AGRB.Optio.API.git
+git clone https://github.com/guga2002/Unicard.Api.git
 ```
 Navigate to the project directory:<br>
 ```sh
-cd AGRB.Optio.API
+cd UniCard.Api
 ```
 
-<br>**Install the required packages:**<br>
+- install the required packages:
 ```sh
 dotnet restore
 ```
-<br>**Configuration:**<br>
-Configure the appsettings.json file with your database connection settings.<br>
-Run the database migrations:
+# Configuration:
+- Configure the appsettings.json file with your database connection settings.
+- Run the database migrations:
 ```sh
 dotnet ef database update
 ```
 
-## Running the Application
-You can run the application using the following command:
+# Running the Application
+- You can run the application using the following command:
 ```sh
 dotnet run
 ```
-<br>
 
 The project will be available at Localhost 
 ```sh
 http://localhost:5000 or port check in appseting.json
 ```
 
-## Usage
+# Usage
 You can use any API client to interact with the API
 ```sh
 Postman
@@ -75,21 +73,19 @@ Postman
  Swagger
 ```
 
-## Some Endpoints
+# Some Endpoints
 
-- GET /api/Merchants - Retrieve a list of all Merchants.<br>
-- POST /api/Merchants - Create a new Merchant.<br>
-- GET /api/Transactions - Retrieve a list of all Transactions.<br>
-- GET /api/Statistics - Retrive statistic details.<br>
-- GET /api/ExchangeRate - Retrieve a list of all ExchangeRate.<br>
-- POST /api/Transaction - Create a new Transaction.<br>
+- GET /api/Orders - Retrieve a list of all Orders
+- POST /api/Order - Create a new Order
+- GET /api/Product - Retrieve a list of all Products
+- GET /api/Users - getting users from DB
   For detailed API documentation and further usage examples, refer to the API documentation available at
   http://localhost:5000/swagger.
 
-## Relational models: <br>
+# Relational models:
 ![image](https://github.com/guga2002/AGRB.Optio.API/assets/74540934/f3a2aacf-49ce-4567-acbd-ae820ffef948)
 
-## Used Architecture:
+# Used Architecture:
 
 ![image](https://github.com/guga2002/AGRB.Optio.API/assets/74540934/acc022c0-ae1e-4d78-99ee-185dd8bad84a)
 <br>
@@ -98,7 +94,8 @@ Postman
 - **solid Pricncipes**
 - **DI for IOC** ( Inversion of controll)
 - **Restfull principes**
-## License
+- 
+# License
 This project is licensed under the MIT License 
 - contanct me  for licence : **aapkhazava22@gmail.com**
 
@@ -109,9 +106,8 @@ If you would like to contribute to the project, please:
  <br> for major changes,please open an issue first to discuss what you would like to change.<br>
 ## Contact
 For any questions or suggestions, please contact:
-- **Author**: Guga Apkhazava , Raisa Badalova
+- **Author**: Guga Apkhazava
 - **Email**: guram.apkhazava908@ens.tsu.ge
-- **SecondEmail**: raisa.badalova132@ens.tsu.ge
 
 
 
