@@ -5,9 +5,9 @@ Create database UniCardFirst
 --Design a database schema for a simple e-commerce platform with the following requirement
 use UniCardFirst
 
+
+# 1.Users (UserId, Username, Password, Email) 
 ```sh
-go 
-- 1.Users (UserId, Username, Password, Email) 
 create table Users (  -- user Table
     UserId int primary key identity,
     Username nvarchar(50) not null,
@@ -15,9 +15,7 @@ create table Users (  -- user Table
     Email nvarchar(100) not null
 );
 ```
-- 2.Products (ProductId, ProductName, Description, Price)
-
- 
+# 2.Products (ProductId, ProductName, Description, Price)
  ```sh
 create table  Products ( -- Product table
     ProductId int primary key identity,
@@ -26,10 +24,9 @@ create table  Products ( -- Product table
     price DECIMAL(10, 2) not null
 );
 ```
-- 3.Orders (OrderId, UserId, OrderDate, TotalAmount)
+# 3.Orders (OrderId, UserId, OrderDate, TotalAmount)
 
-<br>
-``` sh
+```sh
 create table Orders ( -- order table
     OrderId int primary key identity,
     UserId int not null,
@@ -38,11 +35,8 @@ create table Orders ( -- order table
     foreign key (UserId) references Users(UserId)
 );
 ```
-<br>
-- 4.OrderItems (OrderItemId, OrderId, ProductId, Quantity, Price)
-  <br>
-  
-  ```sh
+# 4.OrderItems (OrderItemId, OrderId, ProductId, Quantity, Price)
+```sh
 create table OrderItems (
     OrderItemId int primary key identity,
     OrderId int not null,
@@ -53,10 +47,8 @@ create table OrderItems (
     foreign key (ProductId) references Products(ProductId)
 );
 ```
-<br>
 
--add indexes for optimizy queries:
-<br>
+# Add indexes for optimizy queries:
 ```sh
 create unique index IDX_Username on Users(Username);
 create unique index IDX_Email on Users(Email);
@@ -66,13 +58,11 @@ create index IDX_OrderDate on Orders(OrderDate);
 create index IDX_OrderId on OrderItems(OrderId);
 create index IDX_ProductId on OrderItems(ProductId);
 ```
-<br>
 # Write stored procedures for the following:
 
 - 1.Retrieve all users who have placed an order:
   
-  <br>
-  ```sh
+  <br>```sh
 go
 create procedure GetUsersWithOrders
 as
