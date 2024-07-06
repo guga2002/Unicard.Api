@@ -62,7 +62,7 @@ create index IDX_ProductId on OrderItems(ProductId);
 
 - 1.Retrieve all users who have placed an order:
   
-  <br>```sh
+```sh
 go
 create procedure GetUsersWithOrders
 as
@@ -119,13 +119,12 @@ begin
     inner join Products p on oi.ProductId = p.ProductId;
 end;
 ```
-<br>
 # Task 3: Performance Optimization
 Objective: Test ability to optimize database queries and API performance.
 <br>
 - 1. Given the following query, identify potential performance issues and suggest improvements:
 <br>
-  ```sh
+```sh
 SELECT p.ProductName, SUM(oi.Quantity) AS TotalQuantity
 FROM Products p
 JOIN OrderItems oi ON p.ProductId = oi.ProductId
