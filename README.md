@@ -1,7 +1,6 @@
 # Creating Database Schema:
 
 **Design a database schema for a simple e-commerce platform with the following requirement**
-use UniCardFirst
 
 ```sh
 Create database UniCardFirst
