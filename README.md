@@ -5,6 +5,7 @@ Create database UniCardFirst
 --Design a database schema for a simple e-commerce platform with the following requirement
 use UniCardFirst
 
+``sh
 go 
 -- 1.Users (UserId, Username, Password, Email) 
 create table Users (  -- user Table
@@ -13,7 +14,7 @@ create table Users (  -- user Table
     Passsword nvarchar(50) not null,
     Email nvarchar(100) not null
 );
-
+```
 go
 -- 2.Products (ProductId, ProductName, Description, Price) 
 create table  Products ( -- Product table
