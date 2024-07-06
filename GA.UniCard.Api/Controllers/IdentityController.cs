@@ -1,4 +1,5 @@
-﻿using GA.UniCard.Application.Interfaces.Identity;
+﻿using GA.UniCard.Application.CustomExceptions;
+using GA.UniCard.Application.Interfaces.Identity;
 using GA.UniCard.Application.Models.IdentityModel;
 using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
@@ -48,6 +49,10 @@ namespace GA.UniCard.Api.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<IdentityResult>> RegisterUser([FromBody, SwaggerParameter("Registration Model For register user", Required = true)] RegistrationModel identity)
         {
+            if (!ModelState.IsValid)
+            {
+                throw new ModelStateException(ErrorKeys.ModelState);
+            }
             var res = await ser.RegisterUserAsync(identity.Person, identity.Password);
             if (res is null)
             {
@@ -71,6 +76,10 @@ namespace GA.UniCard.Api.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<SignInResponse>> SignIn([FromBody, SwaggerParameter("Sign In model for User", Required = true)] SignInModel mod)
         {
+            if (!ModelState.IsValid)
+            {
+                throw new ModelStateException(ErrorKeys.ModelState);
+            }
             var res = await ser.SignInAsync(mod);
             if (res is null)
             {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GA.UniCard.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f3b7ca534910215c521d68dec681760799891e9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69c707537e9d64374e82f4595358f6fbcfcac9cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("GA.UniCard.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GA.UniCard.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

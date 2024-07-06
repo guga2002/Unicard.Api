@@ -8,9 +8,11 @@ namespace GA.UniCard.Application.FluentValidates
     /// </summary>
     public class OrderDtoValidations : AbstractValidator<OrderDto>
     {
+        /// <summary>
+        /// Controller  for define Rules for vaidations
+        /// </summary>
         public OrderDtoValidations()
         {
-            // Validation rules for OrderDto properties
             RuleFor(dto => dto.UserId).NotEmpty().WithMessage("User ID is required");
             RuleFor(dto => dto.OrderDate).NotEmpty().WithMessage("Order date is required");
             RuleFor(dto => dto.TotalAmount).GreaterThan(0).WithMessage("Total amount must be greater than 0");

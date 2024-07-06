@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}|GA.UniCard.Application\\GA.UniCard.Application.csproj|c:\\users\\aapkh\\source\\repos\\unicard.api\\ga.unicard.application\\services\\identity\\adminpanelservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}|GA.UniCard.Application\\GA.UniCard.Application.csproj|solutionrelative:ga.unicard.application\\services\\identity\\adminpanelservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}|GA.UniCard.Application\\GA.UniCard.Application.csproj|c:\\users\\aapkh\\source\\repos\\unicard.api\\ga.unicard.application\\services\\orderitemservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}|GA.UniCard.Application\\GA.UniCard.Application.csproj|solutionrelative:ga.unicard.application\\services\\orderitemservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}|GA.UniCard.Application\\GA.UniCard.Application.csproj|c:\\users\\aapkh\\source\\repos\\unicard.api\\ga.unicard.application\\services\\orderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}|GA.UniCard.Application\\GA.UniCard.Application.csproj|solutionrelative:ga.unicard.application\\services\\orderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}|GA.UniCard.Application\\GA.UniCard.Application.csproj|c:\\users\\aapkh\\source\\repos\\unicard.api\\ga.unicard.application\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}|GA.UniCard.Application\\GA.UniCard.Application.csproj|solutionrelative:ga.unicard.application\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}|GA.UniCard.Application\\GA.UniCard.Application.csproj|c:\\users\\aapkh\\source\\repos\\unicard.api\\ga.unicard.application\\services\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7CC14A6-A8CF-4934-AAA2-4615780E95B8}|GA.UniCard.Application\\GA.UniCard.Application.csproj|solutionrelative:ga.unicard.application\\services\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminPanelServices.cs",
+              "DocumentMoniker": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Application\\Services\\Identity\\AdminPanelServices.cs",
+              "RelativeDocumentMoniker": "GA.UniCard.Application\\Services\\Identity\\AdminPanelServices.cs",
+              "ToolTip": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Application\\Services\\Identity\\AdminPanelServices.cs",
+              "RelativeToolTip": "GA.UniCard.Application\\Services\\Identity\\AdminPanelServices.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwEwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T10:45:41.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderItemServices.cs",
+              "DocumentMoniker": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Application\\Services\\OrderItemServices.cs",
+              "RelativeDocumentMoniker": "GA.UniCard.Application\\Services\\OrderItemServices.cs",
+              "ToolTip": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Application\\Services\\OrderItemServices.cs",
+              "RelativeToolTip": "GA.UniCard.Application\\Services\\OrderItemServices.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAcwJgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T10:44:07.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserServices.cs",
+              "DocumentMoniker": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Application\\Services\\UserServices.cs",
+              "RelativeDocumentMoniker": "GA.UniCard.Application\\Services\\UserServices.cs",
+              "ToolTip": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Application\\Services\\UserServices.cs",
+              "RelativeToolTip": "GA.UniCard.Application\\Services\\UserServices.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAwwEsAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T10:43:31.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductServices.cs",
+              "DocumentMoniker": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Application\\Services\\ProductServices.cs",
+              "RelativeDocumentMoniker": "GA.UniCard.Application\\Services\\ProductServices.cs",
+              "ToolTip": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Application\\Services\\ProductServices.cs",
+              "RelativeToolTip": "GA.UniCard.Application\\Services\\ProductServices.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwCUAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T10:43:16.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderServices.cs",
+              "DocumentMoniker": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Application\\Services\\OrderServices.cs",
+              "RelativeDocumentMoniker": "GA.UniCard.Application\\Services\\OrderServices.cs",
+              "ToolTip": "C:\\Users\\aapkh\\source\\repos\\Unicard.Api\\GA.UniCard.Application\\Services\\OrderServices.cs",
+              "RelativeToolTip": "GA.UniCard.Application\\Services\\OrderServices.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAcwIMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T10:41:04.188Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

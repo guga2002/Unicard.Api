@@ -8,9 +8,11 @@ namespace GA.UniCard.Application.FluentValidates
     /// </summary>
     public class UserDtoValidations : AbstractValidator<UserDto>
     {
+        /// <summary>
+        /// Controller  for define Rules for vaidations
+        /// </summary>
         public UserDtoValidations()
         {
-            // Validation rules for UserDto properties
             RuleFor(dto => dto.UserName).NotEmpty().WithMessage("Username is required");
             RuleFor(dto => dto.Password).NotEmpty().WithMessage("Password is required");
             RuleFor(dto => dto.Email).NotEmpty().WithMessage("Email is required")

@@ -1,6 +1,4 @@
-﻿using GA.UniCard.Domain.Entities;
-
-namespace GA.UniCard.Domain.Interfaces
+﻿namespace GA.UniCard.Domain.Interfaces
 {
     /// <summary>
     /// Interface for the Unit of Work pattern, providing access to repositories for various entities.

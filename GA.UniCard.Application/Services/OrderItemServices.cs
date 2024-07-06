@@ -39,6 +39,12 @@ namespace GA.UniCard.Application.Services
             {
                 throw new UniCardGeneralException(validationResult.Errors.FirstOrDefault()?.ErrorMessage);
             }
+            var order=await work.OrderRepository.GetByIdAsync(orderItem.OrderId);
+            var product=await work.ProductRepository.GetByIdAsync(orderItem.ProductId);
+
+            if(product is null) throw new UniCardGeneralException(ErrorKeys.NoProduct);
+
+            if(order is null)throw new UniCardGeneralException(ErrorKeys.NoOrder);
 
             var mappedOrderItem = mapper.Map<OrderItem>(orderItem) ??
                 throw new UniCardGeneralException(ErrorKeys.Mapped);
@@ -124,6 +130,12 @@ namespace GA.UniCard.Application.Services
             {
                 throw new UniCardGeneralException(validationResult.Errors.FirstOrDefault()?.ErrorMessage);
             }
+            var order = await work.OrderRepository.GetByIdAsync(orderItem.OrderId);
+            var product = await work.ProductRepository.GetByIdAsync(orderItem.ProductId);
+
+            if (product is null) throw new UniCardGeneralException(ErrorKeys.NoProduct);
+
+            if (order is null) throw new UniCardGeneralException(ErrorKeys.NoOrder);
 
             var mappedOrderItem = mapper.Map<OrderItem>(orderItem) ??
                 throw new UniCardGeneralException(ErrorKeys.Mapped);

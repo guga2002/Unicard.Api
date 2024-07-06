@@ -39,6 +39,10 @@ namespace GA.UniCard.Application.Services
                 throw new UniCardGeneralException(validationResult.Errors.FirstOrDefault()?.ErrorMessage);
             }
 
+            var user= await work.UserRepository.GetByIdAsync(order.UserId);
+            if (user is null) throw new UniCardGeneralException(ErrorKeys.NoCustomer);
+
+
             var mappedOrder = mapper.Map<Order>(order) ??
                 throw new UniCardGeneralException(ErrorKeys.Mapped);
 
@@ -125,6 +129,9 @@ namespace GA.UniCard.Application.Services
             {
                 throw new UniCardGeneralException(validationResult.Errors.FirstOrDefault()?.ErrorMessage);
             }
+
+            var user = await work.UserRepository.GetByIdAsync(order.UserId);
+            if (user is null) throw new UniCardGeneralException(ErrorKeys.NoCustomer);
 
             var mappedOrder = mapper.Map<Order>(order) ??
                 throw new UniCardGeneralException(ErrorKeys.Mapped);

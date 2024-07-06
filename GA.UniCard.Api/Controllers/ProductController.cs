@@ -44,8 +44,8 @@ namespace GA.UniCard.Api.Controllers
         /// <remarks>
         /// Inserts a new product into the database. Returns success or failure.
         /// </remarks>
-        [MapToApiVersion("2.0")]
         [HttpPost]
+        [MapToApiVersion("2.0")]
         [SwaggerOperation(Summary = "Insert a new product V2.0", Description = "Inserts a new product into the database if it does not already exist. **ADMIN,OPERATOR**")]
         [SwaggerResponse(200, SuccessKeys.InsertSuccess, typeof(bool))]
         [SwaggerResponse(404, ErrorKeys.BadRequest, typeof(string))]

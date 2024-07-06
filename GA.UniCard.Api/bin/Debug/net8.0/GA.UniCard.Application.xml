@@ -14,9 +14,19 @@
             Validator for the OrderDto class using FluentValidation.
             </summary>
         </member>
+        <member name="M:GA.UniCard.Application.FluentValidates.OrderDtoValidations.#ctor">
+            <summary>
+            Controller  for define Rules for vaidations
+            </summary>
+        </member>
         <member name="T:GA.UniCard.Application.FluentValidates.OrderItemDtoValidator">
             <summary>
             Validator for the OrderItemDto class using FluentValidation.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.FluentValidates.OrderItemDtoValidator.#ctor">
+            <summary>
+            Controller  for define Rules for vaidations
             </summary>
         </member>
         <member name="T:GA.UniCard.Application.FluentValidates.ProductDtoValidations">
@@ -24,9 +34,19 @@
             Validator for the ProductDto class using FluentValidation.
             </summary>
         </member>
+        <member name="M:GA.UniCard.Application.FluentValidates.ProductDtoValidations.#ctor">
+            <summary>
+            Controller  for define Rules for vaidations
+            </summary>
+        </member>
         <member name="T:GA.UniCard.Application.FluentValidates.UserDtoValidations">
             <summary>
             Validator for the UserDto class using FluentValidation.
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Application.FluentValidates.UserDtoValidations.#ctor">
+            <summary>
+            Controller  for define Rules for vaidations
             </summary>
         </member>
         <member name="T:GA.UniCard.Application.Interfaces.BasicOperations.IGetService`1">

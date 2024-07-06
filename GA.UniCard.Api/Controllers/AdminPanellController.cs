@@ -35,7 +35,7 @@ namespace GA.UniCard.Api.Controllers
         /// <param name="role">The name of the role to delete.</param>
         /// <returns>An <see cref="IdentityResult"/> representing the result of the operation.</returns>
         [HttpPost]
-        [Route("[action]")]
+        [Route("{role:alpha}")]
         [MapToApiVersion("2.0")]
         [SwaggerOperation(Summary = "Delete Role Endpoint V2.0", Description = "Deletes a role from the application. **ADMIN**")]
         [SwaggerResponse(200, Description = SuccessKeys.InsertSuccess, Type = typeof(IdentityResult))]
@@ -55,7 +55,7 @@ namespace GA.UniCard.Api.Controllers
         /// <param name="roleName">The name of the role to add.</param>
         /// <returns>An <see cref="IdentityResult"/> representing the result of the operation.</returns>
         [HttpPost]
-        [Route("[action]")]
+        [Route("{roleName:alpha}")]
         [MapToApiVersion("2.0")]
         [SwaggerOperation(Summary = "Add Role Endpoint V2.0", Description = "Adds a new role to the application. **ADMIN**")]
         [SwaggerResponse(200, Description = SuccessKeys.InsertSuccess, Type = typeof(IdentityResult))]
@@ -76,7 +76,7 @@ namespace GA.UniCard.Api.Controllers
         /// <param name="role">The role to assign to the user.</param>
         /// <returns>An <see cref="IdentityResult"/> representing the result of the operation.</returns>
         [HttpPost]
-        [Route("[action]")]
+        [Route("[action]/{role:alpha}/{userId:alpha}")]
         [MapToApiVersion("2.0")]
         [SwaggerOperation(Summary = "Assign Role Endpoint V2.0", Description = "Assigns a role to a user identified by their user ID. **ADMIN**")]
         [SwaggerResponse(200, Description = SuccessKeys.InsertSuccess, Type = typeof(IdentityResult))]
@@ -96,7 +96,7 @@ namespace GA.UniCard.Api.Controllers
         /// <param name="id">The ID of the user to delete.</param>
         /// <returns>An <see cref="IdentityResult"/> representing the result of the operation.</returns>
         [HttpPost]
-        [Route("[action]")]
+        [Route("{id:alpha}")]
         [MapToApiVersion("2.0")]
         [SwaggerOperation(Summary = "Delete User Endpoint V2.0", Description = "Deletes a user from the application. **ADMIN**")]
         [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(IdentityResult))]
@@ -136,7 +136,7 @@ namespace GA.UniCard.Api.Controllers
         /// <param name="email">The email address of the user to check.</param>
         /// <returns>True if the user exists; otherwise, false.</returns>
         [HttpGet]
-        [Route("[action]")]
+        [Route("{email:alpha}")]
         [MapToApiVersion("2.0")]
         [SwaggerOperation(Summary = "Check User Existence Endpoint V2.0", Description = "Checks if a user with the specified email exists in the application. **ADMIN**")]
         [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(bool))]
