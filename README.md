@@ -48,7 +48,7 @@ create table OrderItems (
 );
 ```
 
-# Add indexes for optimizy queries:
+# 'Add indexes for optimizy queries':
 ```sh
 create unique index IDX_Username on Users(Username);
 create unique index IDX_Email on Users(Email);
@@ -58,7 +58,7 @@ create index IDX_OrderDate on Orders(OrderDate);
 create index IDX_OrderId on OrderItems(OrderId);
 create index IDX_ProductId on OrderItems(ProductId);
 ```
-# Write stored procedures for the following:
+# 'Write stored procedures for the following':
 
 # 1.Retrieve all users who have placed an order:
   
@@ -114,7 +114,7 @@ begin
 end;
 ```
 
-# Task 3: Performance Optimization
+# Task 3: 'Performance Optimization'
 Objective: Test ability to optimize database queries and API performance.
 <br>
 # 1. Given the following query, identify potential performance issues and suggest improvements:
@@ -165,7 +165,7 @@ same in this case we  need optimize  database using indexes , and  segregate key
 use  asynchronous programing for better performance, and  may use memory cash if  we work with big data
 ```
 
-# Task 4: Data Integrity and Transactions
+# Task 4: 'Data Integrity and Transactions'
 Objective: Evaluate understanding of data integrity and transaction management in SQL.
 - 1. Write a stored procedure(s) to create a new order with multiple order items. Ensure that the procedure handles transactions and rolls back in case of any errors.
      
@@ -209,7 +209,7 @@ begin
     end catch
 end;
 ```
-# Describe how you would ensure data integrity in the database, particularly for the `Orders` `OrderItems` tables.
+# 'Describe how you would ensure data integrity in the database, particularly for the `Orders` `OrderItems` tables'.
 ```sh
 --we have few  principes for data integrity , first of all it is  use  foreign key for conection
 --data types  ,  we must use  data types  in correct  way , for example int, decimal , datetime  ect
