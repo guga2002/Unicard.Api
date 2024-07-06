@@ -2,6 +2,7 @@
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Moq;
 
@@ -15,6 +16,7 @@ namespace GA.UniCard.UniteTests
         private readonly Mock<IOrderService> mockOrderService;
         private readonly Mock<ILogger<OrderController>> mockLogger;
         private readonly OrderController controller;
+        private readonly Mock<IMemoryCache> cech;
 
         /// <summary>
         /// Order Controller Test Constructor for inicialize private fields using moq
@@ -23,7 +25,8 @@ namespace GA.UniCard.UniteTests
         {
             mockOrderService = new Mock<IOrderService>();
             mockLogger = new Mock<ILogger<OrderController>>();
-            controller = new OrderController(mockOrderService.Object, mockLogger.Object);
+            cech=new Mock<IMemoryCache>();
+            controller = new OrderController(mockOrderService.Object, mockLogger.Object, cech.Object);
         }
 
         /// <summary>

@@ -2,6 +2,7 @@
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Moq;
 
@@ -14,6 +15,7 @@ namespace GA.UniCard.UniteTests
     {
         private readonly Mock<IOrderItemServices> mockOrderItemService;
         private readonly Mock<ILogger<OrderItemController>> mockLogger;
+        private readonly Mock<IMemoryCache> cech;
         private readonly OrderItemController controller;
 
         /// <summary>
@@ -23,7 +25,8 @@ namespace GA.UniCard.UniteTests
         {
             mockOrderItemService = new Mock<IOrderItemServices>();
             mockLogger = new Mock<ILogger<OrderItemController>>();
-            controller = new OrderItemController(mockOrderItemService.Object, mockLogger.Object);
+            cech = new Mock<IMemoryCache>();
+            controller = new OrderItemController(mockOrderItemService.Object, mockLogger.Object,cech.Object);
         }
 
         /// <summary>

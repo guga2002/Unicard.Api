@@ -1,3 +1,4 @@
+#region Usings
 using GA.UniCard.Api.CustomMiddlwares;
 using GA.UniCard.Application.Mapper;
 using GA.UniCard.Domain.Data;
@@ -20,11 +21,13 @@ using GA.UniCard.Domain.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+#endregion
 try
 {
     var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddMemoryCache();
 
     #region AddApiVersioning
     builder.Services.AddApiVersioning(options =>
@@ -44,8 +47,8 @@ try
         opt.SwaggerDoc("v1", new OpenApiInfo
         {
             Version = "v1",
-            Title = "UniCard Georgia",
-            Description = "Exercise for Unicard Georgia , RestFull Api",
+            Title = "UniCard Georgia API",
+            Description = "RESTful API using C# .NET 8, Dapper, AutoMapper, NLog for\r\nlogging, FluentValidation for input validation",
             TermsOfService = new Uri("https://github.com/guga2002/Unicard.Api/blob/main/README.md"),
             Contact = new OpenApiContact
             {
@@ -110,15 +113,15 @@ try
     builder.Services.AddScoped<IUnitOfWork, UnitOfWorkRepository>();
     builder.Services.AddScoped<IUserRepository, UserRepository>();
     builder.Services.AddScoped<IProductRepository, ProductRepository>();
-    builder.Services.AddScoped<IOrderRepository, OrderRepository>(); 
+    builder.Services.AddScoped<IOrderRepository, OrderRepository>();
     builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
 
     builder.Services.AddScoped<IOrderService, OrderServices>();
-    builder.Services.AddScoped<IOrderItemServices,OrderItemServices>();
-    builder.Services.AddScoped<IUserService,UserServices>();
+    builder.Services.AddScoped<IOrderItemServices, OrderItemServices>();
+    builder.Services.AddScoped<IUserService, UserServices>();
     builder.Services.AddScoped<IproductServices, ProductServices>();
 
-    builder.Services.AddScoped<IAdminPanelServices,AdminPanelServices>();
+    builder.Services.AddScoped<IAdminPanelServices, AdminPanelServices>();
     builder.Services.AddScoped<IPersonServices, PersonServices>();
     #endregion
 
@@ -177,7 +180,7 @@ try
     var app = builder.Build();
 
     #region Use Swagger
-    if (app.Environment.IsDevelopment()||app.Environment.IsProduction())
+    if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     {
         app.UseSwagger();
         app.UseSwaggerUI(c =>

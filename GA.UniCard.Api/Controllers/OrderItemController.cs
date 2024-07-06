@@ -5,6 +5,7 @@ using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace GA.UniCard.Api.Controllers
@@ -19,22 +20,28 @@ namespace GA.UniCard.Api.Controllers
     [ApiVersion("2.0")]
     [ApiVersion("1.0", Deprecated = true)]
     [Route("api/v{v:apiVersion}/[controller]")]
-    [Authorize]
+    [Authorize(Roles ="CUSTOMER")]
     public class OrderItemController : ControllerBase
     {
         private readonly IOrderItemServices orderItemService;
         private readonly ILogger<OrderItemController> logger;
+        private readonly IMemoryCache cache;
+
 
         /// <summary>
         /// Constructor for OrderItemController.
         /// </summary>
-        /// <param name="orderItemService">Order item services dependency.</param>
-        /// <param name="logger">Logger dependency.</param>
-        public OrderItemController(IOrderItemServices orderItemService, ILogger<OrderItemController> logger)
+        /// <param name="orderItemService"></param>
+        /// <param name="logger"></param>
+        /// <param name="cache"></param>
+        public OrderItemController(IOrderItemServices orderItemService, ILogger<OrderItemController> logger,IMemoryCache cache)
         {
             this.orderItemService = orderItemService;
             this.logger = logger;
+            this.cache = cache;
         }
+
+
 
         /// <summary>
         /// Insert a new order item.
@@ -67,6 +74,8 @@ namespace GA.UniCard.Api.Controllers
             }
         }
 
+
+
         /// <summary>
         /// Delete an order item by its ID.
         /// </summary>
@@ -97,6 +106,8 @@ namespace GA.UniCard.Api.Controllers
             }
         }
 
+
+
         /// <summary>
         /// Get all order items.
         /// </summary>
@@ -106,13 +117,13 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [HttpGet]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get all order items V2.0", Description = "Retrieves all order items from the database. **Authorize User**")]
+        [SwaggerOperation(Summary = "Get all order items V2.0", Description = "Retrieves all order items from the database. **Authorize User** Caching : ** Enable**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(IEnumerable<OrderItemDto>))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
         public async Task<ActionResult<IEnumerable<OrderItemDto>>> GetAll()
         {
-            var result = await orderItemService.GetAllAsync();
+                var result = await orderItemService.GetAllAsync();
             if (result.Any())
             {
                 logger.LogInformation($"{SuccessKeys.Success}");
@@ -123,6 +134,9 @@ namespace GA.UniCard.Api.Controllers
                 return NotFound(ErrorKeys.NotFound);
             }
         }
+
+
+
 
         /// <summary>
         /// Get an order item by its ID.
@@ -135,7 +149,7 @@ namespace GA.UniCard.Api.Controllers
         [HttpGet]
         [Route("{orderItemId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get an order item by ID V2.0", Description = "Retrieves a specific order item from the database by its ID. **Authorize User**")]
+        [SwaggerOperation(Summary = "Get an order item by ID V2.0", Description = "Retrieves a specific order item from the database by its ID. **Authorize User** Caching: **Enable**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(OrderItemDto))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
@@ -151,6 +165,9 @@ namespace GA.UniCard.Api.Controllers
                 return Ok(result);
             }
         }
+
+
+
 
         /// <summary>
         /// Update an order item.

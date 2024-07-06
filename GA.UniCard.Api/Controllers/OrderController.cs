@@ -5,6 +5,7 @@ using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace GA.UniCard.Api.Controllers
@@ -19,22 +20,26 @@ namespace GA.UniCard.Api.Controllers
     [ApiVersion("2.0")]
     [ApiVersion("1.0", Deprecated = true)]
     [Route("api/v{v:apiVersion}/[controller]")]
-    [Authorize]
+    [Authorize(Roles ="CUSTOMER")]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService orderService;
         private readonly ILogger<OrderController> logger;
+        private readonly IMemoryCache cache;
 
         /// <summary>
         /// Constructor for OrderController.
         /// </summary>
-        /// <param name="orderService">Order service dependency.</param>
-        /// <param name="logger">Logger dependency.</param>
-        public OrderController(IOrderService orderService, ILogger<OrderController> logger)
+        /// <param name="orderService"> order services</param>
+        /// <param name="logger"> Logger for log informations</param>
+        /// <param name="cache"> Memory cash for  cash data</param>
+        public OrderController(IOrderService orderService, ILogger<OrderController> logger,IMemoryCache cache)
         {
             this.orderService = orderService;
             this.logger = logger;
+            this.cache = cache;
         }
+         
 
         /// <summary>
         /// Insert a new order.
@@ -69,6 +74,7 @@ namespace GA.UniCard.Api.Controllers
             }
         }
 
+
         /// <summary>
         /// Delete an order by its ID.
         /// </summary>
@@ -100,6 +106,8 @@ namespace GA.UniCard.Api.Controllers
             }
         }
 
+
+
         /// <summary>
         /// Get all orders.
         /// </summary>
@@ -109,7 +117,7 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [HttpGet]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get all order history V2.0", Description = "Retrieves all orders stored by users. **Authorize User**")]
+        [SwaggerOperation(Summary = "Get all order history V2.0", Description = "Retrieves all orders stored by users. **Authorize User** Cashing: **Enable**")]
         [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(IEnumerable<OrderDto>))]
         [SwaggerResponse(404, Description = ErrorKeys.NotFound, Type = typeof(ErrorResponce))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
@@ -118,6 +126,7 @@ namespace GA.UniCard.Api.Controllers
             var result = await orderService.GetAllAsync();
             if (result.Any())
             {
+                //cache.Set(cashKey, result,TimeSpan.FromMinutes(15));
                 logger.LogInformation(SuccessKeys.Success);
                 return Ok(result);
             }
@@ -127,6 +136,8 @@ namespace GA.UniCard.Api.Controllers
                 return NotFound(ErrorKeys.NotFound);
             }
         }
+
+
 
         /// <summary>
         /// Get an order by its ID.
@@ -139,7 +150,7 @@ namespace GA.UniCard.Api.Controllers
         [HttpGet]
         [Route("{orderId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get order history by ID V2.0", Description = "Retrieves a specific order from the database by its ID. ** Authoorize User**")]
+        [SwaggerOperation(Summary = "Get order history by ID V2.0", Description = "Retrieves a specific order from the database by its ID. ** Authoorize User** Cashing: **Enable**")]
         [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(OrderDto))]
         [SwaggerResponse(404, Description = ErrorKeys.NotFound, Type = typeof(ErrorResponce))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
@@ -157,6 +168,8 @@ namespace GA.UniCard.Api.Controllers
                 return Ok(result);
             }
         }
+
+
 
         /// <summary>
         /// Update an order.

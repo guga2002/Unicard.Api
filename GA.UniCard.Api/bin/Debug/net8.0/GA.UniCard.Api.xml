@@ -97,12 +97,13 @@
             This controller provides endpoints for CRUD operations on orders.
             </remarks>
         </member>
-        <member name="M:GA.UniCard.Api.Controllers.OrderController.#ctor(GA.UniCard.Application.Interfaces.IOrderService,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.OrderController})">
+        <member name="M:GA.UniCard.Api.Controllers.OrderController.#ctor(GA.UniCard.Application.Interfaces.IOrderService,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.OrderController},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             Constructor for OrderController.
             </summary>
-            <param name="orderService">Order service dependency.</param>
-            <param name="logger">Logger dependency.</param>
+            <param name="orderService"> order services</param>
+            <param name="logger"> Logger for log informations</param>
+            <param name="cache"> Memory cash for  cash data</param>
         </member>
         <member name="M:GA.UniCard.Api.Controllers.OrderController.Insert(GA.UniCard.Application.Models.OrderDto)">
             <summary>
@@ -162,12 +163,13 @@
             This controller provides endpoints for CRUD operations on order items.
             </remarks>
         </member>
-        <member name="M:GA.UniCard.Api.Controllers.OrderItemController.#ctor(GA.UniCard.Application.Interfaces.IOrderItemServices,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.OrderItemController})">
+        <member name="M:GA.UniCard.Api.Controllers.OrderItemController.#ctor(GA.UniCard.Application.Interfaces.IOrderItemServices,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.OrderItemController},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             Constructor for OrderItemController.
             </summary>
-            <param name="orderItemService">Order item services dependency.</param>
-            <param name="logger">Logger dependency.</param>
+            <param name="orderItemService"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
         </member>
         <member name="M:GA.UniCard.Api.Controllers.OrderItemController.Insert(GA.UniCard.Application.Models.OrderItemDto)">
             <summary>
@@ -227,12 +229,13 @@
             This controller provides endpoints for CRUD operations on products.
             </remarks>
         </member>
-        <member name="M:GA.UniCard.Api.Controllers.ProductController.#ctor(GA.UniCard.Application.Interfaces.IproductServices,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.ProductController})">
+        <member name="M:GA.UniCard.Api.Controllers.ProductController.#ctor(GA.UniCard.Application.Interfaces.IproductServices,Microsoft.Extensions.Logging.ILogger{GA.UniCard.Api.Controllers.ProductController},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             Constructor for ProductController.
             </summary>
-            <param name="productService">Product services dependency.</param>
-            <param name="logger">Logger dependency.</param>
+            <param name="productService"></param>
+            <param name="logger"></param>
+            <param name="ceche"></param>
         </member>
         <member name="M:GA.UniCard.Api.Controllers.ProductController.Insert(GA.UniCard.Application.Models.ProductDto)">
             <summary>

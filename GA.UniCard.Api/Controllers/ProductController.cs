@@ -5,6 +5,7 @@ using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace GA.UniCard.Api.Controllers
@@ -24,16 +25,19 @@ namespace GA.UniCard.Api.Controllers
     {
         private readonly IproductServices productService;
         private readonly ILogger<ProductController> logger;
+        private readonly IMemoryCache ceche;
 
         /// <summary>
         /// Constructor for ProductController.
         /// </summary>
-        /// <param name="productService">Product services dependency.</param>
-        /// <param name="logger">Logger dependency.</param>
-        public ProductController(IproductServices productService, ILogger<ProductController> logger)
+        /// <param name="productService"></param>
+        /// <param name="logger"></param>
+        /// <param name="ceche"></param>
+        public ProductController(IproductServices productService, ILogger<ProductController> logger, IMemoryCache ceche)
         {
             this.productService = productService;
             this.logger = logger;
+            this.ceche = ceche;
         }
 
         /// <summary>
@@ -105,7 +109,7 @@ namespace GA.UniCard.Api.Controllers
         /// </remarks>
         [HttpGet]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get all products V2.0", Description = "Retrieves all products from the database. **Authorize User**")]
+        [SwaggerOperation(Summary = "Get all products V2.0", Description = "Retrieves all products from the database. **Authorize User** Caching: **enable**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(IEnumerable<ProductDto>))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
@@ -122,6 +126,7 @@ namespace GA.UniCard.Api.Controllers
             {
                 return NotFound(ErrorKeys.NotFound);
             }
+
         }
 
         /// <summary>
@@ -135,7 +140,7 @@ namespace GA.UniCard.Api.Controllers
         [HttpGet]
         [Route("{productId:long}")]
         [MapToApiVersion("2.0")]
-        [SwaggerOperation(Summary = "Get a product by ID V2.0", Description = "Retrieves a specific product from the database by its ID. ** Allow Anymous**")]
+        [SwaggerOperation(Summary = "Get a product by ID V2.0", Description = "Retrieves a specific product from the database by its ID. ** Allow Anymous** Caching: **Enable**")]
         [SwaggerResponse(200, SuccessKeys.Success, typeof(ProductDto))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]

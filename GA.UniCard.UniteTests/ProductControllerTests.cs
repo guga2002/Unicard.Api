@@ -2,6 +2,7 @@
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Moq;
 
@@ -15,6 +16,7 @@ namespace GA.UniCard.UniteTests
         private readonly Mock<IproductServices> mockProductService;
         private readonly Mock<ILogger<ProductController>> mockLogger;
         private readonly ProductController controller;
+        private readonly Mock<IMemoryCache> cache;
 
         /// <summary>
         /// Product Controller Test Constructor for inicialize private fields using moq
@@ -23,7 +25,8 @@ namespace GA.UniCard.UniteTests
         {
             mockProductService = new Mock<IproductServices>();
             mockLogger = new Mock<ILogger<ProductController>>();
-            controller = new ProductController(mockProductService.Object, mockLogger.Object);
+            cache = new Mock<IMemoryCache>();
+            controller = new ProductController(mockProductService.Object, mockLogger.Object,cache.Object);
         }
 
         /// <summary>

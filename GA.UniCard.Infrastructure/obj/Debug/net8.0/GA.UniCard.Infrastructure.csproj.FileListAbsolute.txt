@@ -1,8 +1,10 @@
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\bin\Debug\net8.0\GA.UniCard.Infrastructure.xml
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\bin\Debug\net8.0\GA.UniCard.Infrastructure.deps.json
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\bin\Debug\net8.0\GA.UniCard.Infrastructure.dll
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\bin\Debug\net8.0\GA.UniCard.Infrastructure.pdb
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\bin\Debug\net8.0\GA.UniCard.Domain.dll
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\bin\Debug\net8.0\GA.UniCard.Domain.pdb
+C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\bin\Debug\net8.0\GA.UniCard.Domain.xml
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\obj\Debug\net8.0\GA.UniCard.Infrastructure.csproj.AssemblyReference.cache
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\obj\Debug\net8.0\GA.UniCard.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\obj\Debug\net8.0\GA.UniCard.Infrastructure.AssemblyInfoInputs.cache
@@ -14,5 +16,3 @@ C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\obj\Debug\net8
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\obj\Debug\net8.0\refint\GA.UniCard.Infrastructure.dll
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\obj\Debug\net8.0\GA.UniCard.Infrastructure.pdb
 C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\obj\Debug\net8.0\ref\GA.UniCard.Infrastructure.dll
-C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\bin\Debug\net8.0\GA.UniCard.Infrastructure.xml
-C:\Users\aapkh\source\repos\Unicard.Api\GA.UniCard.Infrastructure\bin\Debug\net8.0\GA.UniCard.Domain.xml
