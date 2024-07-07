@@ -83,6 +83,13 @@
             <param name="mod">Sign-in model for signing in a user.</param>
             <returns>Returns the result of user sign-in.</returns>
         </member>
+        <member name="M:GA.UniCard.Api.Controllers.IdentityController.RefreshToken(AGRB.Optio.Infrastructure.Identity.HelperModels.TokenRequest)">
+            <summary>
+            Refresh the token. V2.0
+            </summary>
+            <param name="mod">Sign-in model for refresh token</param>
+            <returns>Returns the result of user sign-in.</returns>
+        </member>
         <member name="M:GA.UniCard.Api.Controllers.IdentityController.SignOutNow">
             <summary>
             Signs out the current user from the system. 

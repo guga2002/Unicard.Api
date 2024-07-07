@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using AGRB.Optio.Application.Interfaces.Identity;
+using AGRB.Optio.Infrastructure.Identity.HelperModels;
+using AutoMapper;
 using GA.UniCard.Application.CustomExceptions;
 using GA.UniCard.Application.Interfaces.Identity;
 using GA.UniCard.Application.Models.IdentityModel;
@@ -6,10 +8,6 @@ using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
 namespace GA.UniCard.Application.Services.Identity
 {
@@ -22,6 +20,7 @@ namespace GA.UniCard.Application.Services.Identity
         private readonly SignInManager<Person> signInManager;
         private readonly IMapper map;
         private readonly IConfiguration Config;
+        private readonly IJwtService jwtSer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PersonServices"/> class.
@@ -30,12 +29,13 @@ namespace GA.UniCard.Application.Services.Identity
         /// <param name="signInManager">The SignInManager instance.</param>
         /// <param name="map">The AutoMapper instance.</param>
         /// <param name="config">The IConfiguration instance.</param>
-        public PersonServices(UserManager<Person> userManager, SignInManager<Person> signInManager, IMapper map, IConfiguration config)
+        public PersonServices(UserManager<Person> userManager, SignInManager<Person> signInManager, IMapper map, IConfiguration config, IJwtService jwtSer)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.map = map;
             this.Config = config;
+            this.jwtSer = jwtSer;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace GA.UniCard.Application.Services.Identity
         /// <param name="password">The password for the new user.</param>
         /// <returns>An <see cref="IdentityResult"/> indicating the result of the user registration operation.</returns>
         /// <exception cref="ArgumentException">Thrown when the user already exists or registration fails.</exception>
-        public async Task<IdentityResult> RegisterUserAsync(PersonModel user, string password)
+        public async Task<AuthResult> RegisterUserAsync(PersonModel user, string password)
         {
             if (await userManager.FindByEmailAsync(user.Email) != null)
                 throw new ArgumentException("User already exists in database");
@@ -56,7 +56,8 @@ namespace GA.UniCard.Application.Services.Identity
             if (!result.Succeeded)
                 throw new ArgumentException("Registration failed");
 
-            return result;
+            var res = await jwtSer.GenerateToken(user.UserName);
+            return res;
         }
 
         /// <summary>
@@ -65,7 +66,7 @@ namespace GA.UniCard.Application.Services.Identity
         /// <param name="mod">The sign-in model containing user credentials.</param>
         /// <returns>A <see cref="SignInResponse"/> containing authentication and refresh token information.</returns>
         /// <exception cref="ArgumentException">Thrown when sign-in fails.</exception>
-        public async Task<SignInResponse> SignInAsync(SignInModel mod)
+        public async Task<AuthResult> SignInAsync(SignInModel mod)
         {
             if (string.IsNullOrEmpty(mod.Username) || string.IsNullOrEmpty(mod.Password))
                 throw new UniCardGeneralException("Username or password is empty.");
@@ -74,80 +75,37 @@ namespace GA.UniCard.Application.Services.Identity
 
             if (result.Succeeded)
             {
-                var accessToken = await GenerateJwtToken(mod.Username);
-                var refreshToken = GenerateRefreshToken();
-                var user = await userManager.FindByNameAsync(mod.Username);
+                var res = await jwtSer.GenerateToken(mod.Username);
 
-                if (user == null)
-                    return new SignInResponse() { AuthToken = accessToken, RefreshToken = refreshToken.Token, ValidateTill = refreshToken.ExpiryDate };
+                return res;
+            }
+            throw new ArgumentException("Sign-in was not successful. no such user exist");
+        }
 
-                SaveRefreshToken(user.Id, refreshToken);
-                return new SignInResponse() { AuthToken = accessToken, RefreshToken = refreshToken.Token, ValidateTill = refreshToken.ExpiryDate };
+        /// <summary>
+        /// Refresh auth token
+        /// </summary>
+        /// <param name="tok"></param>
+        /// <returns></returns>
+        /// <exception cref="UnauthorizedAccessException"></exception>
+        public async Task<AuthResult> RefreshToken(TokenRequest tok)
+        {
+            var ver = await jwtSer.VerifyToken(tok);
+            if (!ver.Success)
+            {
+                throw new UnauthorizedAccessException("Refresh token failed");
             }
 
-            throw new ArgumentException("Sign-in was not successful.");
+            var tokenUser = await userManager.FindByIdAsync(ver.UserId);
+            AuthResult authResult = await jwtSer.GenerateToken(tokenUser.UserName);
+            return authResult;
         }
 
         /// <summary>
-        /// Generates a JWT token for the specified username.
+        /// Sign out current user
         /// </summary>
-        /// <param name="username">The username for which to generate the token.</param>
-        /// <returns>The generated JWT token as a string.</returns>
-        private async Task<string> GenerateJwtToken(string username)
-        {
-            var jwtSettings = Config.GetSection("JwtSettings");
-            var user = await userManager.FindByNameAsync(username) ??
-                throw new UnauthorizedAccessException("Access Denied");
+        /// <returns></returns>
 
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.UserData, username),
-                new Claim(ClaimTypes.MobilePhone, user.PhoneNumber ?? "Not defined"),
-                new Claim(ClaimTypes.Email, user.Email ?? "Not defined")
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]));
-            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var token = new JwtSecurityToken(
-                issuer: jwtSettings["Issuer"],
-                audience: jwtSettings["Audience"],
-                claims: claims,
-                expires: DateTime.Now.AddHours(1),
-                signingCredentials: credentials);
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-
-        /// <summary>
-        /// Generates a refresh token with a unique token and expiry date.
-        /// </summary>
-        /// <returns>The generated <see cref="RefreshTokenModel"/>.</returns>
-        private RefreshTokenModel GenerateRefreshToken()
-        {
-            var refreshToken = new RefreshTokenModel
-            {
-                Token = Guid.NewGuid().ToString(),
-                ExpiryDate = DateTime.UtcNow.AddDays(30)
-            };
-
-            return refreshToken;
-        }
-
-        private Dictionary<string, RefreshTokenModel> _refreshTokens = new Dictionary<string, RefreshTokenModel>();
-
-        /// <summary>
-        /// Saves a refresh token for the specified user ID.
-        /// </summary>
-        /// <param name="userId">The ID of the user.</param>
-        /// <param name="refreshToken">The refresh token to save.</param>
-        private void SaveRefreshToken(string userId, RefreshTokenModel refreshToken)
-        {
-            _refreshTokens[userId] = refreshToken;
-        }
-        /// <summary>
-        /// method for sign out
-        /// </summary>
-        /// <returns> return boolean</returns>
         public async Task<bool> SignOut()
         {
           await signInManager.SignOutAsync();

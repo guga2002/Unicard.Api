@@ -21,6 +21,9 @@ using GA.UniCard.Domain.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using AGRB.Optio.Application.Interfaces.Identity;
+using GA.UniCard.Domain.Identity;
 #endregion
 try
 {
@@ -123,6 +126,7 @@ try
 
     builder.Services.AddScoped<IAdminPanelServices, AdminPanelServices>();
     builder.Services.AddScoped<IPersonServices, PersonServices>();
+    builder.Services.AddScoped<IJwtService, JwtService>();
     #endregion
 
     #region AutoMapper
@@ -147,20 +151,28 @@ try
 
     #region Authentification
     var jwtSettings = builder.Configuration.GetSection("JwtSettings");
-    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(options =>
-        {
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                ValidIssuer = jwtSettings["Issuer"],
-                ValidAudience = jwtSettings["Audience"],
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"])),
-            };
-        });
+    var validateJwt = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]??throw new ArgumentException("security key can not be null"))),
+    };
+
+
+    builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    }).AddJwtBearer(jwt =>
+    {
+
+        jwt.SaveToken = true;
+        jwt.TokenValidationParameters = validateJwt;
+    });
+    builder.Services.AddSingleton(validateJwt);
     #endregion
 
     #region Cors

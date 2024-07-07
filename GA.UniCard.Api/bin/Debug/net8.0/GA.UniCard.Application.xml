@@ -169,6 +169,13 @@
             </summary>
             <returns> Boolean, if succesfully  signed out</returns>
         </member>
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IPersonServices.RefreshToken(AGRB.Optio.Infrastructure.Identity.HelperModels.TokenRequest)">
+            <summary>
+            For refresh auth token
+            </summary>
+            <param name="tok"></param>
+            <returns></returns>
+        </member>
         <member name="T:GA.UniCard.Application.Interfaces.IOrderItemServices">
             <summary>
             Interface for a service that provides operations specific to order items,
@@ -521,7 +528,7 @@
             Service class implementing user-related operations.
             </summary>
         </member>
-        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.#ctor(Microsoft.AspNetCore.Identity.UserManager{GA.UniCard.Domain.Entities.Person},Microsoft.AspNetCore.Identity.SignInManager{GA.UniCard.Domain.Entities.Person},AutoMapper.IMapper,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.#ctor(Microsoft.AspNetCore.Identity.UserManager{GA.UniCard.Domain.Entities.Person},Microsoft.AspNetCore.Identity.SignInManager{GA.UniCard.Domain.Entities.Person},AutoMapper.IMapper,Microsoft.Extensions.Configuration.IConfiguration,AGRB.Optio.Application.Interfaces.Identity.IJwtService)">
             <summary>
             Initializes a new instance of the <see cref="T:GA.UniCard.Application.Services.Identity.PersonServices"/> class.
             </summary>
@@ -547,31 +554,19 @@
             <returns>A <see cref="T:GA.UniCard.Application.Models.ResponseModels.SignInResponse"/> containing authentication and refresh token information.</returns>
             <exception cref="T:System.ArgumentException">Thrown when sign-in fails.</exception>
         </member>
-        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.GenerateJwtToken(System.String)">
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.RefreshToken(AGRB.Optio.Infrastructure.Identity.HelperModels.TokenRequest)">
             <summary>
-            Generates a JWT token for the specified username.
+            Refresh auth token
             </summary>
-            <param name="username">The username for which to generate the token.</param>
-            <returns>The generated JWT token as a string.</returns>
-        </member>
-        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.GenerateRefreshToken">
-            <summary>
-            Generates a refresh token with a unique token and expiry date.
-            </summary>
-            <returns>The generated <see cref="T:GA.UniCard.Application.Models.ResponseModels.RefreshTokenModel"/>.</returns>
-        </member>
-        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.SaveRefreshToken(System.String,GA.UniCard.Application.Models.ResponseModels.RefreshTokenModel)">
-            <summary>
-            Saves a refresh token for the specified user ID.
-            </summary>
-            <param name="userId">The ID of the user.</param>
-            <param name="refreshToken">The refresh token to save.</param>
+            <param name="tok"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException"></exception>
         </member>
         <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.SignOut">
             <summary>
-            method for sign out
+            Sign out current user
             </summary>
-            <returns> return boolean</returns>
+            <returns></returns>
         </member>
         <member name="T:GA.UniCard.Application.Services.OrderItemServices">
             <summary>

@@ -13,5 +13,10 @@ namespace GA.UniCard.Domain.Entities
         /// One User Assign to one Person
         /// </summary>
         public virtual User Users { get; set; }
+
+        /// <summary>
+        /// Refresh tokens for users
+        /// </summary>
+        public virtual IEnumerable<RefreshToken> RefreshTokens { get; set; }
     }
 }

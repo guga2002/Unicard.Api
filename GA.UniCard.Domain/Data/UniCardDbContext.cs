@@ -39,6 +39,11 @@ namespace GA.UniCard.Domain.Data
         public virtual DbSet<Product> Products { get; set; }
 
         /// <summary>
+        /// Refresh token sets
+        /// </summary>
+        public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
+
+        /// <summary>
         /// Configures the model for the UniCardDbContext using the provided modelBuilder.
         /// </summary>
         /// <param name="modelBuilder">The ModelBuilder instance to configure the context.</param>

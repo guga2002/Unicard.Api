@@ -90,6 +90,11 @@
             Gets or sets the DbSet of Products in the database.
             </summary>
         </member>
+        <member name="P:GA.UniCard.Domain.Data.UniCardDbContext.RefreshTokens">
+            <summary>
+            Refresh token sets
+            </summary>
+        </member>
         <member name="M:GA.UniCard.Domain.Data.UniCardDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <summary>
             Configures the model for the UniCardDbContext using the provided modelBuilder.
@@ -186,6 +191,11 @@
             One User Assign to one Person
             </summary>
         </member>
+        <member name="P:GA.UniCard.Domain.Entities.Person.RefreshTokens">
+            <summary>
+            Refresh tokens for users
+            </summary>
+        </member>
         <member name="T:GA.UniCard.Domain.Entities.Product">
             <summary>
             Represents a product entity.
@@ -214,6 +224,46 @@
         <member name="M:GA.UniCard.Domain.Entities.Product.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:GA.UniCard.Domain.Entities.Product"/> class.
+            </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Entities.RefreshToken">
+            <summary>
+            Refresh token for identity
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.RefreshToken.UserId">
+            <summary>
+            Conect to person
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.RefreshToken.Token">
+            <summary>
+            token
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.RefreshToken.JwtId">
+            <summary>
+            Jwt ID
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.RefreshToken.IsUsed">
+            <summary>
+            Is used or not
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.RefreshToken.CreatedAt">
+            <summary>
+            Create data
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.RefreshToken.ExpiredAt">
+            <summary>
+            Expirity
+            </summary>
+        </member>
+        <member name="P:GA.UniCard.Domain.Entities.RefreshToken.Person">
+            <summary>
+            User navigation property
             </summary>
         </member>
         <member name="T:GA.UniCard.Domain.Entities.User">
@@ -255,6 +305,36 @@
             <summary>
             Initializes a new instance of the <see cref="T:GA.UniCard.Domain.Entities.User"/> class.
             </summary>
+        </member>
+        <member name="T:GA.UniCard.Domain.Identity.JwtService">
+            <summary>
+            Jwt  Service for Identity
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Identity.JwtService.#ctor(GA.UniCard.Domain.Data.UniCardDbContext,Microsoft.IdentityModel.Tokens.TokenValidationParameters,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Identity.UserManager{GA.UniCard.Domain.Entities.Person})">
+            <summary>
+            Constructor  for dependency injection
+            </summary>
+            <param name="context"></param>
+            <param name="tokenValidationParameters"></param>
+            <param name="conf"></param>
+            <param name="userManage"></param>
+        </member>
+        <member name="M:GA.UniCard.Domain.Identity.JwtService.GenerateToken(System.String)">
+            <summary>
+            Generate Jwt Token
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:GA.UniCard.Domain.Identity.JwtService.VerifyToken(AGRB.Optio.Infrastructure.Identity.HelperModels.TokenRequest)">
+            <summary>
+             Using for validate token 
+            </summary>
+            <param name="tokenRequest"></param>
+            <returns></returns>
         </member>
         <member name="T:GA.UniCard.Domain.Interfaces.ICrudRepository`1">
             <summary>
@@ -401,6 +481,37 @@
         </member>
         <member name="M:GA.UniCard.Domain.Migrations.NewIdentityMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
+        </member>
+        <member name="T:GA.UniCard.Domain.Migrations.AddRefreshToken">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.AddRefreshToken.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.AddRefreshToken.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GA.UniCard.Domain.Migrations.AddRefreshToken.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:AGRB.Optio.Application.Interfaces.Identity.IJwtService">
+            <summary>
+             Interface for JWT Services
+            </summary>
+        </member>
+        <member name="M:AGRB.Optio.Application.Interfaces.Identity.IJwtService.GenerateToken(System.String)">
+            <summary>
+            Generate Jwt Token
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AGRB.Optio.Application.Interfaces.Identity.IJwtService.VerifyToken(AGRB.Optio.Infrastructure.Identity.HelperModels.TokenRequest)">
+            <summary>
+            Verify Jwt Token
+            </summary>
+            <param name="tokenRequest"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

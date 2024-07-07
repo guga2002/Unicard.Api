@@ -1,8 +1,10 @@
-﻿using GA.UniCard.Application.CustomExceptions;
+﻿using AGRB.Optio.Infrastructure.Identity.HelperModels;
+using GA.UniCard.Application.CustomExceptions;
 using GA.UniCard.Application.Interfaces.Identity;
 using GA.UniCard.Application.Models.IdentityModel;
 using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +19,7 @@ namespace GA.UniCard.Api.Controllers
     [ApiVersion("2.0")]
     [ApiVersion("1.0", Deprecated = true)]
     [Route("api/v{v:apiVersion}/[controller]")]
-    [Authorize]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class IdentityController : ControllerBase
     {
         private readonly IPersonServices ser;
@@ -47,7 +49,7 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(string))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
         [AllowAnonymous]
-        public async Task<ActionResult<IdentityResult>> RegisterUser([FromBody, SwaggerParameter("Registration Model For register user", Required = true)] RegistrationModel identity)
+        public async Task<ActionResult<AuthResult>> RegisterUser([FromBody, SwaggerParameter("Registration Model For register user", Required = true)] RegistrationModel identity)
         {
             if (!ModelState.IsValid)
             {
@@ -74,7 +76,7 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(string))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
         [AllowAnonymous]
-        public async Task<ActionResult<SignInResponse>> SignIn([FromBody, SwaggerParameter("Sign In model for User", Required = true)] SignInModel mod)
+        public async Task<ActionResult<AuthResult>> SignIn([FromBody, SwaggerParameter("Sign In model for User", Required = true)] SignInModel mod)
         {
             if (!ModelState.IsValid)
             {
@@ -87,6 +89,33 @@ namespace GA.UniCard.Api.Controllers
             }
             return Ok(res);
         }
+
+        /// <summary>
+        /// Refresh the token. V2.0
+        /// </summary>
+        /// <param name="mod">Sign-in model for refresh token</param>
+        /// <returns>Returns the result of user sign-in.</returns>
+        [HttpPost]
+        [Route("[action]")]
+        [MapToApiVersion("2.0")]
+        [SwaggerOperation(Summary = "Refresh Token V2.0", Description = "This endpoint is  for update  seasion auth token")]
+        [SwaggerResponse(200, Description = SuccessKeys.InsertSuccess, Type = typeof(SignInResponse))]
+        [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(string))]
+        [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
+        public async Task<ActionResult<AuthResult>> RefreshToken([FromBody, SwaggerParameter("Token refresh parameter", Required = true)] TokenRequest mod)
+        {
+            if (!ModelState.IsValid)
+            {
+                throw new ModelStateException(ErrorKeys.ModelState);
+            }
+            var res = await ser.RefreshToken(mod);
+            if (res is null)
+            {
+                return BadRequest(ErrorKeys.General);
+            }
+            return Ok(res);
+        }
+
 
         /// <summary>
         /// Signs out the current user from the system. 

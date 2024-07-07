@@ -3,6 +3,7 @@ using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -19,7 +20,7 @@ namespace GA.UniCard.Api.Controllers
     [ApiVersion("2.0")]
     [ApiVersion("1.0", Deprecated = true)]
     [Route("api/v{v:apiVersion}/[controller]")]
-    [Authorize]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class UserController : ControllerBase
     {
         private readonly IUserService userService;
@@ -109,7 +110,6 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(200, SuccessKeys.Success, typeof(IEnumerable<UserDto>))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
-        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetAll()
         {
             var res = await userService.GetAllAsync();
@@ -139,7 +139,6 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(200, SuccessKeys.Success, typeof(UserDto))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
-        [AllowAnonymous]
         public async Task<ActionResult<UserDto>> GetById([FromRoute, SwaggerParameter(InfoKeys.UserId, Required = true)] long userId)
         {
             var res = await userService.GetByIdAsync(userId);

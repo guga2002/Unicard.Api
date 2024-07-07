@@ -1,10 +1,12 @@
 ﻿using GA.UniCard.Application.Interfaces.Identity;
 using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Data;
 
 namespace GA.UniCard.Api.Controllers
 {
@@ -15,7 +17,7 @@ namespace GA.UniCard.Api.Controllers
     [ApiVersion("2.0")]
     [ApiVersion("1.0", Deprecated = true)]
     [Route("api/v{v:apiVersion}/[controller]")]
-    [Authorize(Roles ="ADMIN")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,Roles = "ADMIN")]
     public class AdminPanellController : ControllerBase
     {
         private readonly IAdminPanelServices adminPanelServices;

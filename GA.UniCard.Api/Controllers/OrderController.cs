@@ -3,6 +3,7 @@ using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -20,7 +21,7 @@ namespace GA.UniCard.Api.Controllers
     [ApiVersion("2.0")]
     [ApiVersion("1.0", Deprecated = true)]
     [Route("api/v{v:apiVersion}/[controller]")]
-    [Authorize(Roles ="CUSTOMER")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService orderService;

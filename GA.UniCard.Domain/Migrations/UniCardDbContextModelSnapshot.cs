@@ -52,43 +52,43 @@ namespace GA.UniCard.Domain.Migrations
                         new
                         {
                             Id = 1L,
-                            OrderDate = new DateTime(2024, 5, 17, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2645),
-                            TotalAmount = 932m,
+                            OrderDate = new DateTime(2024, 6, 8, 21, 43, 22, 450, DateTimeKind.Local).AddTicks(7861),
+                            TotalAmount = 353m,
                             UserId = 1L
                         },
                         new
                         {
                             Id = 2L,
-                            OrderDate = new DateTime(2024, 6, 19, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2664),
-                            TotalAmount = 168m,
+                            OrderDate = new DateTime(2024, 5, 24, 21, 43, 22, 450, DateTimeKind.Local).AddTicks(7890),
+                            TotalAmount = 411m,
                             UserId = 2L
                         },
                         new
                         {
                             Id = 3L,
-                            OrderDate = new DateTime(2024, 4, 14, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2666),
-                            TotalAmount = 778m,
+                            OrderDate = new DateTime(2024, 3, 31, 21, 43, 22, 450, DateTimeKind.Local).AddTicks(7894),
+                            TotalAmount = 703m,
                             UserId = 3L
                         },
                         new
                         {
                             Id = 4L,
-                            OrderDate = new DateTime(2024, 5, 21, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2668),
-                            TotalAmount = 991m,
+                            OrderDate = new DateTime(2024, 6, 23, 21, 43, 22, 450, DateTimeKind.Local).AddTicks(7897),
+                            TotalAmount = 670m,
                             UserId = 4L
                         },
                         new
                         {
                             Id = 5L,
-                            OrderDate = new DateTime(2024, 6, 7, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2670),
-                            TotalAmount = 759m,
+                            OrderDate = new DateTime(2024, 6, 21, 21, 43, 22, 450, DateTimeKind.Local).AddTicks(7900),
+                            TotalAmount = 118m,
                             UserId = 5L
                         },
                         new
                         {
                             Id = 6L,
-                            OrderDate = new DateTime(2024, 4, 20, 13, 19, 29, 433, DateTimeKind.Local).AddTicks(2672),
-                            TotalAmount = 683m,
+                            OrderDate = new DateTime(2024, 4, 22, 21, 43, 22, 450, DateTimeKind.Local).AddTicks(7904),
+                            TotalAmount = 400m,
                             UserId = 6L
                         });
                 });
@@ -130,57 +130,57 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = 1L,
                             OrderId = 1L,
-                            Price = 91m,
+                            Price = 86m,
                             ProductId = 1L,
-                            Quantity = 3
+                            Quantity = 4
                         },
                         new
                         {
                             Id = 2L,
                             OrderId = 2L,
-                            Price = 32m,
+                            Price = 62m,
                             ProductId = 2L,
-                            Quantity = 3
+                            Quantity = 4
                         },
                         new
                         {
                             Id = 3L,
                             OrderId = 3L,
-                            Price = 45m,
+                            Price = 67m,
                             ProductId = 3L,
-                            Quantity = 8
+                            Quantity = 9
                         },
                         new
                         {
                             Id = 4L,
                             OrderId = 4L,
-                            Price = 77m,
+                            Price = 95m,
                             ProductId = 4L,
-                            Quantity = 5
+                            Quantity = 7
                         },
                         new
                         {
                             Id = 5L,
                             OrderId = 5L,
-                            Price = 82m,
+                            Price = 85m,
                             ProductId = 5L,
-                            Quantity = 5
+                            Quantity = 9
                         },
                         new
                         {
                             Id = 6L,
                             OrderId = 3L,
-                            Price = 75m,
+                            Price = 54m,
                             ProductId = 2L,
-                            Quantity = 7
+                            Quantity = 4
                         },
                         new
                         {
                             Id = 7L,
                             OrderId = 6L,
-                            Price = 98m,
+                            Price = 49m,
                             ProductId = 4L,
-                            Quantity = 1
+                            Quantity = 2
                         });
                 });
 
@@ -253,12 +253,12 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e05abdc2-993f-4107-9ddc-51a426d39680",
+                            ConcurrencyStamp = "6d920564-95d4-444e-87e1-5fcdea4db1ad",
                             Email = "GigaGiga@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "df7d98fb-42c1-4193-a07b-d7b9d5d2e9a2",
+                            SecurityStamp = "10a00969-66ce-4f1e-b30f-68cc10eb0cfb",
                             TwoFactorEnabled = false,
                             UserName = "Guga$445"
                         },
@@ -266,12 +266,12 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "33a16f9f-c3d2-4e4b-85fb-2ae3039f92b8",
+                            ConcurrencyStamp = "6f892689-011d-405c-9452-4c39e263bf3e",
                             Email = "GugaG3434uga@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3c61df7a-8278-47f8-83a1-0cbd7a23aa56",
+                            SecurityStamp = "4dc8bb58-e2e3-4d55-a5e7-f97244d13c16",
                             TwoFactorEnabled = false,
                             UserName = "Guga13guga#43"
                         },
@@ -279,12 +279,12 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "376edc51-1fbf-44d5-9ef7-b080394b61cb",
+                            ConcurrencyStamp = "f06267e3-ce55-41d4-8bcc-89b25e847805",
                             Email = "3443@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0fd5e52d-90e6-468d-8109-cd63f744f9a8",
+                            SecurityStamp = "e31454e7-4ac9-4adc-a64e-a1ad529b0e54",
                             TwoFactorEnabled = false,
                             UserName = "#3445"
                         },
@@ -292,12 +292,12 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = "4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "686c471e-6326-4397-a1bb-54f92e6f2022",
+                            ConcurrencyStamp = "e63c41e9-4ef1-4d1e-9e1c-6e6a275c9b78",
                             Email = "Guga4334Guga@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6d294996-524d-4164-9b6e-b433d35f33cb",
+                            SecurityStamp = "57bca823-95c0-49cc-8732-90a67d8574fe",
                             TwoFactorEnabled = false,
                             UserName = "Gia3454"
                         },
@@ -305,12 +305,12 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = "5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1fc9c69c-ea34-4154-a691-68161407b457",
+                            ConcurrencyStamp = "32af51e7-6054-4009-a55e-c2e023ce75a5",
                             Email = "344334@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ebde7d40-16a9-4678-8ad4-c0f7d33ea69c",
+                            SecurityStamp = "9c0f2a78-4433-49c2-bc2d-f47dadef5d9d",
                             TwoFactorEnabled = false,
                             UserName = "Gaga45454"
                         },
@@ -318,12 +318,12 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = "6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bc2eb702-f9cf-4f8c-b08a-b7e2dbc4f26c",
+                            ConcurrencyStamp = "35a4c394-51cc-4bbc-9f52-154d69d57d2e",
                             Email = "GugaGu343ga@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "212d31c0-7c17-40c6-9301-84bebfeaec5d",
+                            SecurityStamp = "5efb3628-e56e-4383-88b1-49b49363b7f7",
                             TwoFactorEnabled = false,
                             UserName = "Tekla$#43"
                         },
@@ -331,12 +331,12 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = "7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "03c47668-7a63-4faf-b3aa-2fee0d321b18",
+                            ConcurrencyStamp = "504cb420-8b41-41b9-9216-d043bb0d52ce",
                             Email = "Gug3434aGuga@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f4595ac3-dab9-40ec-aa64-c66699c355d9",
+                            SecurityStamp = "ee74caab-faea-4a84-a34f-1aa776ae2b5f",
                             TwoFactorEnabled = false,
                             UserName = "Tek3445"
                         });
@@ -376,58 +376,94 @@ namespace GA.UniCard.Domain.Migrations
                         {
                             Id = 1L,
                             Description = "The milk is good produce in mountains",
-                            Price = 43m,
+                            Price = 87m,
                             ProductName = "Milk"
                         },
                         new
                         {
                             Id = 2L,
                             Description = "The Apple is good produce in mountains",
-                            Price = 83m,
+                            Price = 94m,
                             ProductName = "Apple"
                         },
                         new
                         {
                             Id = 3L,
                             Description = "The Banana is good produce in mountains",
-                            Price = 95m,
+                            Price = 81m,
                             ProductName = "Banana"
                         },
                         new
                         {
                             Id = 4L,
                             Description = "The Bread is good produce in mountains",
-                            Price = 37m,
+                            Price = 53m,
                             ProductName = "Bread"
                         },
                         new
                         {
                             Id = 5L,
                             Description = "The Gold is good produce in mountains",
-                            Price = 78m,
+                            Price = 87m,
                             ProductName = "Gold"
                         },
                         new
                         {
                             Id = 6L,
                             Description = "The Fish is good produce in mountains",
-                            Price = 57m,
+                            Price = 97m,
                             ProductName = "Fish"
                         },
                         new
                         {
                             Id = 7L,
                             Description = "The Beans is good produce in mountains",
-                            Price = 99m,
+                            Price = 74m,
                             ProductName = "Beans"
                         },
                         new
                         {
                             Id = 8L,
                             Description = "The Sugar is good produce in mountains",
-                            Price = 73m,
+                            Price = 83m,
                             ProductName = "Sugar"
                         });
+                });
+
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.RefreshToken", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ExpiredAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRevoked")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsUsed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("JwtId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RefreshTokens");
                 });
 
             modelBuilder.Entity("GA.UniCard.Domain.Entities.User", b =>
@@ -684,6 +720,15 @@ namespace GA.UniCard.Domain.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("GA.UniCard.Domain.Entities.RefreshToken", b =>
+                {
+                    b.HasOne("GA.UniCard.Domain.Entities.Person", "Person")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Person");
+                });
+
             modelBuilder.Entity("GA.UniCard.Domain.Entities.User", b =>
                 {
                     b.HasOne("GA.UniCard.Domain.Entities.Person", "Person")
@@ -753,6 +798,8 @@ namespace GA.UniCard.Domain.Migrations
 
             modelBuilder.Entity("GA.UniCard.Domain.Entities.Person", b =>
                 {
+                    b.Navigation("RefreshTokens");
+
                     b.Navigation("Users")
                         .IsRequired();
                 });

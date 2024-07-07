@@ -3,6 +3,7 @@ using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Application.StaticFiles;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -20,7 +21,7 @@ namespace GA.UniCard.Api.Controllers
     [ApiVersion("2.0")]
     [ApiVersion("1.0", Deprecated = true)]
     [Route("api/v{v:apiVersion}/[controller]")]
-    [Authorize]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ProductController : ControllerBase
     {
         private readonly IproductServices productService;
@@ -113,7 +114,6 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(200, SuccessKeys.Success, typeof(IEnumerable<ProductDto>))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
-        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll()
         {
             var result = await productService.GetAllAsync();
@@ -144,7 +144,6 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(200, SuccessKeys.Success, typeof(ProductDto))]
         [SwaggerResponse(404, ErrorKeys.NotFound, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
-        [AllowAnonymous]
         public async Task<ActionResult<ProductDto>> GetById([FromRoute, SwaggerParameter(InfoKeys.ProductId, Required = true)] long productId)
         {
             var result = await productService.GetByIdAsync(productId);
