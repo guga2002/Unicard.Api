@@ -1,9 +1,9 @@
-﻿using AGRB.Optio.Infrastructure.Identity.HelperModels;
-using GA.UniCard.Application.CustomExceptions;
+﻿using GA.UniCard.Application.CustomExceptions;
 using GA.UniCard.Application.Interfaces.Identity;
 using GA.UniCard.Application.Models.IdentityModel;
 using GA.UniCard.Application.Models.ResponseModels;
-using GA.UniCard.Application.StaticFiles;
+using GA.UniCard.Application.StatickFiles;
+using GA.UniCard.Domain.Identity.HelperModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

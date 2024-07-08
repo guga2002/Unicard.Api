@@ -1,6 +1,6 @@
-﻿using AGRB.Optio.Infrastructure.Identity.HelperModels;
-using GA.UniCard.Application.Models.IdentityModel;
+﻿using GA.UniCard.Application.Models.IdentityModel;
 using GA.UniCard.Application.Models.ResponseModels;
+using GA.UniCard.Domain.Identity.HelperModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace GA.UniCard.Application.Interfaces.Identity

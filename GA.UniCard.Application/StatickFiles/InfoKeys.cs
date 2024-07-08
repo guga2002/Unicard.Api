@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GA.UniCard.Application.StaticFiles
+namespace GA.UniCard.Application.StatickFiles
 {
     /// <summary>
     /// Informational message constants used throughout the application.

@@ -2,7 +2,7 @@
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using GA.UniCard.Application.Models.ResponseModels;
-using GA.UniCard.Application.StaticFiles;
+using GA.UniCard.Application.StatickFiles;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -35,7 +35,7 @@ namespace GA.UniCard.Api.Controllers
         /// <param name="orderItemService"></param>
         /// <param name="logger"></param>
         /// <param name="cache"></param>
-        public OrderItemController(IOrderItemServices orderItemService, ILogger<OrderItemController> logger,IMemoryCache cache)
+        public OrderItemController(IOrderItemServices orderItemService, ILogger<OrderItemController> logger, IMemoryCache cache)
         {
             this.orderItemService = orderItemService;
             this.logger = logger;
@@ -58,7 +58,7 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(200, SuccessKeys.InsertSuccess, typeof(bool))]
         [SwaggerResponse(404, ErrorKeys.BadRequest, typeof(string))]
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
-        [Authorize(Roles ="CUSTOMER")]
+        [Authorize(Roles = "CUSTOMER")]
         public async Task<ActionResult<bool>> Insert([FromBody, SwaggerParameter(InfoKeys.orderInfo, Required = true)] OrderItemDto orderItem)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);
@@ -124,7 +124,7 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(500, ErrorKeys.InternalServerError, typeof(ErrorResponce))]
         public async Task<ActionResult<IEnumerable<OrderItemDto>>> GetAll()
         {
-                var result = await orderItemService.GetAllAsync();
+            var result = await orderItemService.GetAllAsync();
             if (result.Any())
             {
                 logger.LogInformation($"{SuccessKeys.Success}");

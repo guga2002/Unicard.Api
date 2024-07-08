@@ -83,7 +83,7 @@
             <param name="mod">Sign-in model for signing in a user.</param>
             <returns>Returns the result of user sign-in.</returns>
         </member>
-        <member name="M:GA.UniCard.Api.Controllers.IdentityController.RefreshToken(AGRB.Optio.Infrastructure.Identity.HelperModels.TokenRequest)">
+        <member name="M:GA.UniCard.Api.Controllers.IdentityController.RefreshToken(GA.UniCard.Domain.Identity.HelperModels.TokenRequest)">
             <summary>
             Refresh the token. V2.0
             </summary>
@@ -98,7 +98,7 @@
         </member>
         <member name="T:GA.UniCard.Api.Controllers.OrderController">
             <summary>
-            API controller for managing orders.
+            API controller for managing orders. 
             </summary>
             <remarks>
             This controller provides endpoints for CRUD operations on orders.
@@ -114,7 +114,7 @@
         </member>
         <member name="M:GA.UniCard.Api.Controllers.OrderController.Insert(GA.UniCard.Application.Models.OrderDto)">
             <summary>
-            Insert a new order.
+            Insert a new order.V2.0
             </summary>
             <param name="order">The order to insert.</param>
             <returns>True if insertion is successful, otherwise false.</returns>
@@ -124,7 +124,7 @@
         </member>
         <member name="M:GA.UniCard.Api.Controllers.OrderController.Delete(System.Int64)">
             <summary>
-            Delete an order by its ID.
+            Delete an order by its ID.V2.0
             </summary>
             <param name="orderId">The ID of the order to delete.</param>
             <returns>True if deletion is successful, otherwise false.</returns>
@@ -134,7 +134,7 @@
         </member>
         <member name="M:GA.UniCard.Api.Controllers.OrderController.GetAll">
             <summary>
-            Get all orders.
+            Get all orders.V2.0
             </summary>
             <returns>A list of all orders.</returns>
             <remarks>
@@ -143,7 +143,7 @@
         </member>
         <member name="M:GA.UniCard.Api.Controllers.OrderController.GetById(System.Int64)">
             <summary>
-            Get an order by its ID.
+            Get an order by its ID.V2.0
             </summary>
             <param name="orderId">The ID of the order to retrieve.</param>
             <returns>The order with the specified ID.</returns>
@@ -153,7 +153,7 @@
         </member>
         <member name="M:GA.UniCard.Api.Controllers.OrderController.Update(System.Int64,GA.UniCard.Application.Models.OrderDto)">
             <summary>
-            Update an order.
+            Update an order.V2.0
             </summary>
             <param name="orderId">The ID of the order to update.</param>
             <param name="order">The updated order data.</param>

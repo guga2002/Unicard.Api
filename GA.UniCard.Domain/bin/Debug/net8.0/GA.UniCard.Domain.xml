@@ -306,6 +306,25 @@
             Initializes a new instance of the <see cref="T:GA.UniCard.Domain.Entities.User"/> class.
             </summary>
         </member>
+        <member name="T:GA.UniCard.Domain.Identity.IJwtService">
+            <summary>
+             Interface for JWT Services
+            </summary>
+        </member>
+        <member name="M:GA.UniCard.Domain.Identity.IJwtService.GenerateToken(System.String)">
+            <summary>
+            Generate Jwt Token
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GA.UniCard.Domain.Identity.IJwtService.VerifyToken(GA.UniCard.Domain.Identity.HelperModels.TokenRequest)">
+            <summary>
+            Verify Jwt Token
+            </summary>
+            <param name="tokenRequest"></param>
+            <returns></returns>
+        </member>
         <member name="T:GA.UniCard.Domain.Identity.JwtService">
             <summary>
             Jwt  Service for Identity
@@ -329,7 +348,7 @@
             <exception cref="T:System.UnauthorizedAccessException"></exception>
             <exception cref="T:System.ArgumentException"></exception>
         </member>
-        <member name="M:GA.UniCard.Domain.Identity.JwtService.VerifyToken(AGRB.Optio.Infrastructure.Identity.HelperModels.TokenRequest)">
+        <member name="M:GA.UniCard.Domain.Identity.JwtService.VerifyToken(GA.UniCard.Domain.Identity.HelperModels.TokenRequest)">
             <summary>
              Using for validate token 
             </summary>
@@ -493,25 +512,6 @@
         </member>
         <member name="M:GA.UniCard.Domain.Migrations.AddRefreshToken.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
-        </member>
-        <member name="T:AGRB.Optio.Application.Interfaces.Identity.IJwtService">
-            <summary>
-             Interface for JWT Services
-            </summary>
-        </member>
-        <member name="M:AGRB.Optio.Application.Interfaces.Identity.IJwtService.GenerateToken(System.String)">
-            <summary>
-            Generate Jwt Token
-            </summary>
-            <param name="user"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AGRB.Optio.Application.Interfaces.Identity.IJwtService.VerifyToken(AGRB.Optio.Infrastructure.Identity.HelperModels.TokenRequest)">
-            <summary>
-            Verify Jwt Token
-            </summary>
-            <param name="tokenRequest"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>

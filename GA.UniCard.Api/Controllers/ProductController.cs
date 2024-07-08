@@ -2,7 +2,7 @@
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using GA.UniCard.Application.Models.ResponseModels;
-using GA.UniCard.Application.StaticFiles;
+using GA.UniCard.Application.StatickFiles;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

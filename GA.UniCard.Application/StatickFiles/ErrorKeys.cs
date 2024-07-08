@@ -1,4 +1,4 @@
-﻿namespace GA.UniCard.Application.StaticFiles
+﻿namespace GA.UniCard.Application.StatickFiles
 {
     /// <summary>
     /// Error message constants used throughout the application.

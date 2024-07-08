@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AGRB.Optio.Infrastructure.Identity.HelperModels
+namespace GA.UniCard.Domain.Identity.HelperModels
 {
     public class TokenRequest
     {

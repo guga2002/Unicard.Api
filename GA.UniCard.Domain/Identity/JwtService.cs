@@ -5,10 +5,9 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using AGRB.Optio.Infrastructure.Identity.HelperModels;
-using AGRB.Optio.Application.Interfaces.Identity;
 using GA.UniCard.Domain.Data;
 using GA.UniCard.Domain.Entities;
+using GA.UniCard.Domain.Identity.HelperModels;
 
 namespace GA.UniCard.Domain.Identity
 {

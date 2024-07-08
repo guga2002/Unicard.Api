@@ -2,7 +2,7 @@
 using GA.UniCard.Application.Interfaces;
 using GA.UniCard.Application.Models;
 using GA.UniCard.Application.Models.ResponseModels;
-using GA.UniCard.Application.StaticFiles;
+using GA.UniCard.Application.StatickFiles;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +12,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace GA.UniCard.Api.Controllers
 {
     /// <summary>
-    /// API controller for managing orders.
+    /// API controller for managing orders. 
     /// </summary>
     /// <remarks>
     /// This controller provides endpoints for CRUD operations on orders.
@@ -34,16 +34,16 @@ namespace GA.UniCard.Api.Controllers
         /// <param name="orderService"> order services</param>
         /// <param name="logger"> Logger for log informations</param>
         /// <param name="cache"> Memory cash for  cash data</param>
-        public OrderController(IOrderService orderService, ILogger<OrderController> logger,IMemoryCache cache)
+        public OrderController(IOrderService orderService, ILogger<OrderController> logger, IMemoryCache cache)
         {
             this.orderService = orderService;
             this.logger = logger;
             this.cache = cache;
         }
-         
+
 
         /// <summary>
-        /// Insert a new order.
+        /// Insert a new order.V2.0
         /// </summary>
         /// <param name="order">The order to insert.</param>
         /// <returns>True if insertion is successful, otherwise false.</returns>
@@ -77,7 +77,7 @@ namespace GA.UniCard.Api.Controllers
 
 
         /// <summary>
-        /// Delete an order by its ID.
+        /// Delete an order by its ID.V2.0
         /// </summary>
         /// <param name="orderId">The ID of the order to delete.</param>
         /// <returns>True if deletion is successful, otherwise false.</returns>
@@ -91,7 +91,7 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(bool))]
         [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(bool))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
-        [Authorize(Roles ="CUSTOMER,OPERATOR,ADMIN")]
+        [Authorize(Roles = "CUSTOMER,OPERATOR,ADMIN")]
         public async Task<ActionResult<bool>> Delete([FromRoute, SwaggerParameter(InfoKeys.OrderId, Required = true)] long orderId)
         {
             var result = await orderService.DeleteAsync(orderId);
@@ -110,7 +110,7 @@ namespace GA.UniCard.Api.Controllers
 
 
         /// <summary>
-        /// Get all orders.
+        /// Get all orders.V2.0
         /// </summary>
         /// <returns>A list of all orders.</returns>
         /// <remarks>
@@ -141,7 +141,7 @@ namespace GA.UniCard.Api.Controllers
 
 
         /// <summary>
-        /// Get an order by its ID.
+        /// Get an order by its ID.V2.0
         /// </summary>
         /// <param name="orderId">The ID of the order to retrieve.</param>
         /// <returns>The order with the specified ID.</returns>
@@ -173,7 +173,7 @@ namespace GA.UniCard.Api.Controllers
 
 
         /// <summary>
-        /// Update an order.
+        /// Update an order.V2.0
         /// </summary>
         /// <param name="orderId">The ID of the order to update.</param>
         /// <param name="order">The updated order data.</param>
@@ -188,7 +188,7 @@ namespace GA.UniCard.Api.Controllers
         [SwaggerResponse(200, Description = SuccessKeys.Success, Type = typeof(bool))]
         [SwaggerResponse(400, Description = ErrorKeys.BadRequest, Type = typeof(ErrorResponce))]
         [SwaggerResponse(500, Description = ErrorKeys.InternalServerError, Type = typeof(ErrorResponce))]
-        [Authorize(Roles ="CUSTOMER,OPERATOR,ADMIN")]
+        [Authorize(Roles = "CUSTOMER,OPERATOR,ADMIN")]
         public async Task<ActionResult<bool>> Update([FromRoute, SwaggerParameter("OrderId for searching order in the database", Required = true)] long orderId, [FromBody, SwaggerParameter("Order data for updating info")] OrderDto order)
         {
             if (!ModelState.IsValid) throw new ModelStateException(ErrorKeys.ModelState);

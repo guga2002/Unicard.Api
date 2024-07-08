@@ -1,29 +1,27 @@
 #region Usings
 using GA.UniCard.Api.CustomMiddlwares;
+using GA.UniCard.Application.Interfaces;
+using GA.UniCard.Application.Interfaces.Identity;
 using GA.UniCard.Application.Mapper;
+using GA.UniCard.Application.Services;
+using GA.UniCard.Application.Services.Identity;
 using GA.UniCard.Domain.Data;
-using Microsoft.AspNetCore.Mvc.Versioning;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
-using NLog.Web;
+using GA.UniCard.Domain.Entities;
+using GA.UniCard.Domain.Identity;
 using GA.UniCard.Domain.Interfaces;
 using GA.UniCard.Infrastructure.Repositories;
-using GA.UniCard.Application.Interfaces;
-using GA.UniCard.Application.Services;
-using GA.UniCard.Infrastructure.UnitOfWork;
-using NLog.Extensions.Logging;
-using System.Reflection;
-using GA.UniCard.Application.Interfaces.Identity;
-using GA.UniCard.Application.Services.Identity;
-using Microsoft.AspNetCore.Identity;
-using GA.UniCard.Domain.Entities;
+using GA.UniCard.Infrastructure.UniteOfWork;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using NLog.Extensions.Logging;
+using NLog.Web;
+using System.Reflection;
 using System.Text;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using AGRB.Optio.Application.Interfaces.Identity;
-using GA.UniCard.Domain.Identity;
 #endregion
 try
 {
@@ -157,7 +155,7 @@ try
         ValidateAudience = false,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]??throw new ArgumentException("security key can not be null"))),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"] ?? throw new ArgumentException("security key can not be null"))),
     };
 
 

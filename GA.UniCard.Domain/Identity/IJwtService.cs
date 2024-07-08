@@ -1,6 +1,6 @@
-﻿using AGRB.Optio.Infrastructure.Identity.HelperModels;
+﻿using GA.UniCard.Domain.Identity.HelperModels;
 
-namespace AGRB.Optio.Application.Interfaces.Identity
+namespace GA.UniCard.Domain.Identity
 {
     /// <summary>
     ///  Interface for JWT Services

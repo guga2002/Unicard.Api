@@ -2,7 +2,7 @@
 using GA.UniCard.Infrastructure.Repositories;
 using Microsoft.Extensions.Configuration;
 
-namespace GA.UniCard.Infrastructure.UnitOfWork
+namespace GA.UniCard.Infrastructure.UniteOfWork
 {
     /// <summary>
     /// Represents a Unit of Work pattern implementation for managing repositories.

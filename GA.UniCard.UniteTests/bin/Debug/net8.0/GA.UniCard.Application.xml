@@ -169,7 +169,7 @@
             </summary>
             <returns> Boolean, if succesfully  signed out</returns>
         </member>
-        <member name="M:GA.UniCard.Application.Interfaces.Identity.IPersonServices.RefreshToken(AGRB.Optio.Infrastructure.Identity.HelperModels.TokenRequest)">
+        <member name="M:GA.UniCard.Application.Interfaces.Identity.IPersonServices.RefreshToken(GA.UniCard.Domain.Identity.HelperModels.TokenRequest)">
             <summary>
             For refresh auth token
             </summary>
@@ -528,7 +528,7 @@
             Service class implementing user-related operations.
             </summary>
         </member>
-        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.#ctor(Microsoft.AspNetCore.Identity.UserManager{GA.UniCard.Domain.Entities.Person},Microsoft.AspNetCore.Identity.SignInManager{GA.UniCard.Domain.Entities.Person},AutoMapper.IMapper,Microsoft.Extensions.Configuration.IConfiguration,AGRB.Optio.Application.Interfaces.Identity.IJwtService)">
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.#ctor(Microsoft.AspNetCore.Identity.UserManager{GA.UniCard.Domain.Entities.Person},Microsoft.AspNetCore.Identity.SignInManager{GA.UniCard.Domain.Entities.Person},AutoMapper.IMapper,Microsoft.Extensions.Configuration.IConfiguration,GA.UniCard.Domain.Identity.IJwtService)">
             <summary>
             Initializes a new instance of the <see cref="T:GA.UniCard.Application.Services.Identity.PersonServices"/> class.
             </summary>
@@ -554,7 +554,7 @@
             <returns>A <see cref="T:GA.UniCard.Application.Models.ResponseModels.SignInResponse"/> containing authentication and refresh token information.</returns>
             <exception cref="T:System.ArgumentException">Thrown when sign-in fails.</exception>
         </member>
-        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.RefreshToken(AGRB.Optio.Infrastructure.Identity.HelperModels.TokenRequest)">
+        <member name="M:GA.UniCard.Application.Services.Identity.PersonServices.RefreshToken(GA.UniCard.Domain.Identity.HelperModels.TokenRequest)">
             <summary>
             Refresh auth token
             </summary>
@@ -756,137 +756,137 @@
             <param name="userDto">The updated user DTO.</param>
             <returns>True if the update was successful, otherwise false.</returns>
         </member>
-        <member name="T:GA.UniCard.Application.StaticFiles.ErrorKeys">
+        <member name="T:GA.UniCard.Application.StatickFiles.ErrorKeys">
             <summary>
             Error message constants used throughout the application.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.BadRequest">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.BadRequest">
             <summary>
             Bad request error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.UnsuccesfullInsert">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.UnsuccesfullInsert">
             <summary>
             Unsuccessful insert error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.UnsucessfullUpdate">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.UnsucessfullUpdate">
             <summary>
             Unsuccessful update error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NotFound">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.NotFound">
             <summary>
             Not found error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NoOrder">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.NoOrder">
             <summary>
             No order exists error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NoCustomer">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.NoCustomer">
             <summary>
             Customer does not exist error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.InternalServerError">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.InternalServerError">
             <summary>
             Internal server error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.DateValidation">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.DateValidation">
             <summary>
             Date validation error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.Mapped">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.Mapped">
             <summary>
             Mapping error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.General">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.General">
             <summary>
             General exception error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.ArgumentNull">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.ArgumentNull">
             <summary>
             Argument null error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.NoProduct">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.NoProduct">
             <summary>
             No such product exists error message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.ErrorKeys.ModelState">
+        <member name="F:GA.UniCard.Application.StatickFiles.ErrorKeys.ModelState">
             <summary>
             Model state error message.
             </summary>
         </member>
-        <member name="T:GA.UniCard.Application.StaticFiles.InfoKeys">
+        <member name="T:GA.UniCard.Application.StatickFiles.InfoKeys">
             <summary>
             Informational message constants used throughout the application.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.orderInfo">
+        <member name="F:GA.UniCard.Application.StatickFiles.InfoKeys.orderInfo">
             <summary>
             Information about the order that will be sent to the server.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.OrderId">
+        <member name="F:GA.UniCard.Application.StatickFiles.InfoKeys.OrderId">
             <summary>
             The Order ID used for searching the record.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.ProductId">
+        <member name="F:GA.UniCard.Application.StatickFiles.InfoKeys.ProductId">
             <summary>
             The Product ID used for searching the product in the database.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.ProductInfo">
+        <member name="F:GA.UniCard.Application.StatickFiles.InfoKeys.ProductInfo">
             <summary>
             Information about the product that will be sent to the server.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.UserId">
+        <member name="F:GA.UniCard.Application.StatickFiles.InfoKeys.UserId">
             <summary>
             The User ID used for searching a specific user in the database.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.InfoKeys.UserInfo">
+        <member name="F:GA.UniCard.Application.StatickFiles.InfoKeys.UserInfo">
             <summary>
             The User DTO model that will be sent to the server.
             </summary>
         </member>
-        <member name="T:GA.UniCard.Application.StaticFiles.SuccessKeys">
+        <member name="T:GA.UniCard.Application.StatickFiles.SuccessKeys">
             <summary>
             Success message constants used throughout the application.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.EmailSent">
+        <member name="F:GA.UniCard.Application.StatickFiles.SuccessKeys.EmailSent">
             <summary>
             Success message for email sent.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.Success">
+        <member name="F:GA.UniCard.Application.StatickFiles.SuccessKeys.Success">
             <summary>
             Generic success message.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.Warmateba">
+        <member name="F:GA.UniCard.Application.StatickFiles.SuccessKeys.Warmateba">
             <summary>
             Success message for a warmateba request.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.Delete">
+        <member name="F:GA.UniCard.Application.StatickFiles.SuccessKeys.Delete">
             <summary>
             Success message for deletion with ID.
             </summary>
         </member>
-        <member name="F:GA.UniCard.Application.StaticFiles.SuccessKeys.InsertSuccess">
+        <member name="F:GA.UniCard.Application.StatickFiles.SuccessKeys.InsertSuccess">
             <summary>
             Success message for successful insertion.
             </summary>

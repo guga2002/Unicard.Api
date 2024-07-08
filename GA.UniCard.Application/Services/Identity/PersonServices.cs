@@ -1,11 +1,11 @@
-﻿using AGRB.Optio.Application.Interfaces.Identity;
-using AGRB.Optio.Infrastructure.Identity.HelperModels;
-using AutoMapper;
+﻿using AutoMapper;
 using GA.UniCard.Application.CustomExceptions;
 using GA.UniCard.Application.Interfaces.Identity;
 using GA.UniCard.Application.Models.IdentityModel;
 using GA.UniCard.Application.Models.ResponseModels;
 using GA.UniCard.Domain.Entities;
+using GA.UniCard.Domain.Identity;
+using GA.UniCard.Domain.Identity.HelperModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 
